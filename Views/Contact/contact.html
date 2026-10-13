@@ -1,1 +1,178 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Rae Brooke Photography to plan your next photography session.">
+  <title>Contact | Rae Brooke Photography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+  <header class="contact-header">
+    <a class="contact-logo" href="index.html">
+      RAE BROOKE<span>PHOTOGRAPHY</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <p class="contact-eyebrow">THE BEGINNING OF SOMETHING GOOD</p>
+      <h1>Let's make<br><em>something meaningful.</em></h1>
+      <p class="contact-intro">
+        Every session starts with an idea. Tell me yours, and let's
+        create photographs that feel like you.
+      </p>
+    </section>
+
+    <section class="contact-layout">
+      <aside class="contact-aside">
+        <p class="contact-eyebrow">GET IN TOUCH</p>
+        <h2>Your story<br>starts here.</h2>
+        <p>
+          Whether you're planning a portrait session, celebrating
+          someone you love, or building your brand, I'd love to hear
+          what you have in mind.
+        </p>
+        <p class="contact-note">
+          Fill out the inquiry form and I'll be in touch as soon as
+          possible.
+        </p>
+        <!-- Replace this with your real contact email if desired. -->
+        <!-- <a href="mailto:hello@yourdomain.com">Email me directly ↗</a> -->
+      </aside>
+
+      <form id="contact-form" class="contact-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Your name <span>*</span></label>
+            <input id="name" name="name" type="text"
+                   autocomplete="name" maxlength="100" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email address <span>*</span></label>
+            <input id="email" name="email" type="email"
+                   autocomplete="email" maxlength="254" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="session">What are we photographing? <span>*</span></label>
+          <select id="session" name="session" required>
+            <option value="">Choose a session type</option>
+            <option>Portraits</option>
+            <option>Couples / Engagements</option>
+            <option>Families</option>
+            <option>Events</option>
+            <option>Lifestyle / Branding</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="date">Preferred date</label>
+            <input id="date" name="date" type="date">
+          </div>
+
+          <div class="form-field">
+            <label for="location">Location or setting</label>
+            <input id="location" name="location" type="text"
+                   placeholder="City, outdoors, studio..." maxlength="150">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="budget">Budget range</label>
+          <select id="budget" name="budget">
+            <option value="">Prefer to discuss</option>
+            <option>Under $200</option>
+            <option>$200–$400</option>
+            <option>$400–$700</option>
+            <option>$700+</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="message">Tell me about your vision <span>*</span></label>
+          <textarea id="message" name="message" rows="6"
+                    maxlength="3000"
+                    placeholder="What are you imagining? Who is the session for? Anything else I should know?"
+                    required></textarea>
+        </div>
+
+        <!-- Honeypot field: leave this hidden from real visitors. -->
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input id="website" name="website" type="text"
+                 tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="form-required">* Required fields</p>
+
+        <button class="contact-submit" type="submit">
+          Send your inquiry <span aria-hidden="true">↗</span>
+        </button>
+
+        <p id="form-status" class="form-status" role="status"
+           aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="contact-footer">
+    <a href="index.html">RAE BROOKE PHOTOGRAPHY</a>
+    <p>Thoughtfully captured. Authentically you.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contact-form");
+    const statusMessage = document.getElementById("form-status");
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      statusMessage.textContent = "Sending your inquiry...";
+      submitButton.disabled = true;
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.error || "Unable to send your inquiry.");
+        }
+
+        form.reset();
+        statusMessage.textContent =
+          "Thank you! Your inquiry has been sent. I'll be in touch soon.";
+      } catch (error) {
+        statusMessage.textContent =
+          error.message || "Something went wrong. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
