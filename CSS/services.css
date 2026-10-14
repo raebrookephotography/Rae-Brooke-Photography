@@ -6,6 +6,12 @@
   font-size: xxx-large;
 }
 
+.services-page {
+  background: #f5f0e7;
+  color: #28221f;
+  padding: 64px 6%;
+}
+
 
 /* Clickable navigation */
     .package-nav {
