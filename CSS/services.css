@@ -55,6 +55,7 @@
       gap: 6%;
       align-items: start;
       padding-top: 65px;
+      max-width: 1100px;
     }
 
     .description {
