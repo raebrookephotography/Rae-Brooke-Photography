@@ -1,4 +1,8 @@
- /* Clickable navigation */
+.page{
+  margin-bottom: 60px;
+}
+
+/* Clickable navigation */
     .package-nav {
       display: flex;
       justify-content: space-between;
