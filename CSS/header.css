@@ -1,13 +1,25 @@
+/* ========================================
+   RAE BROOKE PHOTOGRAPHY — HEADER
+======================================== */
+
 .page-header {
+  --header-denim: #53677D;
+  --header-sage: #59664F;
+  --header-tan: #B99A79;
+  --header-ivory: #FAF9F6;
+
   padding: 28px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  border-bottom: 1px solid var(--contact-line);
+  background: var(--header-ivory);
+  border-bottom: 1px solid #E3E0D8;
+  color: var(--header-denim);
 }
 
 .page-header-logo {
+  color: var(--header-denim);
   font-size: 19px;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -29,6 +41,7 @@
 }
 
 .page-header nav a {
+  color: var(--header-denim);
   font-size: 12px;
   letter-spacing: 0.08em;
   transition: color 180ms ease;
@@ -36,6 +49,10 @@
 
 .page-header nav a:hover,
 .page-header nav a[aria-current="page"] {
-  color: var(--contact-accent);
+  color: var(--header-sage);
 }
 
+.page-header nav a:focus-visible {
+  outline: 2px solid var(--header-denim);
+  outline-offset: 4px;
+}
