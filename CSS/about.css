@@ -2,9 +2,14 @@
    RAE BROOKE PHOTOGRAPHY — ABOUT PAGE
    Editorial, minimal, photography-led design
 ======================================== */
+/* ========================================
+   RAE BROOKE PHOTOGRAPHY — ABOUT PAGE
+   Heathered denim, sage, tan & ivory
+======================================== */
+
 .about-page {
-  background: #f5f0e7;
-  color: #28221f;
+  background: #FAF9F6;
+  color: #424641;
   padding: 64px 6%;
 }
 
@@ -21,8 +26,10 @@
   max-width: 680px;
 }
 
+/* Main editorial heading */
 .about-heading {
   margin: 0 0 42px;
+  color: #53677D;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.2rem, 1.7vw, 1.8rem);
   font-weight: 400;
@@ -31,13 +38,17 @@
   text-transform: uppercase;
 }
 
+/* Personal introduction accent */
 .about-heading em {
+  color: #7D896F;
   font-weight: 400;
   text-transform: uppercase;
 }
 
+/* About story */
 .about-story {
-  font-size: .85rem;
+  color: #424641;
+  font-size: 0.85rem;
   line-height: 1.95;
 }
 
@@ -49,11 +60,13 @@
   margin-bottom: 0;
 }
 
+/* Portrait */
 .about-image {
   width: 100%;
-  height:  min(58vw, 760px);
+  height: min(58vw, 760px);
   min-height: 480px;
   overflow: hidden;
+  background: #E8EBE2;
 }
 
 .about-image img {
@@ -62,6 +75,16 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/* Optional subtle tan accent under the copy */
+.about-copy::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin-top: 32px;
+  background: #B99A79;
 }
 
 /* Mobile layout */
@@ -81,7 +104,7 @@
   }
 
   .about-story {
-    font-size: .85rem;
+    font-size: 0.85rem;
     line-height: 1.8;
   }
 
