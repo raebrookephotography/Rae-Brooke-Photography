@@ -210,35 +210,43 @@ footer {
 }
 
 /* Six photos across the very top of the footer */
+/* Let the photo strip span the entire browser width */
 .footer-gallery {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   gap: 0;
+  padding: 0;
   overflow: hidden;
   line-height: 0;
 }
 
+/* Make the photos taller and show the full image */
 .footer-gallery img {
   display: block;
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 280px;
+  object-fit: contain;
   object-position: center;
+  margin: 0;
+  padding: 0;
+  background: #111;
 }
 
-/* Optional: slightly shorter photos on smaller screens */
+/* Responsive height */
 @media (max-width: 768px) {
   .footer-gallery img {
-    height: 110px;
+    height: 180px;
   }
 }
 
 @media (max-width: 480px) {
   .footer-gallery img {
-    height: 75px;
+    height: 120px;
   }
 }
+
 
 
 
