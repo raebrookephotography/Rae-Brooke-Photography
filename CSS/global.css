@@ -140,7 +140,12 @@ footer {
 }
 
 /* Footer brand and social icons */
-.footer-inner,
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
 .footer-bottom {
   display: flex;
   justify-content: space-between;
