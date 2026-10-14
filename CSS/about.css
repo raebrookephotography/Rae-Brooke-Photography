@@ -115,4 +115,61 @@
   }
 }
 
+/* ========================================
+   STACKED ABOUT PAGE IMAGES
+======================================== */
+
+.about-image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  background: #FFFFFF;
+  box-shadow: 0 8px 30px rgba(66, 70, 65, 0.06);
+}
+
+/* Individual image containers */
+.about-image {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: #E8EBE2;
+}
+
+/* Images fill their containers */
+.about-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+/* Optional subtle hover effect */
+.about-image:hover img {
+  transform: scale(1.02);
+}
+
+/* ========================================
+   MOBILE LAYOUT
+======================================== */
+
+@media (max-width: 800px) {
+  .about-image-stack {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .about-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-image img {
+    aspect-ratio: 4 / 3;
+  }
+}
 
