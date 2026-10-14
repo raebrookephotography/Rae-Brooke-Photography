@@ -24,6 +24,7 @@
       border-top: 1px solid #c9bf96;
       border-bottom: 1px solid #c9bf96;
       max-width: 1100px;
+      margin: 0 auto;
     }
 
     .package-nav button {
