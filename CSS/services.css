@@ -1,190 +1,220 @@
-.page{
-  margin-bottom: 60px;
+/* ========================================
+   RAE BROOKE PHOTOGRAPHY — SERVICES
+   Heathered denim, sage, tan & ivory
+======================================== */
+
+:root {
+  --services-denim: #53677D;
+  --services-denim-dark: #405267;
+  --services-sage: #A3AD96;
+  --services-sage-light: #E8EBE2;
+  --services-sage-dark: #59664F;
+  --services-tan: #B99A79;
+  --services-ivory: #FAF9F6;
+  --services-text: #424641;
 }
 
-.packages-title {
-  font-size: xxx-large;
-  text-align: center;
-}
-
+/* Main page */
 .services-page {
-  background: #f5f0e7;
-  color: #28221f;
+  background: var(--services-ivory);
+  color: var(--services-text);
   padding: 64px 6%;
 }
 
+/* Page heading */
+.packages-title {
+  margin: 0 0 32px;
+  color: var(--services-denim);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+/* Package navigation */
+.package-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 17px 3%;
+  border-top: 1px solid var(--services-tan);
+  border-bottom: 1px solid var(--services-tan);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.package-nav button {
+  padding: 8px 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--services-denim);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: clamp(10px, 1.5vw, 16px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.package-nav button:hover {
+  color: var(--services-sage-dark);
+}
+
+.package-nav button.active {
+  color: var(--services-denim-dark);
+  border-bottom-color: var(--services-tan);
+}
+
+.package-nav button:focus-visible {
+  outline: 2px solid var(--services-denim);
+  outline-offset: 5px;
+}
+
+/* Package description and photograph */
+.package-content {
+  display: grid;
+  grid-template-columns: 1.03fr 1fr;
+  gap: 6%;
+  align-items: center;
+  padding-top: 65px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.description {
+  min-width: 0;
+}
+
+/* Italic package title */
+.description h2 {
+  margin: -10px 0 8px;
+  color: var(--services-denim);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(36px, 4.3vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Package copy */
+.description p {
+  margin: 0 0 25px;
+  color: var(--services-text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.description .intro {
+  margin-bottom: 25px;
+  color: var(--services-sage-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Photography frame */
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--services-tan);
+  background: var(--services-sage-light);
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.25s ease;
+}
+
+/* Inquiry button — matches the HTML class */
 .inquire-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 405px;
-      height: 50px;
-      background-color: #b9c9c2;
-      color: #302c24;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      transition: background-color 0.3s ease;
-      box-sizing: border-box;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 405px;
+  min-height: 50px;
+  margin-top: 12px;
+  padding: 14px 20px;
+  border: 1px solid var(--services-denim);
+  background: var(--services-denim);
+  color: var(--services-ivory);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
 
-    .inquire-button:hover {
-      background-color: #a5b9b0;
-    }
+.inquire-button:hover {
+  background: var(--services-denim-dark);
+  border-color: var(--services-denim-dark);
+  transform: translateY(-2px);
+}
 
-    .inquire-button:focus-visible {
-      outline: 2px solid #302c24;
-      outline-offset: 3px;
-    }
+.inquire-button:focus-visible {
+  outline: 2px solid var(--services-sage-dark);
+  outline-offset: 4px;
+}
 
+/* Mobile layout */
+@media (max-width: 700px) {
+  .services-page {
+    padding: 40px 6%;
+  }
 
-/* Clickable navigation */
-    .package-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 17px 3%;
-      border-top: 1px solid #c9bf96;
-      border-bottom: 1px solid #c9bf96;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+  .packages-title {
+    margin-bottom: 24px;
+  }
 
-    .package-nav button {
-      padding: 4px 0;
-      border: none;
-      background: transparent;
-      color: var(--gold);
-      font-family: "Montserrat", sans-serif;
-      font-size: clamp(10px, 1.5vw, 16px);
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: color 0.25s ease;
-    }
+  .package-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    padding: 16px 0;
+  }
 
-    .package-nav button:hover,
-    .package-nav button.active {
-      color: var(--blue);
-    }
+  .package-nav button {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
 
-    .package-nav button.active {
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
+  .package-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-top: 40px;
+  }
 
-    /* Description and photograph */
-    .package-content {
-      display: grid;
-      grid-template-columns: 1.03fr 1fr;
-      gap: 6%;
-      align-items: center;
-      padding-top: 65px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+  .description h2 {
+    margin-top: 0;
+    font-size: clamp(36px, 9vw, 46px);
+  }
 
-    .description {
-      min-width: 0;
-    }
+  .description p {
+    font-size: 14px;
+  }
 
-    .description h2 {
-      margin: -10px 0 4px;
-      color: var(--blue);
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(36px, 4.3vw, 52px);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.35;
-    }
+  .inquire-button {
+    max-width: none;
+  }
 
-    .description p {
-      margin: 0 0 25px;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .description .intro {
-      margin-bottom: 25px;
-    }
-
-    .photo-frame {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      border: 1px solid #38332b;
-      background: #e8e3da;
-    }
-
-    .photo-frame img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.25s ease;
-    }
-
-    /* Optional package call to action */
-    .inquire-link {
-      display: inline-block;
-      margin-top: 5px;
-      padding: 9px 0;
-      border-bottom: 1px solid var(--gold);
-      color: var(--heading);
-      font-family: "Montserrat", sans-serif;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .inquire-link:hover {
-      color: var(--blue);
-    }
-
-    /* Mobile layout */
-    @media (max-width: 700px) {
-      .page {
-        padding: 0 6% 40px;
-      }
-
-      .site-title {
-        padding: 15px 0 25px;
-      }
-
-      .package-nav {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px 22px;
-        padding: 16px 0;
-      }
-
-      .package-nav button {
-        font-size: 10px;
-        letter-spacing: 1px;
-      }
-
-      .package-content {
-        grid-template-columns: 1fr;
-        gap: 28px;
-        padding-top: 40px;
-      }
-
-      .description h2 {
-        margin-top: 0;
-      }
-
-      .description p {
-        font-size: 14px;
-      }
-
-      .photo-frame {
-        aspect-ratio: 4 / 4.5;
-      }
-    }
+  .photo-frame {
+    aspect-ratio: 4 / 4.5;
+  }
+}
