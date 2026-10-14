@@ -442,9 +442,16 @@ footer {
 .footer-brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 4px;
-  color: inherit;
-  text-decoration: none;
+  text-align: left;
+}
+
+.footer-brand-name,
+.footer-brand-subtitle {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-brand-name {
