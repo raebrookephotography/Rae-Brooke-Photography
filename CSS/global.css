@@ -566,7 +566,7 @@ footer {
 .about-heading {
   margin: 0 0 42px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.2rem, 1.7vw, 1.8rem)
+  font-size: clamp(1.2rem, 1.7vw, 1.8rem);
   font-weight: 400;
   line-height: 1.38;
   letter-spacing: -0.045em;
@@ -579,7 +579,7 @@ footer {
 }
 
 .about-story {
-  font-size: 1.05rem;
+  font-size: .85rem;
   line-height: 1.95;
 }
 
