@@ -145,6 +145,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   gap: 24px;
+  margin-left: 28px;
+  margin-right: 28px;
 }
 .footer-bottom {
   display: flex;
