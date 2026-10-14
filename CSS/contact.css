@@ -1,14 +1,21 @@
 /* ========================================
    RAE BROOKE PHOTOGRAPHY — CONTACT PAGE
-   Editorial, minimal, photography-led design
+   Heathered denim, sage, tan & ivory
 ======================================== */
 
 .contact-page {
-  --contact-ink: #25231f;
-  --contact-muted: #77736b;
-  --contact-paper: #f8f6f1;
-  --contact-line: #dedad1;
-  --contact-accent: #9a795e;
+  --contact-denim: #53677D;
+  --contact-denim-dark: #405267;
+  --contact-sage: #A3AD96;
+  --contact-sage-light: #E8EBE2;
+  --contact-sage-dark: #59664F;
+  --contact-tan: #B99A79;
+  --contact-paper: #FAF9F6;
+  --contact-ink: #424641;
+  --contact-muted: #62665F;
+  --contact-line: #DEDCD3;
+
+  --contact-accent: var(--contact-tan);
 
   background: var(--contact-paper);
   color: var(--contact-ink);
@@ -26,7 +33,7 @@
   text-decoration: none;
 }
 
-
+/* HERO SECTION */
 .contact-hero {
   max-width: 1100px;
   margin: auto;
@@ -36,7 +43,7 @@
 }
 
 .contact-eyebrow {
-  color: var(--contact-accent);
+  color: var(--contact-sage-dark);
   font-size: 10px;
   letter-spacing: 0.22em;
   line-height: 1.8;
@@ -45,6 +52,7 @@
 
 .contact-hero h1 {
   margin: 25px 0;
+  color: var(--contact-denim);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(42px, 7.4vw, 86px);
   line-height: 1.04;
@@ -53,6 +61,7 @@
 }
 
 .contact-hero h1 em {
+  color: var(--contact-sage-dark);
   font-weight: 400;
 }
 
@@ -64,6 +73,7 @@
   line-height: 1.9;
 }
 
+/* MAIN CONTACT LAYOUT */
 .contact-layout {
   max-width: 1200px;
   margin: 0 auto;
@@ -80,6 +90,7 @@
 
 .contact-aside h2 {
   margin: 20px 0 24px;
+  color: var(--contact-denim);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(36px, 4vw, 52px);
   line-height: 1.1;
@@ -99,6 +110,7 @@
   border-top: 1px solid var(--contact-line);
 }
 
+/* FORM */
 .contact-form {
   min-width: 0;
 }
@@ -117,13 +129,14 @@
 }
 
 .form-field label {
+  color: var(--contact-denim);
   font-size: 11px;
   letter-spacing: 0.06em;
   font-weight: 600;
 }
 
 .form-field label span {
-  color: var(--contact-accent);
+  color: var(--contact-tan);
 }
 
 .form-field input,
@@ -134,12 +147,14 @@
   padding: 15px 14px;
   border: 1px solid var(--contact-line);
   border-radius: 0;
-  background: rgba(255, 255, 255, 0.48);
+  background: #FFFFFF;
   color: var(--contact-ink);
   font: inherit;
   font-size: 13px;
-  transition: border-color 180ms ease,
-              background 180ms ease;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .form-field input,
@@ -155,14 +170,15 @@
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  outline: 2px solid transparent;
-  border-color: var(--contact-accent);
-  background: #fff;
+  outline: none;
+  border-color: var(--contact-denim);
+  box-shadow: 0 0 0 2px rgba(83, 103, 125, 0.15);
+  background: #FFFFFF;
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: #99948b;
+  color: #73766F;
 }
 
 .form-required {
@@ -170,6 +186,7 @@
   font-size: 11px;
 }
 
+/* HONEYPOT — KEEP HIDDEN */
 .form-honeypot {
   position: absolute;
   width: 1px;
@@ -179,6 +196,7 @@
   white-space: nowrap;
 }
 
+/* PRIMARY SUBMIT BUTTON */
 .contact-submit {
   width: 100%;
   min-height: 55px;
@@ -187,35 +205,46 @@
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  border: 1px solid var(--contact-ink);
-  background: var(--contact-ink);
-  color: #fff;
+  border: 1px solid var(--contact-denim);
+  background: var(--contact-denim);
+  color: var(--contact-paper);
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 180ms ease,
-              color 180ms ease;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
-.contact-submit:hover {
-  background: transparent;
-  color: var(--contact-ink);
+.contact-submit:hover:not(:disabled) {
+  background: var(--contact-denim-dark);
+  border-color: var(--contact-denim-dark);
+  transform: translateY(-2px);
+}
+
+.contact-submit:focus-visible {
+  outline: 2px solid var(--contact-sage-dark);
+  outline-offset: 4px;
 }
 
 .contact-submit:disabled {
-  opacity: 0.6;
+  opacity: 0.65;
   cursor: wait;
+  transform: none;
 }
 
+/* FORM STATUS AND FEEDBACK */
 .form-status {
   min-height: 24px;
   margin-top: 18px;
-  color: var(--contact-muted);
+  color: var(--contact-sage-dark);
   font-size: 13px;
   line-height: 1.6;
 }
 
+/* OPTIONAL CONTACT FOOTER */
 .contact-footer {
   padding: 35px 6%;
   border-top: 1px solid var(--contact-line);
@@ -223,6 +252,7 @@
 }
 
 .contact-footer > a {
+  color: var(--contact-denim);
   font-size: 11px;
   letter-spacing: 0.16em;
   font-weight: 700;
@@ -235,21 +265,8 @@
   font-style: italic;
 }
 
+/* TABLET */
 @media (max-width: 760px) {
-  .contact-header {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 24px 6%;
-  }
-
-  .contact-header nav {
-    gap: 18px;
-  }
-
-  .contact-header nav a {
-    font-size: 11px;
-  }
-
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 45px;
@@ -261,6 +278,7 @@
   }
 }
 
+/* MOBILE */
 @media (max-width: 480px) {
   .form-row {
     grid-template-columns: 1fr;
@@ -272,6 +290,7 @@
   }
 }
 
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   .contact-page *,
   .contact-page *::before,
@@ -279,11 +298,3 @@
     transition: none !important;
   }
 }
-
-
-
-
-
-
-
-
