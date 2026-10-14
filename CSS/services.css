@@ -2,6 +2,11 @@
   margin-bottom: 60px;
 }
 
+.packages-title {
+  font-size: xxx-large;
+}
+
+
 /* Clickable navigation */
     .package-nav {
       display: flex;
