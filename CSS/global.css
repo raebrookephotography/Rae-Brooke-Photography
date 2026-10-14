@@ -555,7 +555,7 @@ footer {
   grid-template-columns: 1.12fr 0.88fr;
   align-items: center;
   gap: clamp(40px, 6vw, 100px);
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
