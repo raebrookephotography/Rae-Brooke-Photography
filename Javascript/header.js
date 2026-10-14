@@ -5,7 +5,7 @@ async function loadSharedHeader() {
   if (!container) return;
 
   try {
-    const response = await fetch("/shared/shared.html");
+    const response = await fetch("/Views/Shared/header.html");
 
     if (!response.ok) {
       throw new Error("Could not load the shared header.");
