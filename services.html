@@ -19,9 +19,7 @@
 
 <body>
 
-  <!-- =====================================
-       SERVICES HERO
-  ====================================== -->
+  <!-- SERVICES HERO -->
 
   <section class="services-hero">
 
@@ -34,7 +32,7 @@
 
     <div class="services-hero-overlay"></div>
 
-    <!-- Shared branding and dropdown -->
+    <!-- Shared header, if used by header.js -->
     <div id="shared-header"></div>
 
     <div class="services-hero-content">
@@ -62,40 +60,47 @@
   </section>
 
 
-  <!-- =====================================
-         STICKY NAVIGATION
-    ====================================== -->
+  <!-- STICKY MAIN NAVIGATION -->
 
-    <nav class="sticky-nav" aria-label="Main navigation">
+  <nav class="sticky-nav" aria-label="Main navigation">
 
-      <a class="sticky-brand" href="/index.html">
-        RAE BROOKE
-      </a>
+    <a class="sticky-brand" href="/index.html">
+      RAE BROOKE
+    </a>
 
-      <div class="sticky-links">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/services.html" aria-current="page">Services</a>
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/contact.html">Contact</a>
-      </div>
+    <div class="sticky-links">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html" aria-current="page">Services</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/contact.html">Contact</a>
+    </div>
 
-    </nav>
+  </nav>
 
 
-  <!-- =====================================
-       SERVICES AND PACKAGES
-  ====================================== -->
+  <!-- SERVICES CONTENT -->
 
   <main class="services-page">
 
     <section class="services-section" id="packages">
 
+      <p class="section-eyebrow">
+        FIND YOUR EXPERIENCE
+      </p>
+
       <h2 class="packages-title">
         MY PACKAGES
       </h2>
 
-      <!-- Package selector -->
+      <p class="packages-subtitle">
+        Every story is different. Let's find the experience
+        that feels right for yours.
+      </p>
+
+
+      <!-- PACKAGE SELECTOR -->
+
       <nav class="package-nav" aria-label="Photography packages">
 
         <button
@@ -126,22 +131,31 @@
       </nav>
 
 
-      <!-- Selected package -->
+      <!-- SELECTED PACKAGE -->
+
       <section
         class="package-content"
-        aria-live="polite"
-        aria-atomic="true"
+        aria-label="Selected photography package"
       >
 
         <article class="description">
 
-          <h2 id="package-title">Portraits</h2>
+          <p
+            class="package-eyebrow"
+            id="package-eyebrow"
+          >
+            THE LITTLE MOMENTS
+          </p>
+
+          <h2 id="package-title">
+            Portraits
+          </h2>
 
           <p class="intro" id="package-intro">
             For this version of your life, exactly as it is right now.
           </p>
 
-          <div id="package-description">
+          <div id="package-description" aria-live="polite">
 
             <p>
               It's 30 years from now. You're sitting on the couch
@@ -166,26 +180,44 @@
               keeping.
             </p>
 
-            <p>Portrait sessions begin at $200</p>
+            <p class="package-price">
+              Portrait sessions begin at $200.
+            </p>
 
           </div>
 
-          <a href="/contact.html" class="inquire-button">
-            INQUIRE HERE <span aria-hidden="true">↗</span>
+          <a
+            href="/contact.html?session=Portraits"
+            class="inquire-button"
+            id="package-inquiry"
+          >
+            INQUIRE HERE
+            <span aria-hidden="true">↗</span>
           </a>
 
         </article>
 
 
-        <div class="photo-frame">
+        <!-- PACKAGE IMAGE -->
+
+        <figure class="photo-frame">
 
           <img
             id="package-image"
-            src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"
-            alt="A couple sharing a romantic moment"
+            src="/Images/Portfolio/Colleen_Chris_Sunset.jpg"
+            alt="A couple sharing a romantic moment outdoors"
+            loading="eager"
+            decoding="async"
           >
 
-        </div>
+          <figcaption
+            class="photo-caption"
+            id="package-caption"
+          >
+            REAL MOMENTS. LASTING MEMORIES.
+          </figcaption>
+
+        </figure>
 
       </section>
 
@@ -194,11 +226,12 @@
   </main>
 
 
-  <!-- =====================================
-       SHARED FOOTER
-  ====================================== -->
+  <!-- SHARED FOOTER -->
 
   <div id="shared-footer"></div>
+
+
+  <!-- PAGE SCRIPTS -->
 
   <script src="/Javascript/header.js" defer></script>
   <script src="/Javascript/services.js" defer></script>
