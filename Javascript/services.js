@@ -1,0 +1,118 @@
+<script>
+    // Each option has its own heading, introduction, description,
+    // photograph, and inquiry email subject.
+
+    const packages = {
+      weddings: {
+        title: "Weddings",
+        intro:
+          "For the day that starts a whole new chapter.",
+        paragraphs: [
+          "The happy tears, the shaky hands, the people who have loved you since the beginning, and the person waiting for you at the end of the aisle. Your wedding day is full of moments you won't want to forget.",
+          "My approach is relaxed and documentary-inspired. I'll capture the big moments and the little things happening in between, so your photographs feel like your day actually felt.",
+          "From getting ready to the last dance, we'll make room for the real stuff: the laughter, the happy chaos, and all the love in between.",
+          "Weddings sessions begin at $200"
+        ],
+        image:
+          "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1100&q=85",
+        alt: "A couple celebrating their wedding day",
+        emailSubject: "Wedding Photography Inquiry"
+      },
+
+      elopements: {
+        title: "Intimate Weddings & Elopements",
+        intro:
+          "For a day that feels like the two of you.",
+        paragraphs: [
+          "Maybe it's just the two of you on a mountaintop. Maybe it's a tiny ceremony with your favorite people, followed by dinner and drinks somewhere that means something to you.",
+          "Your wedding doesn't have to follow anyone else's rules. We'll build a photography experience around what matters to you, whether that means exploring somewhere beautiful or keeping things close to home.",
+          "Less pressure, fewer expectations, and more space to be present with each other. Your story deserves to be documented exactly as it unfolds.",
+          "Elopements begin at $200"
+        ],
+        image:
+          "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1100&q=85",
+        alt: "A couple enjoying an intimate wedding celebration",
+        emailSubject: "Elopement Photography Inquiry"
+      },
+
+      portraits: {
+        title: "Portraits",
+        intro:
+          "For this version of your life, exactly as it is right now.",
+        paragraphs: [
+          "It's 30 years from now. You're sitting on the couch with your person, scrolling through some cool holographic photo-viewing thing. You're looking at your dog side-eyeing the new baby, your three-year-old flashing that big, dopey grin, or the two of you lying in tall grass before your butts got saggy.",
+          "You're remembering the fur babies when they were full of energy, the kids before they had kids of their own, and the two of you in this particular season of your life. That's why this version matters.",
+          "We might wander through a downtown, spend an evening at the beach, or find a quiet place that feels like you. No stiff poses. Just the little moments worth keeping.",
+          "Portrait sessions begin at $200"
+        ],
+        image:
+          "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1100&q=85",
+        alt: "A couple sharing a romantic moment",
+        emailSubject: "Portrait Photography Inquiry"
+      }
+    };
+
+    const buttons = document.querySelectorAll("[data-package]");
+    const title = document.getElementById("package-title");
+    const intro = document.getElementById("package-intro");
+    const description = document.getElementById("package-description");
+    const image = document.getElementById("package-image");
+    const inquireLink = document.getElementById("inquire-link");
+
+    function showPackage(packageName) {
+      const selected = packages[packageName];
+
+      if (!selected) return;
+
+      // Update the text
+      title.textContent = selected.title;
+      intro.textContent = selected.intro;
+
+      // Build the paragraphs safely as text
+      description.replaceChildren();
+
+      selected.paragraphs.forEach((paragraphText) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = paragraphText;
+        description.appendChild(paragraph);
+      });
+
+      // Update the photograph and its accessible description
+      image.style.opacity = "0";
+
+      image.onload = () => {
+        image.style.opacity = "1";
+      };
+
+      image.onerror = () => {
+        image.style.opacity = "1";
+        image.alt = "Photograph unavailable. Please check your internet connection.";
+      };
+
+      image.src = selected.image;
+      image.alt = selected.alt;
+
+      // Update the inquiry link
+     // inquireLink.href =
+     //   "mailto:hello@example.com?subject=" +
+     //   encodeURIComponent(selected.emailSubject);
+
+      // Highlight the selected navigation item
+      buttons.forEach((button) => {
+        const isActive = button.dataset.package === packageName;
+
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+    }
+
+    // Make every navigation option clickable
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        showPackage(button.dataset.package);
+      });
+    });
+
+    // Show the Portraits section when the page first loads
+    showPackage("portraits");
+  </script>
