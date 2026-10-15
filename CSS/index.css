@@ -223,3 +223,46 @@
     object-fit: cover;
   }
 }
+
+
+/* ========================================
+   HERO PICTURE AND TEXT EDITS TO MAKE BETTER
+======================================== */
+
+.hero {
+  color: #F8F3EA;
+}
+
+.hero .eyebrow {
+  color: #F0E7D9;
+}
+
+.hero h1 {
+  color: #FFF9F0;
+}
+
+.hero .hero-subtitle {
+  color: #F5EEE5;
+}
+
+.hero .hero-button {
+  color: #FFF9F0;
+  border-color: #F5EEE5;
+  background: rgb(39 43 39 / 18%);
+}
+
+.hero .hero-button:hover {
+  color: #3F514B;
+  background: #F8F3EA;
+  border-color: #F8F3EA;
+}
+
+/* Softer, warmer image overlay */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgb(39 43 39 / 20%) 0%,
+    rgb(39 43 39 / 32%) 50%,
+    rgb(39 43 39 / 48%) 100%
+  );
+}
