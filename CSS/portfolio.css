@@ -17,7 +17,6 @@
   margin: 0;
   background: var(--portfolio-ivory);
   color: var(--portfolio-text);
-
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -45,14 +44,17 @@
 
 
 /* ========================================
-   SHARED HEADER POSITIONING
-   Keeps the shared header above the hero
+   SHARED HEADER
+   Displays the shared dropdown header over
+   the portfolio hero
 ======================================== */
 
 .portfolio-page #shared-header {
   position: absolute;
   z-index: 1001;
-  inset: 0 0 auto;
+  top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
 }
 
@@ -74,7 +76,7 @@
   min-height: 72svh;
 
   margin: 0;
-  padding: 130px 7% 90px;
+  padding: 140px 7% 90px;
   overflow: hidden;
 
   background: var(--portfolio-denim-dark);
@@ -100,7 +102,7 @@
 }
 
 
-/* Dark overlay for text readability */
+/* Dark overlay for readable text */
 
 .portfolio-hero-overlay {
   position: absolute;
@@ -109,7 +111,7 @@
 
   background: linear-gradient(
     to bottom,
-    rgb(30 35 33 / 35%) 0%,
+    rgb(30 35 33 / 38%) 0%,
     rgb(30 35 33 / 30%) 35%,
     rgb(30 35 33 / 45%) 70%,
     rgb(30 35 33 / 58%) 100%
@@ -137,7 +139,6 @@
   margin: 0 0 24px;
 
   color: var(--portfolio-ivory);
-
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -151,7 +152,6 @@
   margin: 0;
 
   color: var(--portfolio-ivory);
-
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 7vw, 82px);
   font-weight: 400;
@@ -173,10 +173,114 @@
   margin: 25px auto 32px;
 
   color: var(--portfolio-ivory);
-
   font-size: 14px;
   font-weight: 400;
   line-height: 1.9;
+}
+
+
+/* ========================================
+   STICKY NAVIGATION
+   Matches the other site pages
+======================================== */
+
+.portfolio-page .sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  width: 100%;
+  min-height: 68px;
+  padding: 14px 7%;
+
+  background: var(--portfolio-ivory);
+  border-bottom: 1px solid #E3E0D8;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 4%);
+}
+
+
+/* Brand */
+
+.portfolio-page .sticky-brand {
+  flex-shrink: 0;
+
+  color: var(--portfolio-denim);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+}
+
+
+/* Navigation links */
+
+.portfolio-page .sticky-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.6vw, 36px);
+}
+
+.portfolio-page .sticky-links a {
+  position: relative;
+
+  padding: 8px 0;
+
+  color: var(--portfolio-denim);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+
+/* Hover and active page */
+
+.portfolio-page .sticky-links a:hover,
+.portfolio-page .sticky-links a[aria-current="page"] {
+  color: var(--portfolio-sage-dark);
+}
+
+
+/* Animated underline */
+
+.portfolio-page .sticky-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+
+  height: 1px;
+
+  background: var(--portfolio-sage-dark);
+  content: "";
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.portfolio-page .sticky-links a:hover::after,
+.portfolio-page .sticky-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+
+/* Keyboard accessibility */
+
+.portfolio-page .sticky-brand:focus-visible,
+.portfolio-page .sticky-links a:focus-visible {
+  outline: 2px solid var(--portfolio-denim);
+  outline-offset: 5px;
 }
 
 
@@ -210,7 +314,7 @@
 }
 
 
-/* Hero button appearance */
+/* Hero button */
 
 .portfolio-hero .portfolio-button {
   border-color: var(--portfolio-ivory);
@@ -252,7 +356,6 @@
 
 .portfolio-gallery-section {
   padding: 65px 6% 95px;
-
   background: #FFFFFF;
 }
 
@@ -262,7 +365,6 @@
 .portfolio-section-heading {
   max-width: 700px;
   margin: 0 auto 50px;
-
   text-align: center;
 }
 
@@ -270,7 +372,6 @@
   margin: 0 0 14px;
 
   color: var(--portfolio-sage-dark);
-
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.5px;
@@ -281,7 +382,6 @@
   margin: 0;
 
   color: var(--portfolio-denim);
-
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
@@ -310,12 +410,10 @@
 
   width: 100%;
   height: auto;
-
   margin: 0 0 28px;
 
   break-inside: avoid;
   border: 0;
-
   background: var(--portfolio-ivory);
 
   transition: opacity 0.3s ease;
@@ -341,13 +439,25 @@
 }
 
 
+/* CTA eyebrow */
+
+.portfolio-cta .portfolio-eyebrow {
+  margin: 0 0 20px;
+
+  color: var(--portfolio-sage-dark);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+
 /* CTA heading */
 
 .portfolio-cta h2 {
   margin: 0;
 
   color: var(--portfolio-denim);
-
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(38px, 5vw, 58px);
   font-weight: 400;
@@ -368,23 +478,8 @@
   margin: 22px auto 30px;
 
   color: var(--portfolio-text);
-
   font-size: 14px;
   line-height: 1.9;
-}
-
-
-/* CTA eyebrow */
-
-.portfolio-cta .portfolio-eyebrow {
-  margin: 0 0 20px;
-
-  color: var(--portfolio-sage-dark);
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  line-height: 1.8;
 }
 
 
@@ -399,12 +494,23 @@
   .portfolio-hero {
     min-height: 65vh;
     min-height: 65svh;
-
-    padding: 115px 6% 75px;
+    padding: 125px 6% 75px;
   }
 
   .portfolio-hero-image {
     object-position: center center;
+  }
+
+
+  /* Sticky navigation */
+
+  .portfolio-page .sticky-nav {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .portfolio-page .sticky-links {
+    gap: 20px;
   }
 
 
@@ -429,15 +535,38 @@
    MOBILE LAYOUT
 ======================================== */
 
-@media (max-width: 560px) {
+@media (max-width: 700px) {
+
+  /* Sticky navigation */
+
+  .portfolio-page .sticky-nav {
+    justify-content: center;
+    min-height: 58px;
+    padding: 12px 5%;
+  }
+
+  .portfolio-page .sticky-brand {
+    display: none;
+  }
+
+  .portfolio-page .sticky-links {
+    justify-content: center;
+    gap: 8px 20px;
+  }
+
+  .portfolio-page .sticky-links a {
+    padding: 6px 0;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+
 
   /* Hero */
 
   .portfolio-hero {
     min-height: 70vh;
     min-height: 70svh;
-
-    padding: 110px 7% 75px;
+    padding: 120px 7% 80px;
   }
 
   .portfolio-hero-image {
@@ -446,7 +575,6 @@
 
   .portfolio-hero .portfolio-eyebrow {
     margin-bottom: 20px;
-
     font-size: 9px;
     letter-spacing: 2px;
   }
@@ -459,20 +587,18 @@
 
   .portfolio-hero .portfolio-description {
     margin: 22px auto 28px;
-
     font-size: 13px;
     line-height: 1.85;
   }
 
   .portfolio-hero .portfolio-button {
     padding: 14px 18px;
-
     font-size: 9px;
     letter-spacing: 1.2px;
   }
 
 
-  /* Gallery section */
+  /* Gallery */
 
   .portfolio-gallery-section {
     padding: 45px 4% 55px;
@@ -490,9 +616,6 @@
   .portfolio-section-heading h2 {
     font-size: 30px;
   }
-
-
-  /* Two-column masonry gallery */
 
   .gallery {
     columns: 2;
@@ -543,6 +666,14 @@
 
   .portfolio-hero .portfolio-description {
     font-size: 12px;
+  }
+
+  .portfolio-page .sticky-links {
+    gap: 8px 14px;
+  }
+
+  .portfolio-page .sticky-links a {
+    font-size: 9px;
   }
 
   .portfolio-gallery-section {
