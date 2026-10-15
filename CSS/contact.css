@@ -211,22 +211,28 @@
 ========================================= */
 
 .contact-layout {
-  display: flex !important;
-  flex-direction: row !important;
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 50px;
+  gap: clamp(30px, 4vw, 55px);
 
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 95px 7% 110px;
 }
 
 
 
+/* Right form card */
 .contact-form-card {
-  flex: 1 1 0;
+  flex: 1 1 55%;
   min-width: 0;
+  padding: clamp(25px, 3vw, 42px);
+
+  border: 1px solid var(--contact-line);
+  background: #FFFFFF;
+  box-shadow: 0 12px 40px rgb(66 70 65 / 4%);
 }
 
 /* Anchor offset */
@@ -241,8 +247,9 @@
 ========================================= */
 
 .contact-aside {
-  flex: 0 0 calc(42% - 25px);
+  flex: 0 0 45%;
   min-width: 0;
+  padding-top: 12px;
 }
 
 .contact-aside > .contact-eyebrow {
@@ -613,14 +620,17 @@
   }
  
   .contact-layout {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 35px;
-
+    gap: 28px;
     padding: 70px 5% 85px;
   }
 
+.contact-aside {
+    flex: 0 0 42%;
+  }
+
   .contact-form-card {
-    padding: 26px;
+    flex: 1 1 58%;
+    padding: 24px;
   }
 
   .contact-aside h2 {
