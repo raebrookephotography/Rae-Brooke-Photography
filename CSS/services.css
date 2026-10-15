@@ -172,7 +172,7 @@
 .services-page {
   background: var(--services-ivory);
   color: var(--services-text);
-  padding: 64px 6%;
+  padding: 0px 6%;
 }
 
 /* Page heading */
