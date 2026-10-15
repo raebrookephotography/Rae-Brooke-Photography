@@ -1,175 +1,726 @@
-/* ========================================
-   RAE BROOKE PHOTOGRAPHY — ABOUT PAGE
-   Editorial, minimal, photography-led design
-======================================== */
-/* ========================================
-   RAE BROOKE PHOTOGRAPHY — ABOUT PAGE
-   Heathered denim, sage, tan & ivory
-======================================== */
+/* =========================================
+   RAE BROOKE PHOTOGRAPHY
+   ABOUT PAGE
+========================================= */
+
+
+/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 72vh;
+  min-height: 72svh;
+
+  padding: 135px 7% 90px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  background: var(--color-denim, #53677D);
+  color: var(--color-ivory, #FAF9F6);
+
+  text-align: center;
+}
+
+
+/* Hero photograph */
+
+.about-hero-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+
+/* Dark overlay for legible text */
+
+.about-hero-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgb(30 35 33 / 35%) 0%,
+    rgb(30 35 33 / 25%) 35%,
+    rgb(30 35 33 / 38%) 70%,
+    rgb(30 35 33 / 52%) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* Shared header placement */
+
+#shared-header {
+  position: absolute;
+  z-index: 10;
+  inset: 0 0 auto;
+
+  height: 0;
+}
+
+
+/* Hero text container */
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+}
+
+
+/* Small introductory label */
+
+.about-hero-eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--color-ivory, #FAF9F6);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  line-height: 1.8;
+}
+
+
+/* Main hero heading */
+
+.about-hero-content h1 {
+  margin: 0 0 24px;
+
+  color: var(--color-ivory, #FAF9F6);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 6.5vw, 76px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+}
+
+
+/* Supporting line */
+
+.about-hero-subtitle {
+  margin: 0;
+
+  color: var(--color-ivory, #FAF9F6);
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   HERO SCROLL INDICATOR
+========================================= */
+
+.about-hero-scroll {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+  margin: 0 auto;
+
+  color: var(--color-ivory, #FAF9F6);
+  text-decoration: none;
+
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.about-scroll-line {
+  display: block;
+
+  width: 1px;
+  height: 26px;
+
+  background: var(--color-ivory, #FAF9F6);
+  opacity: 0.8;
+
+  transform-origin: top;
+  animation: about-scroll-motion 1.8s ease-in-out infinite;
+}
+
+@keyframes about-scroll-motion {
+  0%,
+  100% {
+    transform: scaleY(0.65);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   STICKY NAVIGATION
+   Matches the homepage
+========================================= */
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  width: 100%;
+  min-height: 68px;
+  padding: 14px 7%;
+  box-sizing: border-box;
+
+  background: var(--color-ivory, #FAF9F6);
+  border-bottom: 1px solid #E3E0D8;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 4%);
+}
+
+
+/* Brand */
+
+.sticky-brand {
+  flex-shrink: 0;
+
+  color: var(--color-denim, #53677D);
+  text-decoration: none;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+}
+
+
+/* Links */
+
+.sticky-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.6vw, 36px);
+}
+
+.sticky-links a {
+  position: relative;
+
+  padding: 8px 0;
+
+  color: var(--color-denim, #53677D);
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+
+  transition: color 180ms ease;
+}
+
+.sticky-links a:hover,
+.sticky-links a[aria-current="page"] {
+  color: var(--color-sage-dark, #59664F);
+}
+
+
+/* Animated underline */
+
+.sticky-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+
+  height: 1px;
+
+  background: var(--color-sage-dark, #59664F);
+  content: "";
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.sticky-links a:hover::after,
+.sticky-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+
+/* Keyboard focus */
+
+.sticky-brand:focus-visible,
+.sticky-links a:focus-visible {
+  outline: 2px solid var(--color-denim, #53677D);
+  outline-offset: 5px;
+}
+
+
+/* =========================================
+   ABOUT PAGE BACKGROUND
+========================================= */
 
 .about-page {
-  background: #FAF9F6;
-  color: #424641;
-  padding: 64px 6%;
+  padding: 85px 7% 100px;
+
+  background: var(--color-ivory, #FAF9F6);
+  color: var(--color-text, #424641);
+
+  scroll-margin-top: 85px;
 }
+
+
+/* Main two-column layout */
 
 .about-intro {
   display: grid;
-  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: clamp(40px, 6vw, 100px);
-  max-width: 1100px;
+  gap: clamp(45px, 7vw, 100px);
+
+  width: 100%;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
+
+/* =========================================
+   ABOUT COPY
+========================================= */
+
 .about-copy {
-  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
 }
 
-/* Main editorial heading */
+
+/* Section eyebrow */
+
+.about-section-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--color-sage-dark, #59664F);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.8;
+}
+
+
+/* Main introduction */
+
 .about-heading {
-  margin: 0 0 42px;
-  color: #53677D;
+  margin: 0 0 32px;
+
+  color: var(--color-denim, #53677D);
+
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.2rem, 1.7vw, 1.8rem);
+  font-size: clamp(27px, 2.7vw, 37px);
   font-weight: 400;
-  line-height: 1.38;
-  letter-spacing: -0.045em;
-  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  text-transform: none;
 }
 
-/* Personal introduction accent */
+
+/* Emphasized opening */
+
 .about-heading em {
-  color: #7D896F;
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--color-sage-dark, #59664F);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 4vw, 53px);
   font-weight: 400;
-  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  text-transform: none;
 }
 
-/* About story */
+
+/* Story text */
+
 .about-story {
-  color: #424641;
-  font-size: 0.85rem;
+  width: 100%;
+
+  color: var(--color-text, #424641);
+
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.95;
 }
 
 .about-story p {
-  margin: 0 0 30px;
+  margin: 0 0 22px;
 }
 
 .about-story p:last-child {
   margin-bottom: 0;
 }
 
-/* Portrait */
-.about-image {
-  width: 100%;
-  height: min(58vw, 760px);
-  min-height: 480px;
-  overflow: hidden;
-  background: #E8EBE2;
-}
 
-.about-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+/* Decorative accent */
 
-/* Optional subtle tan accent under the copy */
 .about-copy::after {
-  content: "";
   display: block;
-  width: 56px;
+
+  width: 55px;
   height: 2px;
-  margin-top: 32px;
-  background: #B99A79;
+  margin-top: 30px;
+
+  background: var(--color-tan, #B99A79);
+  content: "";
 }
 
-/* Mobile layout */
-@media (max-width: 800px) {
-  .about-page {
-    padding: 40px 6%;
-  }
 
-  .about-intro {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+/* =========================================
+   CONTACT BUTTON
+========================================= */
 
-  .about-heading {
-    font-size: clamp(1.9rem, 7vw, 2.7rem);
-    margin-bottom: 28px;
-  }
+.about-contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
-  .about-story {
-    font-size: 0.85rem;
-    line-height: 1.8;
-  }
+  min-height: 46px;
+  margin-top: 27px;
+  padding: 13px 24px;
+  box-sizing: border-box;
 
-  .about-image {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 4 / 5;
-  }
+  border: 1px solid var(--color-denim, #53677D);
+  background: transparent;
+  color: var(--color-denim, #53677D);
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
-/* ========================================
-   STACKED ABOUT PAGE IMAGES
-======================================== */
+.about-contact-button:hover {
+  background: var(--color-denim, #53677D);
+  color: var(--color-ivory, #FAF9F6);
+}
+
+.about-contact-button:focus-visible {
+  outline: 2px solid var(--color-denim, #53677D);
+  outline-offset: 5px;
+}
+
+
+/* =========================================
+   STACKED PHOTOGRAPHS
+========================================= */
 
 .about-image-stack {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+
   width: 100%;
+  min-width: 0;
   padding: 12px;
+  box-sizing: border-box;
+
   background: #FFFFFF;
-  box-shadow: 0 8px 30px rgba(66, 70, 65, 0.06);
+  box-shadow: 0 8px 30px rgb(66 70 65 / 6%);
 }
 
-/* Individual image containers */
+
+/* Individual image */
+
 .about-image {
   width: 100%;
-  height: 380px;
   overflow: hidden;
-  background: #E8EBE2;
+
+  background: var(--color-sage-light, #E8EBE2);
 }
 
-/* Images fill their containers */
+
+/* Main portrait */
+
+.about-image-primary {
+  height: 440px;
+}
+
+
+/* Second image */
+
+.about-image-secondary {
+  height: 300px;
+}
+
+
+/* Image behavior */
+
 .about-image img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   object-position: center;
-  transition: transform 0.4s ease;
+
+  transition: transform 400ms ease;
 }
 
-/* Optional subtle hover effect */
 .about-image:hover img {
   transform: scale(1.02);
 }
 
-/* ========================================
-   MOBILE LAYOUT
-======================================== */
 
-@media (max-width: 800px) {
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .about-hero {
+    min-height: 68vh;
+    min-height: 68svh;
+  }
+
+  .sticky-nav {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .sticky-links {
+    gap: 20px;
+  }
+
+  .about-page {
+    padding: 70px 6% 85px;
+  }
+
+  .about-intro {
+    gap: 40px;
+  }
+
+  .about-image-primary {
+    height: 370px;
+  }
+
+  .about-image-secondary {
+    height: 250px;
+  }
+
+  .about-heading {
+    font-size: clamp(25px, 3vw, 32px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .about-hero {
+    min-height: 72vh;
+    min-height: 72svh;
+
+    padding: 125px 7% 90px;
+  }
+
+  .about-hero-image {
+    object-position: center 35%;
+  }
+
+  .about-hero-eyebrow {
+    margin-bottom: 20px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  .about-hero-content h1 {
+    font-size: clamp(42px, 10vw, 60px);
+    line-height: 1.15;
+  }
+
+  .about-hero-subtitle {
+    max-width: 310px;
+    margin: 0 auto;
+
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  /* Sticky navigation */
+
+  .sticky-nav {
+    justify-content: center;
+
+    min-height: 58px;
+    padding: 12px 5%;
+  }
+
+  .sticky-brand {
+    display: none;
+  }
+
+  .sticky-links {
+    justify-content: center;
+    gap: 8px 20px;
+  }
+
+  .sticky-links a {
+    padding: 6px 0;
+
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
+
+
+  /* About content */
+
+  .about-page {
+    padding: 55px 7% 70px;
+  }
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .about-section-eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .about-heading {
+    margin-bottom: 25px;
+    font-size: clamp(26px, 6.5vw, 34px);
+    line-height: 1.4;
+  }
+
+  .about-heading em {
+    margin-bottom: 12px;
+    font-size: clamp(38px, 9vw, 48px);
+  }
+
+  .about-story {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .about-story p {
+    margin-bottom: 20px;
+  }
+
+  .about-contact-button {
+    margin-top: 25px;
+  }
+
+
+  /* Stacked images */
+
   .about-image-stack {
-    gap: 10px;
+    gap: 12px;
     padding: 10px;
   }
 
-  .about-image {
+  .about-image-primary {
     height: auto;
-    min-height: 0;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
   }
 
-  .about-image img {
+  .about-image-secondary {
+    height: auto;
     aspect-ratio: 4 / 3;
   }
 }
 
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .about-hero {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .about-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .sticky-links {
+    gap: 8px 14px;
+  }
+
+  .sticky-links a {
+    font-size: 9px;
+  }
+
+  .about-page {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-scroll-line {
+    animation: none;
+  }
+
+  .about-image img,
+  .about-contact-button,
+  .sticky-links a,
+  .sticky-links a::after {
+    transition: none;
+  }
+}
