@@ -211,18 +211,23 @@
 ========================================= */
 
 .contact-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  align-items: start;
-  gap: clamp(30px, 5vw, 70px);
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 50px;
 
   width: 100%;
   max-width: 1300px;
-
   margin: 0 auto;
   padding: 95px 7% 110px;
 }
 
+
+
+.contact-form-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
 
 /* Anchor offset */
 
@@ -236,7 +241,8 @@
 ========================================= */
 
 .contact-aside {
-  padding-top: 12px;
+  flex: 0 0 calc(42% - 25px);
+  min-width: 0;
 }
 
 .contact-aside > .contact-eyebrow {
