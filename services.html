@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="/CSS/global.css">
   <link rel="stylesheet" href="/CSS/header.css">
+  <link rel="stylesheet" href="/CSS/hero.css">
   <link rel="stylesheet" href="/CSS/sticky-nav.css">
   <link rel="stylesheet" href="/CSS/services.css">
   <link rel="stylesheet" href="/CSS/footer.css">  
@@ -21,44 +22,21 @@
 <body>
 
   <!-- SERVICES HERO -->
-
-  <section class="services-hero">
-
-    <img
-      class="services-hero-image"
-      src="/Images/services-hero.jpeg"
-      alt="A heartfelt moment captured by Rae Brooke Photography"
-      fetchpriority="high"
-    >
-
-    <div class="services-hero-overlay"></div>
-
-    <!-- Shared header, if used by header.js -->
-    <div id="shared-header"></div>
-
-    <div class="services-hero-content">
-
-      <p class="services-hero-eyebrow">
-        THE RAE BROOKE EXPERIENCE
-      </p>
-
-      <h1>
-        Your story,<br>
-        beautifully told.
-      </h1>
-
-      <p class="services-hero-subtitle">
-        Photography for the moments you'll want to remember.
-      </p>
-
-      <a class="services-hero-button" href="#packages">
-        EXPLORE MY PACKAGES
-        <span aria-hidden="true">↓</span>
-      </a>
-
-    </div>
-
-  </section>
+<div
+  id="shared-hero"
+  data-variant="services"
+  data-image="/Images/services-hero.jpg"
+  data-alt="A couple embracing at sunset by the water"
+  data-eyebrow="THE RAE BROOKE EXPERIENCE"
+  data-title="Your story,<br>
+        beautifully told."
+  data-subtitle="Photography for the moments you'll want to remember."
+  data-button-text="EXPLORE MY PACKAGES"
+  data-button-url="#packages"
+  data-scroll-target="#packages"
+  data-scroll-label="EXPLORE MY PACKAGES"
+></div>
+  
 
 
   <!-- STICKY MAIN NAVIGATION -->
@@ -220,6 +198,7 @@
   <!-- PAGE SCRIPTS -->
 
   <script src="/Javascript/header.js" defer></script>
+  <script src="/Javascript/hero.js" defer></script>
   <script src="/Javascript/services.js" defer></script>
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
