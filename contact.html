@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="/CSS/global.css">
   <link rel="stylesheet" href="/CSS/header.css">
+  <link rel="stylesheet" href="/CSS/hero.css">
   <link rel="stylesheet" href="/CSS/sticky-nav.css">
   <link rel="stylesheet" href="/CSS/contact.css">
   <link rel="stylesheet" href="/CSS/footer.css">
@@ -26,39 +27,20 @@
          CONTACT HERO
     ====================================== -->
 
-    <section class="contact-hero">
-
-      <img
-        class="contact-hero-image"
-        src="/Images/index-hero.jpg"
-        alt=""
-        fetchpriority="high"
-      >
-
-      <div class="contact-hero-overlay"></div>
-
-      <div class="contact-hero-content">
-
-        <p class="contact-eyebrow">
-          THE BEGINNING OF SOMETHING GOOD
-        </p>
-
-        <h1>
-          Let's make<br>
-          <em>something meaningful.</em>
-        </h1>
-
-        <p class="contact-intro">
-          Every session starts with an idea. Tell me yours,
-          and let's create photographs that feel like you.
-        </p>
-
-        <a class="contact-hero-button" href="#contact">
-          LET'S CONNECT <span aria-hidden="true">↓</span>
-        </a>
-
-      </div>
-    </section>
+   <div
+  id="shared-hero"
+  data-variant="contact"
+  data-image="/Images/index-hero.jpg"
+  data-alt="A couple embracing at sunset by the water"
+  data-eyebrow="THE BEGINNING OF SOMETHING GOOD"
+  data-title="Let's make something meaninful."
+  data-subtitle="Every session starts with an idea. Tell me yours,
+          and let's create photographs that feel like you."
+  data-button-text="LET'S CONNECT"
+  data-button-url="#contact"
+  data-scroll-target="#contact"
+  data-scroll-label="LET'S CONNECT"
+></div>
 
 
     <!-- =====================================
@@ -273,6 +255,7 @@
   <!-- Shared footer -->
   <div id="shared-footer"></div>
   <script src="/Javascript/footer.js" defer></script>
+  <script src="/Javascript/hero.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
 
 
