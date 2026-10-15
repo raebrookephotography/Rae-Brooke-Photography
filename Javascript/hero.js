@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       heading.appendChild(document.createTextNode(line));
     });
 
-    container.querySelector(".hero-subtitle").textContent =
+    container.querySelector(".hero-subtitle").innerHTML =
       settings.subtitle || "";
 
     const button = container.querySelector(".hero-button");
