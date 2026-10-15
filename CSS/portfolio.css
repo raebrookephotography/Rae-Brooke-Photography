@@ -1,136 +1,423 @@
-/* ==============================
-   GENERAL STYLES
-   ============================== */
+/* ========================================
+   RAE BROOKE PHOTOGRAPHY
+   PORTFOLIO PAGE
+   Editorial, minimal, photography-led
+======================================== */
 
-* {
+:root {
+  --portfolio-denim: #53677D;
+  --portfolio-denim-dark: #405267;
+  --portfolio-sage: #A3AD96;
+  --portfolio-sage-light: #E8EBE2;
+  --portfolio-sage-dark: #59664F;
+  --portfolio-tan: #B99A79;
+  --portfolio-ivory: #FAF9F6;
+  --portfolio-white: #FFFFFF;
+  --portfolio-text: #424641;
+  --portfolio-muted: #62665F;
+  --portfolio-line: #E3E0D8;
+}
+
+/* ========================================
+   PAGE BASE
+======================================== */
+
+.portfolio-page {
+  width: 100%;
+  overflow: clip;
+  background: var(--portfolio-ivory);
+  color: var(--portfolio-text);
+}
+
+.portfolio-page *,
+.portfolio-page *::before,
+.portfolio-page *::after {
   box-sizing: border-box;
 }
 
-.portfolio-title {
-  font-size: xxx-large;
+.portfolio-page img {
+  max-width: 100%;
+}
+
+.portfolio-page a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portfolio-page a:focus-visible {
+  outline: 2px solid var(--portfolio-denim);
+  outline-offset: 5px;
+}
+
+/* ========================================
+   PORTFOLIO HERO / INTRODUCTION
+======================================== */
+
+.portfolio-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 430px;
+  padding: clamp(70px, 10vw, 125px) 7% 75px;
+
   text-align: center;
-  color: #536b85;
-  margin-bottom: 0;
+  background: var(--portfolio-ivory);
 }
 
-/* Decorative divider beneath the title */
-.portfolio-title::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 3px;
-  background-color: #536b85;
-  margin: 18px auto 28px;
+.portfolio-eyebrow,
+.portfolio-hero .portfolio-eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--portfolio-sage-dark);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.24em;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+.portfolio-title {
   margin: 0;
-  padding: 0;
-  background-color: #f4eee3;
+
+  color: var(--portfolio-denim);
   font-family: Georgia, "Times New Roman", serif;
-  color: #37332e;
+  font-size: clamp(48px, 7.5vw, 86px);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.045em;
 }
 
-/* ==============================
-   PORTFOLIO GALLERY
-   ============================== */
+.portfolio-title em {
+  color: var(--portfolio-sage-dark);
+  font-weight: 400;
+}
+
+/* Introductory paragraph */
+
+.portfolio-intro {
+  max-width: 540px;
+  margin: 27px auto 0;
+
+  color: var(--portfolio-muted);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+/* Explore gallery link */
+
+.portfolio-explore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  margin-top: 32px;
+  padding: 14px 22px;
+
+  border: 1px solid var(--portfolio-denim);
+  background: transparent;
+  color: var(--portfolio-denim);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.portfolio-explore span {
+  font-size: 15px;
+}
+
+.portfolio-explore:hover {
+  background: var(--portfolio-denim);
+  border-color: var(--portfolio-denim);
+  color: var(--portfolio-ivory);
+}
+
+/* ========================================
+   GALLERY SECTION
+======================================== */
+
+.portfolio-gallery-section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 45px 6% 100px;
+
+  scroll-margin-top: 110px;
+}
+
+/* Gallery introduction */
+
+.gallery-heading {
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.gallery-eyebrow {
+  margin: 0 0 14px;
+
+  color: var(--portfolio-sage-dark);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+}
+
+.gallery-heading h2 {
+  margin: 0;
+
+  color: var(--portfolio-denim);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* ========================================
+   MASONRY-STYLE PHOTO GALLERY
+======================================== */
 
 .gallery {
   columns: 3;
-  column-gap: 46px;
-  padding: 0 6px;
+  column-gap: 28px;
   width: 100%;
-  margin-bottom: 80px;
 }
 
-/* ==============================
-   IMAGES
-   ============================== */
+/* Individual photo */
 
-.gallery img {
+.gallery-item {
+  display: block;
+  width: 100%;
+
+  margin: 0 0 28px;
+  padding: 0;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+
+  overflow: hidden;
+  background: var(--portfolio-sage-light);
+}
+
+/* Images retain their original aspect ratios */
+
+.gallery-item img {
   display: block;
   width: 100%;
   height: auto;
-  margin: 0 0 46px;
-  break-inside: avoid;
-  object-fit: contain;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease,
+    opacity 0.35s ease;
 }
 
-/* Optional subtle hover effect */
-.gallery img:hover {
+/* Subtle photography-gallery hover */
+
+.gallery-item:hover img {
+  transform: scale(1.025);
   opacity: 0.94;
-  transition: opacity 0.3s ease;
 }
 
-/* ==============================
-   AUTOMATIC IMAGE SIZING
-   No individual classes needed
-   ============================== */
+/* ========================================
+   CLOSING CALL TO ACTION
+======================================== */
 
-/* First image in every group of five */
-.gallery img:nth-child(5n + 1) {
-  grid-row: span 1;
+.portfolio-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: clamp(65px, 9vw, 105px) 7%;
+
+  border-top: 1px solid var(--portfolio-line);
+  background: var(--portfolio-sage-light);
+  text-align: center;
 }
 
-/* Second image */
-.gallery img:nth-child(5n + 2) {
-  grid-row: span 1;
+.portfolio-cta .portfolio-eyebrow {
+  margin-bottom: 22px;
 }
 
-/* Third image: taller portrait */
-.gallery img:nth-child(5n + 3) {
-  grid-row: span 2;
+.portfolio-cta h2 {
+  margin: 0;
+
+  color: var(--portfolio-denim);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
 }
 
-/* Fourth image: taller portrait */
-.gallery img:nth-child(5n + 4) {
-  grid-row: span 2;
+.portfolio-cta h2 em {
+  color: var(--portfolio-sage-dark);
+  font-weight: 400;
 }
 
-/* Fifth image */
-.gallery img:nth-child(5n) {
-  grid-row: span 1;
+.portfolio-cta > p:not(.portfolio-eyebrow) {
+  max-width: 500px;
+  margin: 22px auto 0;
+
+  color: var(--portfolio-muted);
+  font-size: 14px;
+  line-height: 1.9;
 }
 
-/* ==============================
-   HOVER EFFECT
-   ============================== */
+/* Contact button */
 
-.gallery img:hover {
-  transform: scale(1.02);
+.portfolio-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-width: 200px;
+  margin-top: 30px;
+  padding: 16px 24px;
+
+  border: 1px solid var(--portfolio-denim);
+  background: var(--portfolio-denim);
+  color: var(--portfolio-ivory);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-/* ==============================
+.portfolio-cta-button span {
+  font-size: 15px;
+}
+
+.portfolio-cta-button:hover {
+  background: var(--portfolio-denim-dark);
+  border-color: var(--portfolio-denim-dark);
+  transform: translateY(-2px);
+}
+
+/* ========================================
    TABLET
-   ============================== */
+======================================== */
 
-@media (max-width: 900px) {
-  .gallery {
-    columns: 2;
-    column-gap: 28px;
+@media (max-width: 1000px) {
+  .portfolio-hero {
+    min-height: 390px;
   }
 
-  .gallery img {
-    margin-bottom: 28px;
+  .portfolio-gallery-section {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .gallery {
+    columns: 2;
+    column-gap: 22px;
+  }
+
+  .gallery-item {
+    margin-bottom: 22px;
   }
 }
 
-/* ==============================
+/* ========================================
    MOBILE
-   ============================== */
+======================================== */
 
-@media (max-width: 560px) {
-  .gallery {
-    columns: 2;
-    column-gap: 16px;
-    padding: 8px 4px;
+@media (max-width: 600px) {
+  .portfolio-hero {
+    min-height: 0;
+    padding: 65px 7% 60px;
   }
 
-  .gallery img {
-    margin-bottom: 16px;
+  .portfolio-hero .portfolio-eyebrow {
+    margin-bottom: 20px;
+    font-size: 9px;
+    letter-spacing: 0.19em;
+  }
+
+  .portfolio-title {
+    font-size: clamp(43px, 11vw, 62px);
+  }
+
+  .portfolio-intro {
+    margin-top: 22px;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .portfolio-explore {
+    margin-top: 26px;
+    padding: 13px 17px;
+    font-size: 9px;
+  }
+
+  .portfolio-gallery-section {
+    padding: 35px 5% 65px;
+    scroll-margin-top: 90px;
+  }
+
+  .gallery-heading {
+    margin-bottom: 30px;
+  }
+
+  .gallery-heading h2 {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+
+  .gallery-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  .gallery {
+    columns: 2;
+    column-gap: 12px;
+  }
+
+  .gallery-item {
+    margin-bottom: 12px;
+  }
+
+  .portfolio-cta {
+    padding: 65px 7%;
+  }
+
+  .portfolio-cta .portfolio-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+  }
+
+  .portfolio-cta h2 {
+    font-size: clamp(34px, 8vw, 44px);
+  }
+
+  .portfolio-cta > p:not(.portfolio-eyebrow) {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-page *,
+  .portfolio-page *::before,
+  .portfolio-page *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
   }
 }
