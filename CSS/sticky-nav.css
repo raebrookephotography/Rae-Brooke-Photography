@@ -14,20 +14,18 @@
 */
 
 #shared-sticky-nav {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 1000;
+
   width: 100%;
 }
-
-
 /* =========================================
    STICKY NAVIGATION BAR
 ========================================= */
 
 .sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
 
   display: flex;
   align-items: center;
@@ -44,6 +42,7 @@
   border-bottom: 1px solid #E3E0D8;
   box-shadow: 0 4px 18px rgb(0 0 0 / 4%);
 }
+
 
 
 /* =========================================
