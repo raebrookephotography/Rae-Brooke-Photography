@@ -1,6 +1,7 @@
 /* ========================================
    RAE BROOKE PHOTOGRAPHY
    PORTFOLIO PAGE
+   Denim, sage, tan & ivory
 ======================================== */
 
 .portfolio-page {
@@ -13,8 +14,11 @@
   --portfolio-text: #424641;
   --portfolio-line: #DEDCD3;
 
+  margin: 0;
   background: var(--portfolio-ivory);
   color: var(--portfolio-text);
+
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .portfolio-page *,
@@ -35,58 +39,146 @@
   scroll-margin-top: 100px;
 }
 
+.portfolio-page :focus-visible {
+  outline-offset: 5px;
+}
+
+
 /* ========================================
-   PORTFOLIO INTRODUCTION
+   SHARED HEADER POSITIONING
+   Keeps the shared header above the hero
 ======================================== */
 
-.portfolio-intro {
+.portfolio-page #shared-header {
+  position: absolute;
+  z-index: 1001;
+  inset: 0 0 auto;
+  width: 100%;
+}
+
+
+/* ========================================
+   PORTFOLIO HERO
+======================================== */
+
+.portfolio-hero {
+  position: relative;
+  isolation: isolate;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  min-height: 440px;
-  padding: 85px 7% 75px;
+  width: 100%;
+  min-height: 72vh;
+  min-height: 72svh;
 
-  background: var(--portfolio-ivory);
+  margin: 0;
+  padding: 130px 7% 90px;
+  overflow: hidden;
+
+  background: var(--portfolio-denim-dark);
+  color: var(--portfolio-ivory);
   text-align: center;
 }
 
-.portfolio-eyebrow {
-  margin: 0 0 20px;
 
-  color: var(--portfolio-sage-dark);
+/* Hero background photograph */
+
+.portfolio-hero-image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+
+/* Dark overlay for text readability */
+
+.portfolio-hero-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgb(30 35 33 / 35%) 0%,
+    rgb(30 35 33 / 30%) 35%,
+    rgb(30 35 33 / 45%) 70%,
+    rgb(30 35 33 / 58%) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* Hero text container */
+
+.portfolio-hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+}
+
+
+/* Hero eyebrow */
+
+.portfolio-hero .portfolio-eyebrow {
+  margin: 0 0 24px;
+
+  color: var(--portfolio-ivory);
+
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 3px;
   line-height: 1.8;
 }
 
-.portfolio-title {
+
+/* Hero heading */
+
+.portfolio-hero .portfolio-title {
   margin: 0;
 
-  color: var(--portfolio-denim);
+  color: var(--portfolio-ivory);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 7vw, 82px);
   font-weight: 400;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -2px;
 }
 
-.portfolio-title em,
-.portfolio-cta h2 em {
-  color: var(--portfolio-sage-dark);
+.portfolio-hero .portfolio-title em {
+  color: var(--portfolio-ivory);
   font-weight: 400;
+  font-style: italic;
 }
 
-.portfolio-description {
-  max-width: 500px;
-  margin: 25px 0 30px;
 
-  color: var(--portfolio-text);
+/* Hero description */
+
+.portfolio-hero .portfolio-description {
+  max-width: 500px;
+  margin: 25px auto 32px;
+
+  color: var(--portfolio-ivory);
+
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.9;
 }
+
 
 /* ========================================
    SHARED PORTFOLIO BUTTON
@@ -117,29 +209,60 @@
     border-color 0.25s ease;
 }
 
-.portfolio-button:hover {
+
+/* Hero button appearance */
+
+.portfolio-hero .portfolio-button {
+  border-color: var(--portfolio-ivory);
+  background: transparent;
+  color: var(--portfolio-ivory);
+}
+
+.portfolio-hero .portfolio-button:hover {
+  border-color: var(--portfolio-ivory);
+  background: var(--portfolio-ivory);
+  color: var(--portfolio-denim-dark);
+}
+
+
+/* Standard button hover */
+
+.portfolio-cta .portfolio-button:hover {
   border-color: var(--portfolio-denim-dark);
   background: var(--portfolio-denim-dark);
-  color: white;
+  color: #FFFFFF;
 }
+
+
+/* Button keyboard accessibility */
 
 .portfolio-button:focus-visible {
   outline: 2px solid var(--portfolio-sage-dark);
   outline-offset: 5px;
 }
 
+.portfolio-hero .portfolio-button:focus-visible {
+  outline-color: var(--portfolio-ivory);
+}
+
+
 /* ========================================
-   GALLERY SECTION
+   PORTFOLIO GALLERY SECTION
 ======================================== */
 
 .portfolio-gallery-section {
   padding: 65px 6% 95px;
+
   background: #FFFFFF;
 }
+
+
+/* Gallery introduction */
 
 .portfolio-section-heading {
   max-width: 700px;
   margin: 0 auto 50px;
+
   text-align: center;
 }
 
@@ -147,23 +270,27 @@
   margin: 0 0 14px;
 
   color: var(--portfolio-sage-dark);
+
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 2.5px;
+  line-height: 1.8;
 }
 
 .portfolio-section-heading h2 {
   margin: 0;
 
   color: var(--portfolio-denim);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   line-height: 1.2;
 }
 
+
 /* ========================================
-   MASONRY GALLERY
+   MASONRY PHOTO GALLERY
 ======================================== */
 
 .gallery {
@@ -175,8 +302,12 @@
   column-gap: 28px;
 }
 
+
+/* Individual photographs */
+
 .gallery img {
   display: block;
+
   width: 100%;
   height: auto;
 
@@ -184,14 +315,19 @@
 
   break-inside: avoid;
   border: 0;
+
   background: var(--portfolio-ivory);
 
   transition: opacity 0.3s ease;
 }
 
+
+/* Subtle hover effect */
+
 .gallery img:hover {
   opacity: 0.92;
 }
+
 
 /* ========================================
    CLOSING CALL TO ACTION
@@ -199,38 +335,80 @@
 
 .portfolio-cta {
   padding: 90px 7% 100px;
+
   background: var(--portfolio-ivory);
   text-align: center;
 }
+
+
+/* CTA heading */
 
 .portfolio-cta h2 {
   margin: 0;
 
   color: var(--portfolio-denim);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(38px, 5vw, 58px);
   font-weight: 400;
   line-height: 1.15;
 }
 
+.portfolio-cta h2 em {
+  color: var(--portfolio-sage-dark);
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* CTA description */
+
 .portfolio-cta > p:not(.portfolio-eyebrow) {
   max-width: 500px;
   margin: 22px auto 30px;
 
   color: var(--portfolio-text);
+
   font-size: 14px;
   line-height: 1.9;
 }
 
+
+/* CTA eyebrow */
+
+.portfolio-cta .portfolio-eyebrow {
+  margin: 0 0 20px;
+
+  color: var(--portfolio-sage-dark);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.8;
+}
+
+
 /* ========================================
-   TABLET
+   TABLET LAYOUT
 ======================================== */
 
 @media (max-width: 900px) {
-  .portfolio-intro {
-    min-height: 390px;
-    padding: 70px 6%;
+
+  /* Hero */
+
+  .portfolio-hero {
+    min-height: 65vh;
+    min-height: 65svh;
+
+    padding: 115px 6% 75px;
   }
+
+  .portfolio-hero-image {
+    object-position: center center;
+  }
+
+
+  /* Gallery */
 
   .portfolio-gallery-section {
     padding: 55px 5% 75px;
@@ -246,24 +424,55 @@
   }
 }
 
+
 /* ========================================
-   MOBILE
+   MOBILE LAYOUT
 ======================================== */
 
 @media (max-width: 560px) {
-  .portfolio-intro {
-    min-height: 350px;
-    padding: 60px 7%;
+
+  /* Hero */
+
+  .portfolio-hero {
+    min-height: 70vh;
+    min-height: 70svh;
+
+    padding: 110px 7% 75px;
   }
 
-  .portfolio-title {
+  .portfolio-hero-image {
+    object-position: center center;
+  }
+
+  .portfolio-hero .portfolio-eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-hero .portfolio-title {
     font-size: clamp(43px, 11vw, 60px);
     letter-spacing: -1px;
+    line-height: 1.12;
   }
 
-  .portfolio-description {
+  .portfolio-hero .portfolio-description {
+    margin: 22px auto 28px;
+
     font-size: 13px;
+    line-height: 1.85;
   }
+
+  .portfolio-hero .portfolio-button {
+    padding: 14px 18px;
+
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+
+  /* Gallery section */
 
   .portfolio-gallery-section {
     padding: 45px 4% 55px;
@@ -273,9 +482,17 @@
     margin-bottom: 30px;
   }
 
+  .portfolio-section-heading > p {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
   .portfolio-section-heading h2 {
     font-size: 30px;
   }
+
+
+  /* Two-column masonry gallery */
 
   .gallery {
     columns: 2;
@@ -286,20 +503,83 @@
     margin-bottom: 12px;
   }
 
+
+  /* Closing CTA */
+
   .portfolio-cta {
     padding: 65px 7% 75px;
   }
+
+  .portfolio-cta .portfolio-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-cta h2 {
+    font-size: clamp(35px, 9vw, 46px);
+  }
+
+  .portfolio-cta > p:not(.portfolio-eyebrow) {
+    font-size: 13px;
+  }
 }
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  .portfolio-hero {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .portfolio-hero .portfolio-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+
+  .portfolio-hero .portfolio-description {
+    font-size: 12px;
+  }
+
+  .portfolio-gallery-section {
+    padding-right: 3%;
+    padding-left: 3%;
+  }
+
+  .gallery {
+    column-gap: 10px;
+  }
+
+  .gallery img {
+    margin-bottom: 10px;
+  }
+
+  .portfolio-cta {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+}
+
 
 /* ========================================
    ACCESSIBILITY
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
+  .portfolio-page {
+    scroll-behavior: auto;
+  }
+
   .portfolio-page *,
   .portfolio-page *::before,
   .portfolio-page *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+    animation: none !important;
   }
 }
