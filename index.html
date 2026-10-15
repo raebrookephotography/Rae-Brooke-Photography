@@ -3,77 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rae Brooke Photography</title>
-  <link rel="stylesheet" href="CSS/global.css">
-  <link rel="stylesheet" href="/CSS/footer.css">
+
+  <meta
+    name="description"
+    content="Rae Brooke Photography captures authentic, heartfelt moments throughout North Carolina."
+  >
+
+  <title>Rae Brooke Photography | North Carolina Photographer</title>
+
+  <link rel="stylesheet" href="/CSS/global.css">
   <link rel="stylesheet" href="/CSS/header.css">
   <link rel="stylesheet" href="/CSS/index.css">
+  <link rel="stylesheet" href="/CSS/footer.css">
 </head>
+
 <body>
-  <div id="shared-header"></div>
-  <script src="/Javascript/header.js" defer></script>
 
   <main>
-  <!-- EXISTING HOMEPAGE HERO -->
-  <section class="hero">
-  <!-- Background family portrait -->
-  <img
-    class="hero-image"
-    src="Images/index-hero.jpg"
-    alt="A family portrait captured by Rae Brooke Photography"
-  >
-  <!-- Dark overlay for readable text -->
-  <div class="hero-overlay"></div>
-  <!-- Hero text -->
-  <div class="hero-content">
-    <p class="eyebrow">NORTH CAROLINA PHOTOGRAPHER</p>
-    <h1>Every moment<br>has a story.</h1>
-    <p class="hero-subtitle">
-      Authentic photography. Unforgettable memories.
-    </p>
-    <a class="button hero-button" href="portfolio.html">
-      EXPLORE MY WORK ↗
-    </a>
-  </div>
-</section>
 
-  <!-- ABOUT ME SECTION -->
-  <section class="about-intro">
-    <div class="about-content">
-      <h2>Hey, I'm Rae!</h2>
-      <p class="about-subtitle">
-        NORTH CAROLINA PHOTOGRAPHER / STORYTELLER /
-        CAPTURING THE MOMENTS THAT MATTER
-      </p>
-      <p>
-        I believe the most meaningful photographs are the ones
-        that bring you right back to how a moment felt. The
-        laughter, the happy tears, the quiet in-between moments
-        that make your story uniquely yours.
-      </p>
-      <p>
-        My approach to photography is natural, heartfelt, and
-        focused on capturing your day as it unfolds. I want you
-        to feel comfortable being yourself, knowing that the
-        little moments and the big ones are all worth remembering.
-      </p>
-      <p>
-        It would be an honor to tell your story.
-      </p>
-      <a class="button about-button" href="about.html">
-        MORE ABOUT ME ↗
-      </a>
-    </div>
-    <div class="about-image">
+    <!-- =====================================
+         HERO SECTION
+    ====================================== -->
+
+    <section class="hero">
+
       <img
-        src="Images/about-portrait.jpg"
-        alt="Rae Brooke, wedding photographer"
+        class="hero-image"
+        src="/Images/index-hero.jpg"
+        alt="A family portrait captured by Rae Brooke Photography"
+        fetchpriority="high"
       >
-    </div>
-  </section>
-</main>
+
+      <div class="hero-overlay"></div>
+
+      <!-- Header and dropdown are loaded here -->
+      <div id="shared-header"></div>
+
+      <!-- Hero text -->
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          NORTH CAROLINA PHOTOGRAPHER
+        </p>
+
+        <h1>
+          Every moment<br>
+          has a story.
+        </h1>
+
+        <p class="hero-subtitle">
+          Authentic photography. Unforgettable memories.
+        </p>
+
+        <a class="button hero-button" href="/portfolio.html">
+          EXPLORE MY WORK <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+      <a class="hero-scroll" href="#about" aria-label="Scroll to learn about Rae">
+        <span>DISCOVER MORE</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+
+    </section>
+
+
+    <!-- =====================================
+         STICKY NAVIGATION
+    ====================================== -->
+
+    <nav class="sticky-nav" aria-label="Main navigation">
+
+      <a class="sticky-brand" href="/index.html">
+        RAE BROOKE
+      </a>
+
+      <div class="sticky-links">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         ABOUT INTRODUCTION
+    ====================================== -->
+
+    <section class="about-intro" id="about">
+
+      <div class="about-content">
+
+        <p class="section-eyebrow">A LITTLE ABOUT ME</p>
+
+        <h2>Hey, I'm Rae!</h2>
+
+        <p class="about-subtitle">
+          NORTH CAROLINA PHOTOGRAPHER / STORYTELLER /
+          CAPTURING THE MOMENTS THAT MATTER
+        </p>
+
+        <p>
+          I believe the most meaningful photographs are the ones
+          that bring you right back to how a moment felt. The
+          laughter, the happy tears, the quiet in-between moments
+          that make your story uniquely yours.
+        </p>
+
+        <p>
+          My approach to photography is natural, heartfelt, and
+          focused on capturing your day as it unfolds. I want you
+          to feel comfortable being yourself, knowing that the
+          little moments and the big ones are all worth remembering.
+        </p>
+
+        <p>
+          It would be an honor to tell your story.
+        </p>
+
+        <a class="button about-button" href="/about.html">
+          MORE ABOUT ME <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+      <div class="about-image">
+        <img
+          src="/Images/about-portrait.jpg"
+          alt="Rae Brooke, photographer"
+          loading="lazy"
+        >
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       SHARED FOOTER
+  ====================================== -->
 
   <div id="shared-footer"></div>
+
+  <script src="/Javascript/header.js" defer></script>
   <script src="/Javascript/footer.js" defer></script>
+
 </body>
 </html>
