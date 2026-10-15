@@ -10,8 +10,8 @@
   align-items: center;
   justify-content: center;
 
-  min-height: 70vh;
-  min-height: 70svh;
+  min-height: 100vh;
+  min-height: 100svh;
 
   padding: 135px 7% 90px;
   box-sizing: border-box;
