@@ -206,112 +206,6 @@
   outline-offset: 5px;
 }
 
-
-/* =========================================
-   STICKY NAVIGATION
-========================================= */
-
-.sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-
-  width: 100%;
-  min-height: 68px;
-  padding: 14px 7%;
-  box-sizing: border-box;
-
-  background: var(--contact-paper);
-  border-bottom: 1px solid #E3E0D8;
-  box-shadow: 0 4px 18px rgb(0 0 0 / 4%);
-}
-
-
-/* Brand */
-
-.sticky-brand {
-  flex-shrink: 0;
-
-  color: var(--contact-denim);
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-}
-
-
-/* Navigation links */
-
-.sticky-links {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  gap: clamp(16px, 2.6vw, 36px);
-}
-
-.sticky-links a {
-  position: relative;
-
-  padding: 8px 0;
-
-  color: var(--contact-denim);
-
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.09em;
-
-  transition: color 180ms ease;
-}
-
-
-/* Hover and current page */
-
-.sticky-links a:hover,
-.sticky-links a[aria-current="page"] {
-  color: var(--contact-sage-dark);
-}
-
-
-/* Animated underline */
-
-.sticky-links a::after {
-  position: absolute;
-  right: 0;
-  bottom: 2px;
-  left: 0;
-
-  height: 1px;
-
-  background: var(--contact-sage-dark);
-  content: "";
-
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 200ms ease;
-}
-
-.sticky-links a:hover::after,
-.sticky-links a[aria-current="page"]::after {
-  transform: scaleX(1);
-}
-
-
-/* Navigation keyboard accessibility */
-
-.sticky-brand:focus-visible,
-.sticky-links a:focus-visible {
-  outline: 2px solid var(--contact-denim);
-  outline-offset: 5px;
-}
-
-
 /* =========================================
    CONTACT LAYOUT
 ========================================= */
@@ -711,16 +605,7 @@
     min-height: 65vh;
     min-height: 65svh;
   }
-
-  .sticky-nav {
-    padding-right: 5%;
-    padding-left: 5%;
-  }
-
-  .sticky-links {
-    gap: 20px;
-  }
-
+ 
   .contact-layout {
     grid-template-columns: 0.9fr 1.1fr;
     gap: 35px;
@@ -779,29 +664,7 @@
     padding: 14px 20px;
     font-size: 9px;
   }
-
-
-  /* Sticky navigation */
-
-  .sticky-nav {
-    justify-content: center;
-
-    min-height: 58px;
-    padding: 12px 5%;
-  }
-
-  .sticky-brand {
-    display: none;
-  }
-
-  .sticky-links {
-    justify-content: center;
-    gap: 8px 20px;
-  }
-
-  .sticky-links a {
-    padding: 6px 0;
-
+ 
     font-size: 10px;
     letter-spacing: 0.04em;
   }
@@ -881,14 +744,6 @@
 
   .contact-hero h1 {
     font-size: 39px;
-  }
-
-  .sticky-links {
-    gap: 8px 14px;
-  }
-
-  .sticky-links a {
-    font-size: 9px;
   }
 
   .contact-layout {
