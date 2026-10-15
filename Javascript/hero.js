@@ -31,8 +31,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     heading.replaceChildren();
 
     (settings.title || "").split("|").forEach((line, index) => {
-      if (index > 0) heading.appendChild(document.createElement("br"));
-      heading.appendChild(document.createTextNode(line));
+      if (index > 0) {
+        heading.appendChild(document.createElement("br"));
+      }
+    
+      const template = document.createElement("template");
+      template.innerHTML = line;
+      heading.appendChild(template.content);
     });
 
     container.querySelector(".hero-subtitle").innerHTML =
