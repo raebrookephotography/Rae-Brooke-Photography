@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("/HTML/sticky-nav.html");
+    const response = await fetch("sticky-nav.html");
 
     if (!response.ok) {
       throw new Error(`Navigation request failed: ${response.status}`);
