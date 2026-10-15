@@ -1,11 +1,33 @@
 /* =========================================
+   RAE BROOKE PHOTOGRAPHY
    SHARED STICKY NAVIGATION
+========================================= */
+
+
+/* =========================================
+   NAVIGATION CONTAINER
+========================================= */
+
+/*
+   The placeholder should sit between the hero
+   and the rest of the page content.
+*/
+
+#shared-sticky-nav {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+
+
+/* =========================================
+   STICKY NAVIGATION BAR
 ========================================= */
 
 .sticky-nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 
   display: flex;
   align-items: center;
@@ -15,6 +37,7 @@
   width: 100%;
   min-height: 68px;
   padding: 14px 7%;
+
   box-sizing: border-box;
 
   background: var(--color-ivory, #FAF9F6);
@@ -22,7 +45,10 @@
   box-shadow: 0 4px 18px rgb(0 0 0 / 4%);
 }
 
-/* Brand */
+
+/* =========================================
+   BRAND
+========================================= */
 
 .sticky-brand {
   flex-shrink: 0;
@@ -36,7 +62,10 @@
   letter-spacing: 0.14em;
 }
 
-/* Navigation links */
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .sticky-links {
   display: flex;
@@ -48,11 +77,13 @@
 
 .sticky-links a {
   position: relative;
+
   padding: 8px 0;
 
   color: var(--color-denim, #53677D);
   text-decoration: none;
 
+  font-family: Arial, sans-serif;
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.09em;
@@ -60,7 +91,10 @@
   transition: color 180ms ease;
 }
 
-/* Underline effect */
+
+/* =========================================
+   UNDERLINE HOVER EFFECT
+========================================= */
 
 .sticky-links a::after {
   position: absolute;
@@ -69,11 +103,13 @@
   left: 0;
 
   height: 1px;
+
   background: var(--color-sage-dark, #59664F);
   content: "";
 
   transform: scaleX(0);
   transform-origin: left;
+
   transition: transform 200ms ease;
 }
 
@@ -86,6 +122,11 @@
   transform: scaleX(1);
 }
 
+
+/* =========================================
+   CURRENT PAGE
+========================================= */
+
 .sticky-links a[aria-current="page"] {
   color: var(--color-sage-dark, #59664F);
 }
@@ -94,7 +135,10 @@
   transform: scaleX(1);
 }
 
-/* Keyboard accessibility */
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
 
 .sticky-brand:focus-visible,
 .sticky-links a:focus-visible {
@@ -102,7 +146,10 @@
   outline-offset: 5px;
 }
 
-/* Tablet */
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1000px) {
   .sticky-nav {
@@ -115,11 +162,15 @@
   }
 }
 
-/* Mobile */
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
   .sticky-nav {
     justify-content: center;
+
     min-height: 58px;
     padding: 12px 5%;
   }
@@ -140,7 +191,10 @@
   }
 }
 
-/* Small phones */
+
+/* =========================================
+   SMALL PHONES
+========================================= */
 
 @media (max-width: 380px) {
   .sticky-links {
@@ -152,7 +206,10 @@
   }
 }
 
-/* Reduced motion */
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .sticky-links a,
