@@ -44,9 +44,7 @@
 
 
 /* ========================================
-   SHARED HEADER
-   Displays the shared dropdown header over
-   the portfolio hero
+   SHARED SITE HEADER
 ======================================== */
 
 .portfolio-page #shared-header {
@@ -60,10 +58,10 @@
 
 
 /* ========================================
-   PORTFOLIO HERO
+   PORTFOLIO INTRO / HERO
 ======================================== */
 
-.portfolio-hero {
+.portfolio-intro {
   position: relative;
   isolation: isolate;
 
@@ -85,9 +83,9 @@
 }
 
 
-/* Hero background photograph */
+/* Background photograph */
 
-.portfolio-hero-image {
+.portfolio-intro .portfolio-hero-image {
   position: absolute;
   z-index: -2;
   inset: 0;
@@ -102,9 +100,9 @@
 }
 
 
-/* Dark overlay for readable text */
+/* Dark overlay */
 
-.portfolio-hero-overlay {
+.portfolio-intro .portfolio-hero-overlay {
   position: absolute;
   z-index: -1;
   inset: 0;
@@ -123,7 +121,7 @@
 
 /* Hero text container */
 
-.portfolio-hero-content {
+.portfolio-intro-content {
   position: relative;
   z-index: 1;
 
@@ -135,7 +133,7 @@
 
 /* Hero eyebrow */
 
-.portfolio-hero .portfolio-eyebrow {
+.portfolio-intro .portfolio-eyebrow {
   margin: 0 0 24px;
 
   color: var(--portfolio-ivory);
@@ -148,7 +146,7 @@
 
 /* Hero heading */
 
-.portfolio-hero .portfolio-title {
+.portfolio-intro .portfolio-title {
   margin: 0;
 
   color: var(--portfolio-ivory);
@@ -159,7 +157,7 @@
   letter-spacing: -2px;
 }
 
-.portfolio-hero .portfolio-title em {
+.portfolio-intro .portfolio-title em {
   color: var(--portfolio-ivory);
   font-weight: 400;
   font-style: italic;
@@ -168,7 +166,7 @@
 
 /* Hero description */
 
-.portfolio-hero .portfolio-description {
+.portfolio-intro .portfolio-description {
   max-width: 500px;
   margin: 25px auto 32px;
 
@@ -181,7 +179,6 @@
 
 /* ========================================
    STICKY NAVIGATION
-   Matches the other site pages
 ======================================== */
 
 .portfolio-page .sticky-nav {
@@ -214,7 +211,6 @@
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.14em;
-  text-decoration: none;
 }
 
 
@@ -237,7 +233,6 @@
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.09em;
-  text-decoration: none;
 
   transition: color 180ms ease;
 }
@@ -275,7 +270,7 @@
 }
 
 
-/* Keyboard accessibility */
+/* Navigation keyboard accessibility */
 
 .portfolio-page .sticky-brand:focus-visible,
 .portfolio-page .sticky-links a:focus-visible {
@@ -316,20 +311,20 @@
 
 /* Hero button */
 
-.portfolio-hero .portfolio-button {
+.portfolio-intro .portfolio-button {
   border-color: var(--portfolio-ivory);
   background: transparent;
   color: var(--portfolio-ivory);
 }
 
-.portfolio-hero .portfolio-button:hover {
+.portfolio-intro .portfolio-button:hover {
   border-color: var(--portfolio-ivory);
   background: var(--portfolio-ivory);
   color: var(--portfolio-denim-dark);
 }
 
 
-/* Standard button hover */
+/* CTA button hover */
 
 .portfolio-cta .portfolio-button:hover {
   border-color: var(--portfolio-denim-dark);
@@ -345,7 +340,7 @@
   outline-offset: 5px;
 }
 
-.portfolio-hero .portfolio-button:focus-visible {
+.portfolio-intro .portfolio-button:focus-visible {
   outline-color: var(--portfolio-ivory);
 }
 
@@ -491,13 +486,13 @@
 
   /* Hero */
 
-  .portfolio-hero {
+  .portfolio-intro {
     min-height: 65vh;
     min-height: 65svh;
     padding: 125px 6% 75px;
   }
 
-  .portfolio-hero-image {
+  .portfolio-intro .portfolio-hero-image {
     object-position: center center;
   }
 
@@ -563,35 +558,35 @@
 
   /* Hero */
 
-  .portfolio-hero {
+  .portfolio-intro {
     min-height: 70vh;
     min-height: 70svh;
     padding: 120px 7% 80px;
   }
 
-  .portfolio-hero-image {
+  .portfolio-intro .portfolio-hero-image {
     object-position: center center;
   }
 
-  .portfolio-hero .portfolio-eyebrow {
+  .portfolio-intro .portfolio-eyebrow {
     margin-bottom: 20px;
     font-size: 9px;
     letter-spacing: 2px;
   }
 
-  .portfolio-hero .portfolio-title {
+  .portfolio-intro .portfolio-title {
     font-size: clamp(43px, 11vw, 60px);
     letter-spacing: -1px;
     line-height: 1.12;
   }
 
-  .portfolio-hero .portfolio-description {
+  .portfolio-intro .portfolio-description {
     margin: 22px auto 28px;
     font-size: 13px;
     line-height: 1.85;
   }
 
-  .portfolio-hero .portfolio-button {
+  .portfolio-intro .portfolio-button {
     padding: 14px 18px;
     font-size: 9px;
     letter-spacing: 1.2px;
@@ -654,17 +649,17 @@
 
 @media (max-width: 380px) {
 
-  .portfolio-hero {
+  .portfolio-intro {
     padding-right: 6%;
     padding-left: 6%;
   }
 
-  .portfolio-hero .portfolio-title {
+  .portfolio-intro .portfolio-title {
     font-size: 42px;
     letter-spacing: -1px;
   }
 
-  .portfolio-hero .portfolio-description {
+  .portfolio-intro .portfolio-description {
     font-size: 12px;
   }
 
