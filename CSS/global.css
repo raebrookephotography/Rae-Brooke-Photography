@@ -1,15 +1,13 @@
 /* ========================================
-   RAE BROOKE PHOTOGRAPHY — MAIN PAGES (GLOBAL)
+   RAE BROOKE PHOTOGRAPHY — GLOBAL STYLES
    Editorial, minimal, photography-led design
 ======================================== */
+
 
 /* ========================================
-   RAE BROOKE PHOTOGRAPHY
-   Editorial, minimal, photography-led design
-   Heathered denim, sage, tan & ivory
+   BRAND COLOR PALETTE
 ======================================== */
 
-/* BRAND COLOR PALETTE */
 :root {
   --color-denim: #53677D;
   --color-denim-dark: #405267;
@@ -22,8 +20,14 @@
   --color-white: #FFFFFF;
 }
 
-/* GLOBAL RESET */
-* {
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -38,29 +42,8 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 6%;
-  background: var(--color-ivory);
-}
-
-/* LOGO */
-.logo {
-  color: var(--color-denim);
-  font-weight: 800;
-  letter-spacing: 4px;
-}
-
-/* NAVIGATION */
-nav {
-  display: flex;
-  gap: 24px;
+img {
+  max-width: 100%;
 }
 
 a {
@@ -68,66 +51,80 @@ a {
   text-decoration: none;
 }
 
-nav a {
+
+/* ========================================
+   SHARED HEADER
+   Used by the main site header component
+======================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 28px 6%;
+  background: var(--color-ivory);
+}
+
+
+/* Header logo */
+
+.logo {
+  color: var(--color-denim);
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+
+/* Header navigation only */
+
+header nav {
+  display: flex;
+  gap: 24px;
+}
+
+header nav a {
   color: var(--color-denim);
   transition: color 0.2s ease;
 }
 
-nav a:hover {
+header nav a:hover {
   color: var(--color-sage-dark);
 }
 
-/* KEYBOARD ACCESSIBILITY */
+
+/* ========================================
+   KEYBOARD ACCESSIBILITY
+======================================== */
+
 a:focus-visible {
   outline: 2px solid var(--color-denim);
   outline-offset: 4px;
 }
 
-/* HOMEPAGE HERO */
-.hero {
-  min-height: 78vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
-  background: var(--color-ivory);
-}
 
-/* SMALL INTRODUCTORY TEXT */
-.eyebrow {
-  color: var(--color-sage-dark);
-  letter-spacing: 4px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
+/* ========================================
+   GLOBAL BUTTONS
+======================================== */
 
-/* MAIN HEADLINE */
-h1 {
-  color: var(--color-denim);
-  font-size: clamp(48px, 8vw, 100px);
-  line-height: 1;
-}
-
-/* HERO SUPPORTING TEXT */
-.hero > p:not(.eyebrow) {
-  color: var(--color-text);
-  line-height: 1.7;
-}
-
-/* PRIMARY BUTTON */
 .button {
   display: inline-block;
+
+  margin-top: 20px;
+  padding: 16px 24px;
+
+  border: 1px solid var(--color-denim);
   background: var(--color-denim);
   color: var(--color-white);
-  padding: 16px 24px;
-  margin-top: 20px;
-  border: 1px solid var(--color-denim);
+
   letter-spacing: 1px;
   font-size: 12px;
   font-weight: 600;
+
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
@@ -145,42 +142,52 @@ h1 {
   outline-offset: 4px;
 }
 
-/* FOOTER */
+
+/* ========================================
+   SHARED FOOTER
+======================================== */
+
 footer {
   padding: 24px;
-  text-align: center;
   background: var(--color-denim);
   color: var(--color-ivory);
+  text-align: center;
 }
 
-/* MOBILE RESPONSIVENESS */
+
+/* ========================================
+   MOBILE GLOBAL STYLES
+======================================== */
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
     gap: 20px;
   }
 
-  nav {
+  header nav {
     gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  .hero {
-    min-height: 70vh;
-    padding: 48px 20px;
-  }
-
-  h1 {
-    font-size: clamp(44px, 11vw, 64px);
-  }
-
-  .eyebrow {
-    letter-spacing: 3px;
-    line-height: 1.8;
-  }
 }
 
 
+/* ========================================
+   REDUCED MOTION
+======================================== */
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
+  .button,
+  header nav a {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+}
