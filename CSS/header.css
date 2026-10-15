@@ -1,58 +1,278 @@
-/* ========================================
-   RAE BROOKE PHOTOGRAPHY — HEADER
-======================================== */
+/* =========================================
+   RAE BROOKE PHOTOGRAPHY
+   HERO HEADER AND DROPDOWN MENU
+========================================= */
 
-.page-header {
-  --header-denim: #53677D;
-  --header-sage: #59664F;
-  --header-tan: #B99A79;
-  --header-ivory: #FAF9F6;
+.hero-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
 
-  padding: 28px 6%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: 100%;
+  padding: 32px 7%;
+  box-sizing: border-box;
+
+  color: var(--color-ivory, #FAF9F6);
+}
+
+
+/* =========================================
+   LOGO / BRANDING
+========================================= */
+
+.hero-header-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+
+  color: var(--color-ivory, #FAF9F6);
+  text-decoration: none;
+}
+
+.logo-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(21px, 2.3vw, 30px);
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+}
+
+.logo-subtitle {
+  padding-left: 2px;
+
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   MENU BUTTON
+========================================= */
+
+.hero-menu {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-menu-toggle {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  background: var(--header-ivory);
-  border-bottom: 1px solid #E3E0D8;
-  color: var(--header-denim);
+  justify-content: center;
+  gap: 13px;
+
+  padding: 10px 0;
+
+  border: 0;
+  background: transparent;
+  color: var(--color-ivory, #FAF9F6);
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+
+  cursor: pointer;
 }
 
-.page-header-logo {
-  color: var(--header-denim);
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  white-space: nowrap;
+.menu-label {
+  line-height: 1;
 }
 
-.page-header-logo span {
-  display: block;
-  margin-top: 6px;
-  font-size: 9px;
-  letter-spacing: 0.35em;
-  font-weight: 400;
-}
 
-.page-header nav {
+/* Two-line menu icon */
+
+.menu-icon {
   display: flex;
-  flex-wrap: wrap;
-  gap: clamp(14px, 3vw, 38px);
+  flex-direction: column;
+  gap: 6px;
+
+  width: 25px;
 }
 
-.page-header nav a {
-  color: var(--header-denim);
+.menu-icon span {
+  display: block;
+
+  width: 25px;
+  height: 1px;
+
+  background: currentColor;
+
+  transition:
+    transform 200ms ease,
+    width 200ms ease;
+}
+
+
+/* Animate into an X when open */
+
+.hero-menu-toggle[aria-expanded="true"]
+.menu-icon span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.hero-menu-toggle[aria-expanded="true"]
+.menu-icon span:last-child {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+
+/* Hover state */
+
+.hero-menu-toggle:hover .menu-icon span:last-child {
+  width: 18px;
+}
+
+.hero-menu-toggle[aria-expanded="true"]:hover
+.menu-icon span:last-child {
+  width: 25px;
+}
+
+
+/* =========================================
+   DROPDOWN PANEL
+========================================= */
+
+.hero-dropdown {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 16px);
+  right: 0;
+
+  width: 280px;
+  max-width: calc(100vw - 40px);
+  padding: 12px 0;
+  box-sizing: border-box;
+
+  background: var(--color-ivory, #FAF9F6);
+  box-shadow: 0 14px 40px rgb(0 0 0 / 15%);
+
+  opacity: 1;
+  transform: translateY(0);
+
+  animation: dropdown-enter 180ms ease-out;
+}
+
+
+/* The hidden attribute must always hide the menu */
+
+.hero-dropdown[hidden] {
+  display: none;
+}
+
+.hero-dropdown a {
+  display: block;
+
+  padding: 15px 25px;
+
+  color: var(--color-denim, #53677D);
+  text-decoration: none;
+
   font-size: 12px;
+  font-weight: 400;
   letter-spacing: 0.08em;
-  transition: color 180ms ease;
+  line-height: 1.5;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    padding-left 180ms ease;
 }
 
-.page-header nav a:hover,
-.page-header nav a[aria-current="page"] {
-  color: var(--header-sage);
+.hero-dropdown a:hover {
+  padding-left: 30px;
+
+  color: var(--color-sage-dark, #59664F);
+  background: #F0EEE8;
 }
 
-.page-header nav a:focus-visible {
-  outline: 2px solid var(--header-denim);
-  outline-offset: 4px;
+.hero-dropdown a:focus-visible {
+  outline: 2px solid var(--color-denim, #53677D);
+  outline-offset: -4px;
+}
+
+
+/* Dropdown entrance */
+
+@keyframes dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
+
+.hero-header-logo:focus-visible,
+.hero-menu-toggle:focus-visible {
+  outline: 2px solid var(--color-ivory, #FAF9F6);
+  outline-offset: 5px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero-header {
+    padding: 25px 6%;
+  }
+
+  .logo-name {
+    font-size: 19px;
+    letter-spacing: 0.12em;
+  }
+
+  .logo-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.35em;
+  }
+
+  .hero-menu-toggle {
+    gap: 9px;
+  }
+
+  .menu-label {
+    font-size: 10px;
+  }
+
+  .hero-dropdown {
+    top: calc(100% + 12px);
+    width: 255px;
+  }
+
+  .hero-dropdown a {
+    padding: 14px 20px;
+  }
+}
+
+
+/* Reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-dropdown {
+    animation: none;
+  }
+
+  .menu-icon span,
+  .hero-dropdown a {
+    transition: none;
+  }
 }
