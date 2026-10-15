@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="/CSS/global.css">
   <link rel="stylesheet" href="/CSS/header.css">
+  <link rel="stylesheet" href="/CSS/hero.css">
   <link rel="stylesheet" href="/CSS/sticky-nav.css">
   <link rel="stylesheet" href="/CSS/about.css">
   <link rel="stylesheet" href="/CSS/footer.css">
@@ -25,49 +26,18 @@
     <!-- =====================================
          ABOUT PAGE HERO
     ====================================== -->
-
-    <section class="about-hero">
-
-      <img
-        class="about-hero-image"
-        src="/Images/about-hero.jpg"
-        alt="Rae Brooke, North Carolina photographer"
-        fetchpriority="high"
-      >
-
-      <div class="about-hero-overlay"></div>
-
-      <!-- Shared branding and dropdown menu -->
-      <div id="shared-header"></div>
-
-      <!-- About page introduction -->
-      <div class="about-hero-content">
-
-        <p class="about-hero-eyebrow">
-          GET TO KNOW ME
-        </p>
-
-        <h1>
-          The girl behind<br>
-          the camera.
-        </h1>
-
-        <p class="about-hero-subtitle">
-          A little about me, my story, and what I love.
-        </p>
-
-      </div>
-
-      <a
-        class="about-hero-scroll"
-        href="#about-story"
-        aria-label="Scroll to read about Rae"
-      >
-        <span>MY STORY</span>
-        <span class="about-scroll-line" aria-hidden="true"></span>
-      </a>
-
-    </section>
+    <div
+    id="shared-hero"
+    data-image="/Images/about-hero.jpg"
+    data-alt="Rae Brooke Photography"
+    data-eyebrow="GET TO KNOW ME"
+    data-title="The girl|behind the camera."
+    data-subtitle="A little about me, my story, and what I love."
+    data-button-text="MY STORY"
+    data-button-url="#about"
+    data-scroll-target="#about"
+    data-scroll-label="Read my story"
+  ></div>
 
 
     <!-- =====================================
@@ -167,6 +137,7 @@
   <div id="shared-footer"></div>
 
   <script src="/Javascript/header.js" defer></script>
+  <script src="/Javascript/hero.js" defer></script>
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
 
