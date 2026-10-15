@@ -1,74 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Rae Brooke Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Get to know Rae Brooke, a Raleigh, North Carolina photographer who loves capturing genuine connection and meaningful moments."
+  >
+
+  <title>About Rae | Rae Brooke Photography</title>
+
   <link rel="stylesheet" href="/CSS/global.css">
-  <link rel="stylesheet" href="/CSS/footer.css">
   <link rel="stylesheet" href="/CSS/header.css">
   <link rel="stylesheet" href="/CSS/about.css">
+  <link rel="stylesheet" href="/CSS/footer.css">
 </head>
+
 <body>
 
-  <div id="shared-header"></div>
+  <main>
+
+    <!-- =====================================
+         ABOUT PAGE HERO
+    ====================================== -->
+
+    <section class="about-hero">
+
+      <img
+        class="about-hero-image"
+        src="/Images/index-hero.jpg"
+        alt="Rae Brooke, North Carolina photographer"
+        fetchpriority="high"
+      >
+
+      <div class="about-hero-overlay"></div>
+
+      <!-- Shared branding and dropdown menu -->
+      <div id="shared-header"></div>
+
+      <!-- About page introduction -->
+      <div class="about-hero-content">
+
+        <p class="about-hero-eyebrow">
+          GET TO KNOW ME
+        </p>
+
+        <h1>
+          The girl behind<br>
+          the camera.
+        </h1>
+
+        <p class="about-hero-subtitle">
+          A little about me, my story, and what I love.
+        </p>
+
+      </div>
+
+      <a
+        class="about-hero-scroll"
+        href="#about-story"
+        aria-label="Scroll to read about Rae"
+      >
+        <span>MY STORY</span>
+        <span class="about-scroll-line" aria-hidden="true"></span>
+      </a>
+
+    </section>
+
+
+    <!-- =====================================
+         STICKY NAVIGATION
+    ====================================== -->
+
+    <nav class="sticky-nav" aria-label="Main navigation">
+
+      <a class="sticky-brand" href="/index.html">
+        RAE BROOKE
+      </a>
+
+      <div class="sticky-links">
+        <a href="/index.html">Home</a>
+        <a href="/about.html" aria-current="page">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         ABOUT STORY
+    ====================================== -->
+
+    <section class="about-page" id="about-story">
+
+      <div class="about-intro">
+
+        <!-- Text column -->
+        <div class="about-copy">
+
+          <p class="about-section-eyebrow">
+            A LITTLE ABOUT ME
+          </p>
+
+          <h2 class="about-heading">
+            <em>Hey, I'm Rae!</em>
+            A photographer living in Raleigh, North Carolina,
+            drawn to the people, places, and moments that make
+            life meaningful.
+          </h2>
+
+          <div class="about-story">
+
+            <p>
+              I’m Rachael (but you can call me Rae) — a New
+              England native, wife of Jeff, and dog mom to
+              Wrigley. I’ve spent the past year chasing light,
+              capturing laughter, and turning little in-between
+              moments into memories that last forever.
+            </p>
+
+            <p>
+              I'm drawn to genuine connection, the little
+              in-between moments, and the details that might
+              otherwise go unnoticed. My goal is to create
+              photographs that feel natural, thoughtful, and
+              true to the people in them.
+            </p>
+
+            <p>
+              Whether it’s couples, four-legged friends, grads,
+              families, or just you living your best life, I love
+              creating images that feel like you.
+            </p>
+
+          </div>
+
+          <a class="about-contact-button" href="/contact.html">
+            LET'S CONNECT <span aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+
+        <!-- Stacked photographs -->
+        <div class="about-image-stack">
+
+          <div class="about-image about-image-primary">
+            <img
+              src="/Images/about-portrait.jpg"
+              alt="Rae Brooke, photographer"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="about-image about-image-secondary">
+            <img
+              src="/Images/about-second.jpg"
+              alt="Rae enjoying a moment with her family"
+              loading="lazy"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================
+       SHARED FOOTER
+  ====================================== -->
+
+  <div id="shared-footer"></div>
+
   <script src="/Javascript/header.js" defer></script>
-
-
-<main class="about-page">
-  <section class="about-intro">
-
-    <div class="about-copy">
-      <h1 class="about-heading">
-        <em>Hey, I'm Rae! </em> A photographer living in Raleigh, North Carolina drawn to
-        the people, places, and moments that make life meaningful.
-      </h1>
-
-      <div class="about-story">
-        <p>
-          I’m Rachael (but you can call me Rae) — a New England native, wife of Jeff, and dog mom to Wrigley.
-          I’ve spent the past year chasing light, capturing laughter, and turning little in-between moments into memories that last forever.
-        </p>
-
-        <p>
-          I'm drawn to genuine connection, the little
-          in-between moments, and the details that might
-          otherwise go unnoticed. My goal is to create
-          photographs that feel natural, thoughtful, and
-          true to the people in them.
-        </p>
-
-        <p>
-          Whether it’s couples, four-legged friends, grads, families, 
-          or just you living your best life, I love creating images that feel like you.
-        </p>
-      </div>
-    </div>   
-
-    <div class="about-image-stack">
-      <div class="about-image">
-        <img
-          src="/Images/about-portrait.jpg"
-          alt="Rae Brooke, photographer"
-        >
-      </div>
-    
-      <div class="about-image">
-        <img
-          src="/Images/about-second.jpg"
-          alt="Rae enjoying a moment with her family"
-          loading="lazy"
-        >
-      </div>
-    </div>
-
-  </section>
-</main>
-
-<div id="shared-footer"></div>
-<script src="/Javascript/footer.js" defer></script>
-
+  <script src="/Javascript/footer.js" defer></script>
 
 </body>
 </html>
