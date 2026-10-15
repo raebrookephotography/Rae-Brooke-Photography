@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="/CSS/global.css">  
   <link rel="stylesheet" href="/CSS/header.css">
+  <link rel="stylesheet" href="/CSS/hero.css">
   <link rel="stylesheet" href="/CSS/sticky-nav.css">
   <link rel="stylesheet" href="/CSS/portfolio.css">
   <link rel="stylesheet" href="/CSS/footer.css">
@@ -31,46 +32,20 @@
          PORTFOLIO INTRO / HERO
     ====================================== -->
 
-    <section class="portfolio-intro">
-
-      <!-- Background photograph -->
-      <img
-        class="portfolio-hero-image"
-        src="/Images/index-hero.jpg"
-        alt=""
-        fetchpriority="high"
-        decoding="async"
-      >
-
-      <!-- Dark overlay -->
-      <div class="portfolio-hero-overlay" aria-hidden="true"></div>
-
-      <!-- Hero content -->
-      <div class="portfolio-intro-content">
-
-        <p class="portfolio-eyebrow">
-          RAE BROOKE PHOTOGRAPHY
-        </p>
-
-        <h1 class="portfolio-title">
-          Stories worth<br>
-          <em>remembering.</em>
-        </h1>
-
-        <p class="portfolio-description">
-          A collection of genuine moments, meaningful connections,
-          and the little details that make every story unique.
-        </p>
-
-        <a class="portfolio-button" href="#gallery">
-          EXPLORE THE GALLERY
-          <span aria-hidden="true">↓</span>
-        </a>
-
-      </div>
-
-    </section>
-
+  <div
+    id="shared-hero"
+    data-variant="portfolio"
+    data-image="/Images/index-hero.jpg"
+    data-alt="A couple embracing at sunset by the water"
+    data-eyebrow="RAE BROOKE PHOTOGRAPHY"
+    data-title="Stories worth remembering."
+    data-subtitle="A collection of genuine moments, meaningful connections,
+            and the little details that make every story unique."
+    data-button-text="EXPLORE THE GALLERY"
+    data-button-url="#gallery"
+    data-scroll-target="#gallery"
+    data-scroll-label="EXPLORE THE GALLERY"
+  ></div>
 
     <!-- =====================================
          STICKY NAVIGATION
@@ -265,6 +240,7 @@
   <!-- SHARED SITE FOOTER -->
   <div id="shared-footer"></div>
   <script src="/Javascript/footer.js" defer></script>
+  <script src="/Javascript/hero.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
 
 </body>
