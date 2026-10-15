@@ -230,39 +230,39 @@
 ======================================== */
 
 .hero {
-  color: #F8F3EA;
+  color: var(--color-ivory);
 }
 
 .hero .eyebrow {
-  color: #F0E7D9;
+  color: var(--color-ivory);
 }
 
 .hero h1 {
-  color: #FFF9F0;
+  color: var(--color-ivory);
 }
 
 .hero .hero-subtitle {
-  color: #F5EEE5;
+  color: var(--color-ivory);
 }
 
 .hero .hero-button {
-  color: #FFF9F0;
-  border-color: #F5EEE5;
-  background: rgb(39 43 39 / 18%);
+  color: var(--color-ivory);
+  border: 1px solid var(--color-ivory);
+  background: rgb(64 82 103 / 20%);
 }
 
 .hero .hero-button:hover {
-  color: #3F514B;
-  background: #F8F3EA;
-  border-color: #F8F3EA;
+  color: var(--color-white);
+  background: var(--color-denim-dark);
+  border-color: var(--color-denim-dark);
 }
 
-/* Softer, warmer image overlay */
+/* Warm, subtle overlay */
 .hero-overlay {
   background: linear-gradient(
-    180deg,
-    rgb(39 43 39 / 20%) 0%,
-    rgb(39 43 39 / 32%) 50%,
-    rgb(39 43 39 / 48%) 100%
+    to bottom,
+    rgb(66 70 65 / 15%) 0%,
+    rgb(66 70 65 / 30%) 55%,
+    rgb(66 70 65 / 45%) 100%
   );
 }
