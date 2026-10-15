@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("/header.html");
+    const response = await fetch("/Views/Shared/header.html");
 
     if (!response.ok) {
       throw new Error(
