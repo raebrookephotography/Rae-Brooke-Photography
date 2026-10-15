@@ -1,7 +1,7 @@
 /* =========================================
    RAE BROOKE PHOTOGRAPHY
    SERVICES PAGE
-   Denim, sage, tan & ivory
+   Editorial, minimal, photography-led
 ========================================= */
 
 :root {
@@ -12,12 +12,35 @@
   --services-sage-dark: #59664F;
   --services-tan: #B99A79;
   --services-ivory: #FAF9F6;
+  --services-white: #FFFFFF;
   --services-text: #424641;
+  --services-muted: #62665F;
+  --services-line: #E3E0D8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--services-ivory);
+  color: var(--services-text);
+}
+
+img {
+  max-width: 100%;
 }
 
 
 /* =========================================
-   SERVICES HERO
+   HERO
 ========================================= */
 
 .services-hero {
@@ -34,16 +57,13 @@
 
   margin: 0;
   padding: 130px 7% 90px;
-  box-sizing: border-box;
+
   overflow: hidden;
 
   background: var(--services-denim-dark);
   color: var(--services-ivory);
   text-align: center;
 }
-
-
-/* Hero photograph */
 
 .services-hero-image {
   position: absolute;
@@ -58,9 +78,6 @@
   object-position: center 40%;
 }
 
-
-/* Dark overlay */
-
 .services-hero-overlay {
   position: absolute;
   z-index: -1;
@@ -69,27 +86,19 @@
   background: linear-gradient(
     to bottom,
     rgb(30 35 33 / 30%) 0%,
-    rgb(30 35 33 / 25%) 35%,
-    rgb(30 35 33 / 40%) 70%,
+    rgb(30 35 33 / 30%) 40%,
     rgb(30 35 33 / 52%) 100%
   );
 
   pointer-events: none;
 }
 
-
-/* Shared dropdown header positioning */
-
+/* Keep a dynamically inserted shared header above the hero. */
 #shared-header {
   position: absolute;
   z-index: 1001;
   inset: 0 0 auto;
-
-  height: 0;
 }
-
-
-/* Hero content */
 
 .services-hero-content {
   position: relative;
@@ -99,9 +108,6 @@
   max-width: 850px;
   margin: auto;
 }
-
-
-/* Hero eyebrow */
 
 .services-hero-eyebrow {
   margin: 0 0 24px;
@@ -113,9 +119,6 @@
   letter-spacing: 0.28em;
   line-height: 1.8;
 }
-
-
-/* Hero heading */
 
 .services-hero h1 {
   margin: 0 0 24px;
@@ -129,9 +132,6 @@
   line-height: 1.1;
 }
 
-
-/* Hero subtitle */
-
 .services-hero-subtitle {
   max-width: 560px;
   margin: 0 auto 34px;
@@ -139,12 +139,8 @@
   color: var(--services-ivory);
 
   font-size: 15px;
-  font-weight: 400;
   line-height: 1.9;
 }
-
-
-/* Hero button */
 
 .services-hero-button {
   display: inline-flex;
@@ -180,8 +176,7 @@
 
 
 /* =========================================
-   STICKY NAVIGATION
-   Matches Home and About pages
+   STICKY MAIN NAVIGATION
 ========================================= */
 
 .sticky-nav {
@@ -197,15 +192,11 @@
   width: 100%;
   min-height: 68px;
   padding: 14px 7%;
-  box-sizing: border-box;
 
   background: var(--services-ivory);
-  border-bottom: 1px solid #E3E0D8;
+  border-bottom: 1px solid var(--services-line);
   box-shadow: 0 4px 18px rgb(0 0 0 / 4%);
 }
-
-
-/* Brand */
 
 .sticky-brand {
   flex-shrink: 0;
@@ -218,9 +209,6 @@
   letter-spacing: 0.14em;
   text-decoration: none;
 }
-
-
-/* Navigation links */
 
 .sticky-links {
   display: flex;
@@ -245,16 +233,10 @@
   transition: color 180ms ease;
 }
 
-
-/* Hover and current page */
-
 .sticky-links a:hover,
 .sticky-links a[aria-current="page"] {
   color: var(--services-sage-dark);
 }
-
-
-/* Animated underline */
 
 .sticky-links a::after {
   position: absolute;
@@ -269,6 +251,7 @@
 
   transform: scaleX(0);
   transform-origin: left;
+
   transition: transform 200ms ease;
 }
 
@@ -276,9 +259,6 @@
 .sticky-links a[aria-current="page"]::after {
   transform: scaleX(1);
 }
-
-
-/* Keyboard accessibility */
 
 .sticky-brand:focus-visible,
 .sticky-links a:focus-visible {
@@ -288,7 +268,7 @@
 
 
 /* =========================================
-   MAIN SERVICES PAGE
+   MAIN SERVICES SECTION
 ========================================= */
 
 .services-page {
@@ -299,29 +279,31 @@
   color: var(--services-text);
 }
 
-
-/* Package section */
-
 .services-section {
   width: 100%;
-  padding: 64px 6% 90px;
-  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 76px 6% 100px;
 }
-
-
-/* Anchor spacing for sticky navigation */
 
 #packages {
   scroll-margin-top: 85px;
 }
 
+.section-eyebrow {
+  margin: 0 0 14px;
 
-/* =========================================
-   PACKAGE SECTION HEADING
-========================================= */
+  color: var(--services-sage-dark);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.8;
+  text-align: center;
+}
 
 .packages-title {
-  margin: 0 0 32px;
+  margin: 0 0 18px;
 
   color: var(--services-denim);
 
@@ -333,9 +315,20 @@
   text-align: center;
 }
 
+.packages-subtitle {
+  max-width: 500px;
+  margin: 0 auto 38px;
+
+  color: var(--services-muted);
+
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: center;
+}
+
 
 /* =========================================
-   PACKAGE NAVIGATION
+   PACKAGE SELECTOR
 ========================================= */
 
 .package-nav {
@@ -348,22 +341,19 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+
   padding: 17px 3%;
-  box-sizing: border-box;
 
   border-top: 1px solid var(--services-tan);
   border-bottom: 1px solid var(--services-tan);
 }
-
-
-/* Package buttons */
 
 .package-nav button {
   position: relative;
 
   padding: 10px 0;
 
-  border: none;
+  border: 0;
   border-bottom: 2px solid transparent;
   background: transparent;
   color: var(--services-denim);
@@ -387,7 +377,8 @@
   color: var(--services-sage-dark);
 }
 
-.package-nav button.active {
+.package-nav button.active,
+.package-nav button[aria-pressed="true"] {
   color: var(--services-denim-dark);
   border-bottom-color: var(--services-tan);
 }
@@ -399,12 +390,12 @@
 
 
 /* =========================================
-   PACKAGE CONTENT LAYOUT
+   PACKAGE CONTENT
 ========================================= */
 
 .package-content {
   display: grid;
-  grid-template-columns: 1.03fr 1fr;
+  grid-template-columns: minmax(0, 1.03fr) minmax(0, 1fr);
   align-items: center;
   gap: clamp(35px, 6vw, 75px);
 
@@ -412,18 +403,22 @@
   max-width: 1100px;
   margin: 0 auto;
   padding-top: 65px;
-  box-sizing: border-box;
 }
-
-
-/* Description column */
 
 .description {
   min-width: 0;
 }
 
+.package-eyebrow {
+  margin: 0 0 15px;
 
-/* Package title */
+  color: var(--services-sage-dark);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+}
 
 .description h2 {
   margin: 0 0 12px;
@@ -438,9 +433,6 @@
   line-height: 1.2;
 }
 
-
-/* Package introduction */
-
 .description .intro {
   margin: 0 0 28px;
 
@@ -448,13 +440,9 @@
 
   font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
-  font-weight: 400;
   font-style: italic;
   line-height: 1.7;
 }
-
-
-/* Package paragraphs */
 
 .description p {
   margin: 0 0 22px;
@@ -466,8 +454,12 @@
   line-height: 1.95;
 }
 
-.description p:last-child {
+.description .package-price {
+  margin-top: 28px;
   margin-bottom: 0;
+
+  color: var(--services-denim);
+  font-weight: 600;
 }
 
 
@@ -480,8 +472,9 @@
 
   width: 100%;
   aspect-ratio: 4 / 5;
+  margin: 0;
+
   overflow: hidden;
-  box-sizing: border-box;
 
   border: 1px solid var(--services-tan);
   background: var(--services-sage-light);
@@ -501,6 +494,28 @@
   transition: opacity 0.25s ease;
 }
 
+.photo-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  padding: 16px 20px;
+
+  background: linear-gradient(
+    to top,
+    rgb(30 35 33 / 65%),
+    rgb(30 35 33 / 0%)
+  );
+
+  color: var(--services-white);
+
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  line-height: 1.8;
+}
+
 
 /* =========================================
    INQUIRY BUTTON
@@ -509,16 +524,15 @@
 .inquire-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 12px;
 
   width: 100%;
   max-width: 405px;
-  min-height: 50px;
+  min-height: 52px;
 
-  margin-top: 28px;
-  padding: 14px 22px;
-  box-sizing: border-box;
+  margin-top: 30px;
+  padding: 15px 22px;
 
   border: 1px solid var(--services-denim);
   background: var(--services-denim);
@@ -550,7 +564,7 @@
 
 
 /* =========================================
-   TABLET LAYOUT
+   TABLET
 ========================================= */
 
 @media (max-width: 900px) {
@@ -560,7 +574,7 @@
   }
 
   .services-section {
-    padding: 55px 5% 75px;
+    padding: 60px 5% 80px;
   }
 
   .sticky-nav {
@@ -601,16 +615,13 @@
 
 
 /* =========================================
-   MOBILE LAYOUT
+   MOBILE
 ========================================= */
 
 @media (max-width: 700px) {
-  /* Hero */
-
   .services-hero {
     min-height: 70vh;
     min-height: 70svh;
-
     padding: 120px 7% 85px;
   }
 
@@ -620,7 +631,6 @@
 
   .services-hero-eyebrow {
     margin-bottom: 20px;
-
     font-size: 9px;
     letter-spacing: 0.2em;
   }
@@ -632,8 +642,7 @@
 
   .services-hero-subtitle {
     max-width: 330px;
-    margin: 0 auto 28px;
-
+    margin-bottom: 28px;
     font-size: 13px;
     line-height: 1.8;
   }
@@ -643,14 +652,11 @@
     font-size: 9px;
   }
 
-
-  /* Sticky navigation */
-
+  /* Keep every navigation link available on mobile. */
   .sticky-nav {
     justify-content: center;
-
     min-height: 58px;
-    padding: 12px 5%;
+    padding: 12px 4%;
   }
 
   .sticky-brand {
@@ -659,54 +665,44 @@
 
   .sticky-links {
     justify-content: center;
-    gap: 8px 20px;
+    gap: 8px 18px;
   }
 
   .sticky-links a {
     padding: 6px 0;
-
     font-size: 10px;
     letter-spacing: 0.04em;
   }
 
-
-  /* Packages */
-
   .services-section {
-    padding: 42px 6% 65px;
+    padding: 45px 6% 65px;
   }
 
   .packages-title {
-    margin-bottom: 24px;
     font-size: clamp(30px, 8vw, 40px);
   }
 
-
-  /* Package selector */
+  .packages-subtitle {
+    margin-bottom: 28px;
+    font-size: 13px;
+  }
 
   .package-nav {
     justify-content: center;
     gap: 8px 22px;
-
     padding: 14px 0;
   }
 
   .package-nav button {
     max-width: 100%;
-
     padding: 8px 0;
-
     font-size: 9px;
     letter-spacing: 0.06em;
   }
 
-
-  /* Stack text and image */
-
   .package-content {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
-
     padding-top: 38px;
   }
 
@@ -722,21 +718,14 @@
 
   .description p {
     margin-bottom: 20px;
-
     font-size: 14px;
     line-height: 1.9;
   }
-
-
-  /* Full-width inquiry button */
 
   .inquire-button {
     max-width: none;
     margin-top: 25px;
   }
-
-
-  /* Package photo */
 
   .photo-frame {
     aspect-ratio: 4 / 4.5;
@@ -759,7 +748,7 @@
   }
 
   .sticky-links {
-    gap: 8px 14px;
+    gap: 8px 13px;
   }
 
   .sticky-links a {
@@ -783,10 +772,14 @@
 
 
 /* =========================================
-   REDUCED MOTION ACCESSIBILITY
+   REDUCED MOTION
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .services-hero-button,
   .sticky-links a,
   .sticky-links a::after,
