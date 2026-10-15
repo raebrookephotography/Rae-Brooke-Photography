@@ -1,118 +1,297 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with Rae Brooke Photography to plan your next photography session.">
+  <meta name="description" content="Get in touch with Rae Brooke Photography in Raleigh, North Carolina. Let's create photographs that feel like you.">
+
   <title>Contact | Rae Brooke Photography</title>
+
   <link rel="stylesheet" href="/CSS/global.css">
   <link rel="stylesheet" href="/CSS/footer.css">
   <link rel="stylesheet" href="/CSS/header.css">
   <link rel="stylesheet" href="/CSS/contact.css">
 </head>
+
 <body class="contact-page">
 
+  <!-- Shared header and dropdown -->
   <div id="shared-header"></div>
   <script src="/Javascript/header.js" defer></script>
 
   <main>
+
+    <!-- =====================================
+         CONTACT HERO
+    ====================================== -->
+
     <section class="contact-hero">
-      <p class="contact-eyebrow">THE BEGINNING OF SOMETHING GOOD</p>
-      <h1>Let's make<br><em>something meaningful.</em></h1>
-      <p class="contact-intro">
-        Every session starts with an idea. Tell me yours, and let's
-        create photographs that feel like you.
-      </p>
+
+      <img
+        class="contact-hero-image"
+        src="/Images/index-hero.jpg"
+        alt=""
+        fetchpriority="high"
+      >
+
+      <div class="contact-hero-overlay"></div>
+
+      <div class="contact-hero-content">
+
+        <p class="contact-eyebrow">
+          THE BEGINNING OF SOMETHING GOOD
+        </p>
+
+        <h1>
+          Let's make<br>
+          <em>something meaningful.</em>
+        </h1>
+
+        <p class="contact-intro">
+          Every session starts with an idea. Tell me yours,
+          and let's create photographs that feel like you.
+        </p>
+
+        <a class="contact-hero-button" href="#contact">
+          LET'S CONNECT <span aria-hidden="true">↓</span>
+        </a>
+
+      </div>
     </section>
 
-    <section class="contact-layout">
-      <aside class="contact-aside">
-        <p class="contact-eyebrow">GET IN TOUCH</p>
-        <h2>Your story<br>starts here.</h2>
+
+    <!-- =====================================
+         STICKY NAVIGATION
+    ====================================== -->
+
+    <nav class="sticky-nav" aria-label="Main navigation">
+
+      <a class="sticky-brand" href="/index.html">
+        RAE BROOKE
+      </a>
+
+      <div class="sticky-links">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/contact.html" aria-current="page">Contact</a>
+      </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         CONTACT INTRODUCTION AND FORM
+    ====================================== -->
+
+    <section class="contact-layout" id="contact">
+
+      <div class="contact-aside">
+
+        <p class="contact-eyebrow">
+          GET IN TOUCH
+        </p>
+
+        <h2>
+          Your story<br>
+          starts here.
+        </h2>
+
+        <p class="contact-lead">
+          I'd love to hear what you're dreaming up.
+        </p>
+
         <p>
           Whether you're planning a portrait session, celebrating
-          someone you love, or building your brand, I'd love to hear
-          what you have in mind.
+          someone you love, or documenting a season of life,
+          let's create something you'll treasure for years to come.
         </p>
-        <p class="contact-note">
-          Fill out the inquiry form and I'll be in touch as soon as
-          possible.
+
+        <p>
+          Tell me a little about yourself, what you have in mind,
+          and the moments you'd love to remember. You don't need
+          to have every detail figured out yet.
         </p>
-        <!-- Replace this with your real contact email if desired. -->
-        <!-- <a href="mailto:hello@yourdomain.com">Email me directly ↗</a> -->
-      </aside>
 
-      <form id="contact-form" class="contact-form">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="name">Your Name <span>*</span></label>
-            <input id="name" name="name" type="text"
-                   autocomplete="name" maxlength="100" required>
+        <div class="contact-note">
+          <span class="contact-note-label">WHAT HAPPENS NEXT?</span>
+          <p>
+            Once your inquiry comes through, I'll review the details
+            and get back to you as soon as possible so we can start
+            planning your session.
+          </p>
+        </div>
+
+        <div class="contact-signoff">
+          I can't wait to hear from you.
+        </div>
+
+      </div>
+
+
+      <!-- Contact form -->
+      <div class="contact-form-card">
+
+        <div class="form-heading">
+          <p class="form-eyebrow">YOUR NEXT CHAPTER</p>
+          <h2>Tell me about it.</h2>
+          <p>
+            Fill out the form below and let's make something meaningful.
+          </p>
+        </div>
+
+        <form id="contact-form">
+
+          <div class="form-row">
+
+            <div class="form-field">
+              <label for="name">
+                Your Name <span>*</span>
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                maxlength="100"
+                placeholder="Your full name"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="email">
+                Email Address <span>*</span>
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                maxlength="254"
+                placeholder="you@example.com"
+                required
+              >
+            </div>
+
           </div>
 
-          <div class="form-field">
-            <label for="email">Email Address <span>*</span></label>
-            <input id="email" name="email" type="email"
-                   autocomplete="email" maxlength="254" required>
-          </div>
-        </div>
-
-        <div class="form-field">
-          <label for="session">What are we photographing? <span>*</span></label>
-          <select id="session" name="session" required>
-            <option value="">Choose a session type</option>
-            <option>Portraits</option>
-            <option>Couples / Engagements</option>
-            <option>Families</option>
-            <option>Events</option>
-            <option>Lifestyle / Branding</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <div class="form-row">
-          <div class="form-field">
-            <label for="date">Preferred Date</label>
-            <input id="date" name="date" type="date">
-          </div>
 
           <div class="form-field">
-            <label for="location">Location or Setting</label>
-            <input id="location" name="location" type="text"
-                   placeholder="City, outdoors, studio..." maxlength="150">
+            <label for="session">
+              What are we photographing? <span>*</span>
+            </label>
+
+            <select id="session" name="session" required>
+              <option value="">Choose a session type</option>
+              <option value="Portraits">Portraits</option>
+              <option value="Couples / Engagements">Couples / Engagements</option>
+              <option value="Families">Families</option>
+              <option value="Events">Events</option>
+              <option value="Lifestyle / Branding">Lifestyle / Branding</option>
+              <option value="Weddings">Weddings</option>
+              <option value="Intimate Weddings / Elopements">Intimate Weddings / Elopements</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
-        </div>
 
-        <div class="form-field">
-          <label for="message">Tell me about your vision <span>*</span></label>
-          <textarea id="message" name="message" rows="6"
-                    maxlength="3000"
-                    placeholder="What are you imagining? Who is the session for? Anything else I should know?"
-                    required></textarea>
-        </div>
 
-        <!-- Honeypot field: leave this hidden from real visitors. -->
-        <div class="form-honeypot" aria-hidden="true">
-          <label for="website">Leave this field empty</label>
-          <input id="website" name="website" type="text"
-                 tabindex="-1" autocomplete="off">
-        </div>
+          <div class="form-row">
 
-        <p class="form-required">* Required fields</p>
+            <div class="form-field">
+              <label for="date">
+                Preferred Date
+              </label>
 
-        <button class="contact-submit" type="submit">
-          Send your inquiry <span aria-hidden="true">↗</span>
-        </button>
+              <input
+                id="date"
+                name="date"
+                type="date"
+              >
+            </div>
 
-        <p id="form-status" class="form-status" role="status"
-           aria-live="polite"></p>
-      </form>
+            <div class="form-field">
+              <label for="location">
+                Location or Setting
+              </label>
+
+              <input
+                id="location"
+                name="location"
+                type="text"
+                placeholder="City, outdoors, studio..."
+                maxlength="150"
+              >
+            </div>
+
+          </div>
+
+
+          <div class="form-field">
+            <label for="message">
+              Tell me about your vision <span>*</span>
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              maxlength="3000"
+              placeholder="What are you imagining? Who is the session for? What moments matter most to you?"
+              required
+            ></textarea>
+          </div>
+
+
+          <!-- Honeypot spam prevention field -->
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input
+              id="website"
+              name="website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            >
+          </div>
+
+
+          <p class="form-required">
+            * Required fields
+          </p>
+
+          <button class="contact-submit" type="submit">
+            <span>Send your inquiry</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <p
+            id="form-status"
+            class="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+      </div>
+
     </section>
+
   </main>
 
+
+  <!-- Shared footer -->
   <div id="shared-footer"></div>
   <script src="/Javascript/footer.js" defer></script>
+
+
+  <!-- =====================================
+       CONTACT FORM SUBMISSION
+  ====================================== -->
 
   <script>
     const form = document.getElementById("contact-form");
@@ -124,35 +303,60 @@
 
       if (!form.reportValidity()) return;
 
-      statusMessage.textContent = "Sending your inquiry...";
-      submitButton.disabled = true;
-
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
+
+      // Basic honeypot spam check
+      if (data.website) {
+        form.reset();
+        statusMessage.textContent =
+          "Thank you! Your inquiry has been received.";
+        return;
+      }
+
+      statusMessage.textContent = "Sending your inquiry...";
+      statusMessage.classList.remove("form-status-error");
+      submitButton.disabled = true;
+
+      const buttonText = submitButton.querySelector("span");
+
+      buttonText.textContent = "Sending...";
 
       try {
         const response = await fetch("/api/contact", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify(data)
         });
 
         const result = await response.json();
 
         if (!response.ok) {
-          throw new Error(result.error || "Unable to send your inquiry.");
+          throw new Error(
+            result.error || "Unable to send your inquiry."
+          );
         }
 
         form.reset();
+
         statusMessage.textContent =
           "Thank you! Your inquiry has been sent. I'll be in touch soon.";
+
       } catch (error) {
         statusMessage.textContent =
-          error.message || "Something went wrong. Please try again.";
+          error.message ||
+          "Something went wrong. Please try again.";
+
+        statusMessage.classList.add("form-status-error");
+
       } finally {
         submitButton.disabled = false;
+        buttonText.textContent = "Send your inquiry";
       }
     });
   </script>
+
 </body>
 </html>
