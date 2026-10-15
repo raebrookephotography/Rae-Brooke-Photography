@@ -1,30 +1,18 @@
 /* ========================================
    RAE BROOKE PHOTOGRAPHY
    PORTFOLIO PAGE
-   Editorial, minimal, photography-led
-======================================== */
-
-:root {
-  --portfolio-denim: #53677D;
-  --portfolio-denim-dark: #405267;
-  --portfolio-sage: #A3AD96;
-  --portfolio-sage-light: #E8EBE2;
-  --portfolio-sage-dark: #59664F;
-  --portfolio-tan: #B99A79;
-  --portfolio-ivory: #FAF9F6;
-  --portfolio-white: #FFFFFF;
-  --portfolio-text: #424641;
-  --portfolio-muted: #62665F;
-  --portfolio-line: #E3E0D8;
-}
-
-/* ========================================
-   PAGE BASE
 ======================================== */
 
 .portfolio-page {
-  width: 100%;
-  overflow: clip;
+  --portfolio-denim: #53677D;
+  --portfolio-denim-dark: #405267;
+  --portfolio-sage: #A3AD96;
+  --portfolio-sage-dark: #59664F;
+  --portfolio-tan: #B99A79;
+  --portfolio-ivory: #FAF9F6;
+  --portfolio-text: #424641;
+  --portfolio-line: #DEDCD3;
+
   background: var(--portfolio-ivory);
   color: var(--portfolio-text);
 }
@@ -35,45 +23,43 @@
   box-sizing: border-box;
 }
 
+.portfolio-page a {
+  text-decoration: none;
+}
+
 .portfolio-page img {
   max-width: 100%;
 }
 
-.portfolio-page a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.portfolio-page a:focus-visible {
-  outline: 2px solid var(--portfolio-denim);
-  outline-offset: 5px;
+.portfolio-page #gallery {
+  scroll-margin-top: 100px;
 }
 
 /* ========================================
-   PORTFOLIO HERO / INTRODUCTION
+   PORTFOLIO INTRODUCTION
 ======================================== */
 
-.portfolio-hero {
+.portfolio-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  min-height: 430px;
-  padding: clamp(70px, 10vw, 125px) 7% 75px;
+  min-height: 440px;
+  padding: 85px 7% 75px;
 
-  text-align: center;
   background: var(--portfolio-ivory);
+  text-align: center;
 }
 
-.portfolio-eyebrow,
-.portfolio-hero .portfolio-eyebrow {
-  margin: 0 0 24px;
+.portfolio-eyebrow {
+  margin: 0 0 20px;
 
   color: var(--portfolio-sage-dark);
   font-size: 10px;
   font-weight: 600;
+  letter-spacing: 3px;
   line-height: 1.8;
-  letter-spacing: 0.24em;
 }
 
 .portfolio-title {
@@ -81,62 +67,65 @@
 
   color: var(--portfolio-denim);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(48px, 7.5vw, 86px);
+  font-size: clamp(48px, 7vw, 82px);
   font-weight: 400;
-  line-height: 1.06;
-  letter-spacing: -0.045em;
+  line-height: 1.08;
+  letter-spacing: -2px;
 }
 
-.portfolio-title em {
+.portfolio-title em,
+.portfolio-cta h2 em {
   color: var(--portfolio-sage-dark);
   font-weight: 400;
 }
 
-/* Introductory paragraph */
+.portfolio-description {
+  max-width: 500px;
+  margin: 25px 0 30px;
 
-.portfolio-intro {
-  max-width: 540px;
-  margin: 27px auto 0;
-
-  color: var(--portfolio-muted);
+  color: var(--portfolio-text);
   font-size: 14px;
-  line-height: 1.95;
+  line-height: 1.9;
 }
 
-/* Explore gallery link */
+/* ========================================
+   SHARED PORTFOLIO BUTTON
+======================================== */
 
-.portfolio-explore {
+.portfolio-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 15px;
 
-  margin-top: 32px;
-  padding: 14px 22px;
+  min-height: 48px;
+  padding: 14px 24px;
 
   border: 1px solid var(--portfolio-denim);
-  background: transparent;
-  color: var(--portfolio-denim);
+  background: var(--portfolio-denim);
+  color: var(--portfolio-ivory);
 
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  text-decoration: none;
+  letter-spacing: 1.5px;
+  text-align: center;
 
   transition:
-    color 0.25s ease,
     background-color 0.25s ease,
+    color 0.25s ease,
     border-color 0.25s ease;
 }
 
-.portfolio-explore span {
-  font-size: 15px;
+.portfolio-button:hover {
+  border-color: var(--portfolio-denim-dark);
+  background: var(--portfolio-denim-dark);
+  color: white;
 }
 
-.portfolio-explore:hover {
-  background: var(--portfolio-denim);
-  border-color: var(--portfolio-denim);
-  color: var(--portfolio-ivory);
+.portfolio-button:focus-visible {
+  outline: 2px solid var(--portfolio-sage-dark);
+  outline-offset: 5px;
 }
 
 /* ========================================
@@ -144,85 +133,64 @@
 ======================================== */
 
 .portfolio-gallery-section {
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 45px 6% 100px;
-
-  scroll-margin-top: 110px;
+  padding: 65px 6% 95px;
+  background: #FFFFFF;
 }
 
-/* Gallery introduction */
-
-.gallery-heading {
-  margin: 0 auto 45px;
+.portfolio-section-heading {
+  max-width: 700px;
+  margin: 0 auto 50px;
   text-align: center;
 }
 
-.gallery-eyebrow {
+.portfolio-section-heading > p {
   margin: 0 0 14px;
 
   color: var(--portfolio-sage-dark);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  line-height: 1.8;
+  letter-spacing: 2.5px;
 }
 
-.gallery-heading h2 {
+.portfolio-section-heading h2 {
   margin: 0;
 
   color: var(--portfolio-denim);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 4vw, 43px);
+  font-size: clamp(30px, 4vw, 44px);
   font-weight: 400;
   line-height: 1.2;
 }
 
 /* ========================================
-   MASONRY-STYLE PHOTO GALLERY
+   MASONRY GALLERY
 ======================================== */
 
 .gallery {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+
   columns: 3;
   column-gap: 28px;
-  width: 100%;
 }
 
-/* Individual photo */
-
-.gallery-item {
-  display: block;
-  width: 100%;
-
-  margin: 0 0 28px;
-  padding: 0;
-
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-
-  overflow: hidden;
-  background: var(--portfolio-sage-light);
-}
-
-/* Images retain their original aspect ratios */
-
-.gallery-item img {
+.gallery img {
   display: block;
   width: 100%;
   height: auto;
 
-  object-fit: cover;
+  margin: 0 0 28px;
 
-  transition:
-    transform 0.45s ease,
-    opacity 0.35s ease;
+  break-inside: avoid;
+  border: 0;
+  background: var(--portfolio-ivory);
+
+  transition: opacity 0.3s ease;
 }
 
-/* Subtle photography-gallery hover */
-
-.gallery-item:hover img {
-  transform: scale(1.025);
-  opacity: 0.94;
+.gallery img:hover {
+  opacity: 0.92;
 }
 
 /* ========================================
@@ -230,19 +198,9 @@
 ======================================== */
 
 .portfolio-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: clamp(65px, 9vw, 105px) 7%;
-
-  border-top: 1px solid var(--portfolio-line);
-  background: var(--portfolio-sage-light);
+  padding: 90px 7% 100px;
+  background: var(--portfolio-ivory);
   text-align: center;
-}
-
-.portfolio-cta .portfolio-eyebrow {
-  margin-bottom: 22px;
 }
 
 .portfolio-cta h2 {
@@ -250,75 +208,32 @@
 
   color: var(--portfolio-denim);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 5.5vw, 60px);
+  font-size: clamp(38px, 5vw, 58px);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.035em;
-}
-
-.portfolio-cta h2 em {
-  color: var(--portfolio-sage-dark);
-  font-weight: 400;
 }
 
 .portfolio-cta > p:not(.portfolio-eyebrow) {
   max-width: 500px;
-  margin: 22px auto 0;
+  margin: 22px auto 30px;
 
-  color: var(--portfolio-muted);
+  color: var(--portfolio-text);
   font-size: 14px;
   line-height: 1.9;
-}
-
-/* Contact button */
-
-.portfolio-cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-
-  min-width: 200px;
-  margin-top: 30px;
-  padding: 16px 24px;
-
-  border: 1px solid var(--portfolio-denim);
-  background: var(--portfolio-denim);
-  color: var(--portfolio-ivory);
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-decoration: none;
-
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.portfolio-cta-button span {
-  font-size: 15px;
-}
-
-.portfolio-cta-button:hover {
-  background: var(--portfolio-denim-dark);
-  border-color: var(--portfolio-denim-dark);
-  transform: translateY(-2px);
 }
 
 /* ========================================
    TABLET
 ======================================== */
 
-@media (max-width: 1000px) {
-  .portfolio-hero {
+@media (max-width: 900px) {
+  .portfolio-intro {
     min-height: 390px;
+    padding: 70px 6%;
   }
 
   .portfolio-gallery-section {
-    padding-right: 5%;
-    padding-left: 5%;
+    padding: 55px 5% 75px;
   }
 
   .gallery {
@@ -326,7 +241,7 @@
     column-gap: 22px;
   }
 
-  .gallery-item {
+  .gallery img {
     margin-bottom: 22px;
   }
 }
@@ -335,50 +250,31 @@
    MOBILE
 ======================================== */
 
-@media (max-width: 600px) {
-  .portfolio-hero {
-    min-height: 0;
-    padding: 65px 7% 60px;
-  }
-
-  .portfolio-hero .portfolio-eyebrow {
-    margin-bottom: 20px;
-    font-size: 9px;
-    letter-spacing: 0.19em;
+@media (max-width: 560px) {
+  .portfolio-intro {
+    min-height: 350px;
+    padding: 60px 7%;
   }
 
   .portfolio-title {
-    font-size: clamp(43px, 11vw, 62px);
+    font-size: clamp(43px, 11vw, 60px);
+    letter-spacing: -1px;
   }
 
-  .portfolio-intro {
-    margin-top: 22px;
+  .portfolio-description {
     font-size: 13px;
-    line-height: 1.85;
-  }
-
-  .portfolio-explore {
-    margin-top: 26px;
-    padding: 13px 17px;
-    font-size: 9px;
   }
 
   .portfolio-gallery-section {
-    padding: 35px 5% 65px;
-    scroll-margin-top: 90px;
+    padding: 45px 4% 55px;
   }
 
-  .gallery-heading {
+  .portfolio-section-heading {
     margin-bottom: 30px;
   }
 
-  .gallery-heading h2 {
-    font-size: clamp(28px, 7vw, 36px);
-  }
-
-  .gallery-eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.15em;
+  .portfolio-section-heading h2 {
+    font-size: 30px;
   }
 
   .gallery {
@@ -386,30 +282,17 @@
     column-gap: 12px;
   }
 
-  .gallery-item {
+  .gallery img {
     margin-bottom: 12px;
   }
 
   .portfolio-cta {
-    padding: 65px 7%;
-  }
-
-  .portfolio-cta .portfolio-eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.16em;
-  }
-
-  .portfolio-cta h2 {
-    font-size: clamp(34px, 8vw, 44px);
-  }
-
-  .portfolio-cta > p:not(.portfolio-eyebrow) {
-    font-size: 13px;
+    padding: 65px 7% 75px;
   }
 }
 
 /* ========================================
-   REDUCED MOTION ACCESSIBILITY
+   ACCESSIBILITY
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -418,6 +301,5 @@
   .portfolio-page *::after {
     scroll-behavior: auto !important;
     transition: none !important;
-    animation: none !important;
   }
 }
