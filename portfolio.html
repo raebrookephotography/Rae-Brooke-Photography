@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta
     name="description"
     content="Explore the photography portfolio of Rae Brooke Photography, featuring couples, families, portraits, weddings, and lifestyle branding in North Carolina."
@@ -18,55 +20,56 @@
 
 <body class="portfolio-page">
 
-  <!-- SHARED SITE HEADER AND NAVIGATION -->
+  <!-- SHARED SITE HEADER -->
   <div id="shared-header"></div>
   <script src="/Javascript/header.js" defer></script>
 
   <main>
 
     <!-- =====================================
-     PORTFOLIO HERO
-====================================== -->
+         PORTFOLIO INTRO / HERO
+    ====================================== -->
 
-<section class="portfolio-intro">
+    <section class="portfolio-intro">
 
-  <!-- Background hero photograph -->
-  <img
-    class="portfolio-hero-image"
-    src="/Images/index-hero.jpg"
-    alt=""
-    fetchpriority="high"
-    decoding="async"
-  >
+      <!-- Background photograph -->
+      <img
+        class="portfolio-hero-image"
+        src="/Images/index-hero.jpg"
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+      >
 
-  <!-- Dark overlay for readable text -->
-  <div class="portfolio-hero-overlay"></div>
+      <!-- Dark overlay -->
+      <div class="portfolio-hero-overlay" aria-hidden="true"></div>
 
-  <!-- Hero text and button -->
-  <div class="portfolio-intro-content">
+      <!-- Hero content -->
+      <div class="portfolio-intro-content">
 
-    <p class="portfolio-eyebrow">
-      RAE BROOKE PHOTOGRAPHY
-    </p>
+        <p class="portfolio-eyebrow">
+          RAE BROOKE PHOTOGRAPHY
+        </p>
 
-    <h1 class="portfolio-title">
-      Stories worth<br>
-      <em>remembering.</em>
-    </h1>
+        <h1 class="portfolio-title">
+          Stories worth<br>
+          <em>remembering.</em>
+        </h1>
 
-    <p class="portfolio-description">
-      A collection of genuine moments, meaningful connections,
-      and the little details that make every story unique.
-    </p>
+        <p class="portfolio-description">
+          A collection of genuine moments, meaningful connections,
+          and the little details that make every story unique.
+        </p>
 
-    <a class="portfolio-button" href="#gallery">
-      EXPLORE THE GALLERY
-      <span aria-hidden="true">↓</span>
-    </a>
+        <a class="portfolio-button" href="#gallery">
+          EXPLORE THE GALLERY
+          <span aria-hidden="true">↓</span>
+        </a>
 
-  </div>
+      </div>
 
-</section>
+    </section>
+
 
     <!-- =====================================
          STICKY NAVIGATION
@@ -88,7 +91,11 @@
 
     </nav>
 
-    <!-- PORTFOLIO GALLERY -->
+
+    <!-- =====================================
+         PORTFOLIO GALLERY
+    ====================================== -->
+
     <section
       class="portfolio-gallery-section"
       id="gallery"
@@ -105,7 +112,7 @@
         <img
           src="/Images/Portfolio/Ring_Seashells.jpg"
           alt="Wedding ring and seashell details"
-          fetchpriority="high"
+          loading="lazy"
           decoding="async"
         >
 
@@ -236,11 +243,19 @@
         >
 
       </div>
+
     </section>
 
-    <!-- CONTACT CALL TO ACTION -->
+
+    <!-- =====================================
+         CLOSING CALL TO ACTION
+    ====================================== -->
+
     <section class="portfolio-cta">
-      <p class="portfolio-eyebrow">YOUR STORY, YOUR WAY</p>
+
+      <p class="portfolio-eyebrow">
+        YOUR STORY, YOUR WAY
+      </p>
 
       <h2>
         Let's create something<br>
@@ -251,13 +266,15 @@
         Have a moment you want to remember? I'd love to hear about it.
       </p>
 
-      <a class="portfolio-button" href="/contact">
+      <a class="portfolio-button" href="/contact.html">
         LET'S CONNECT
         <span aria-hidden="true">↗</span>
       </a>
+
     </section>
 
   </main>
+
 
   <!-- SHARED SITE FOOTER -->
   <div id="shared-footer"></div>
