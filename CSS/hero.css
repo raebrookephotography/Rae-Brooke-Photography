@@ -81,6 +81,11 @@
   margin: auto;
 }
 
+.hero-content h1 em {
+  font-style: italic;
+  font-weight: inherit;
+}
+
 
 /* Small introductory label */
 
@@ -109,6 +114,7 @@
   letter-spacing: -0.025em;
   line-height: 1.12;
 }
+
 
 
 /* Subtitle */
