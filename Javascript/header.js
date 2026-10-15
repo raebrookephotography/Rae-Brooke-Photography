@@ -1,34 +1,100 @@
+/* =========================================
+   RAE BROOKE PHOTOGRAPHY
+   SHARED HEADER + DROPDOWN MENU
+========================================= */
 
-async function loadSharedHeader() {
-  const container = document.querySelector("#shared-header");
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("shared-header");
 
-  if (!container) return;
+  if (!container) {
+    return;
+  }
 
   try {
-    const response = await fetch("/Views/Shared/header.html");
+    const response = await fetch("/header.html");
 
     if (!response.ok) {
-      throw new Error("Could not load the shared header.");
+      throw new Error(
+        `Unable to load header.html: ${response.status}`
+      );
     }
 
-    container.innerHTML = await response.text();
+    const html = await response.text();
 
-    // Highlight the current page in the navigation.
-    const currentPage =
-      window.location.pathname.split("/").pop() || "index.html";
+    container.innerHTML = html;
 
-    container.querySelectorAll(".site-nav a").forEach((link) => {
-      const linkPage = link.getAttribute("href").split("/").pop();
+    const toggle = container.querySelector(".hero-menu-toggle");
+    const dropdown = container.querySelector(".hero-dropdown");
 
-      if (linkPage === currentPage) {
-        link.setAttribute("aria-current", "page");
+    if (!toggle || !dropdown) {
+      console.error("The hero menu button or dropdown was not found.");
+      return;
+    }
+
+    /* Open and close the dropdown */
+
+    function openMenu() {
+      dropdown.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu(returnFocus = false) {
+      dropdown.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+
+      if (returnFocus) {
+        toggle.focus();
+      }
+    }
+
+    function menuIsOpen() {
+      return toggle.getAttribute("aria-expanded") === "true";
+    }
+
+    toggle.addEventListener("click", () => {
+      if (menuIsOpen()) {
+        closeMenu();
+      } else {
+        openMenu();
       }
     });
+
+    /* Close after selecting a page */
+
+    dropdown.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+
+    /* Close when clicking anywhere outside the menu */
+
+    document.addEventListener("click", (event) => {
+      if (
+        menuIsOpen() &&
+        !container.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    /* Close the menu with Escape */
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menuIsOpen()) {
+        closeMenu(true);
+      }
+    });
+
+    /* Close when the browser window is resized */
+
+    window.addEventListener("resize", () => {
+      if (menuIsOpen()) {
+        closeMenu();
+      }
+    });
+
   } catch (error) {
-    console.error("Header loading failed:", error);
-    container.textContent = "Navigation could not be loaded.";
+    console.error("Error loading the shared header:", error);
   }
-}
-
-loadSharedHeader();
-
+});
