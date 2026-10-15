@@ -1,7 +1,8 @@
-/* ========================================
-   RAE BROOKE PHOTOGRAPHY — SERVICES
-   Heathered denim, sage, tan & ivory
-======================================== */
+/* =========================================
+   RAE BROOKE PHOTOGRAPHY
+   SERVICES PAGE
+   Denim, sage, tan & ivory
+========================================= */
 
 :root {
   --services-denim: #53677D;
@@ -14,87 +15,136 @@
   --services-text: #424641;
 }
 
-/* ========================================
+
+/* =========================================
    SERVICES HERO
-======================================== */
+========================================= */
 
-.services-page {
-  padding-top: 0;
-}
-
-/* Full-width hero, extending beyond page gutters */
 .services-hero {
   position: relative;
+  isolation: isolate;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: calc(100% + 12vw);
+  width: 100%;
   min-height: clamp(480px, 72vh, 760px);
-  margin-left: -6vw;
-  padding: 80px 7%;
+  min-height: clamp(480px, 72svh, 760px);
+
+  margin: 0;
+  padding: 130px 7% 90px;
+  box-sizing: border-box;
   overflow: hidden;
 
   background: var(--services-denim-dark);
   color: var(--services-ivory);
   text-align: center;
-  isolation: isolate;
 }
 
-.services-hero-image,
-.services-hero-overlay {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
+
+/* Hero photograph */
 
 .services-hero-image {
+  position: absolute;
   z-index: -2;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
   object-position: center 40%;
 }
 
+
+/* Dark overlay */
+
 .services-hero-overlay {
+  position: absolute;
   z-index: -1;
+  inset: 0;
+
   background: linear-gradient(
     to bottom,
-    rgb(64 82 103 / 25%) 0%,
-    rgb(64 82 103 / 42%) 100%
+    rgb(30 35 33 / 30%) 0%,
+    rgb(30 35 33 / 25%) 35%,
+    rgb(30 35 33 / 40%) 70%,
+    rgb(30 35 33 / 52%) 100%
   );
+
+  pointer-events: none;
 }
 
+
+/* Shared dropdown header positioning */
+
+#shared-header {
+  position: absolute;
+  z-index: 10;
+  inset: 0 0 auto;
+
+  height: 0;
+}
+
+
+/* Hero text */
+
 .services-hero-content {
+  position: relative;
+  z-index: 1;
+
   width: 100%;
   max-width: 850px;
-  margin: 0 auto;
+  margin: auto;
 }
+
+
+/* Hero eyebrow */
 
 .services-hero-eyebrow {
   margin: 0 0 24px;
+
   color: var(--services-ivory);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 3px;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
   line-height: 1.8;
 }
 
+
+/* Hero heading */
+
 .services-hero h1 {
   margin: 0 0 24px;
+
   color: var(--services-ivory);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(48px, 7vw, 84px);
   font-weight: 400;
+  letter-spacing: -0.025em;
   line-height: 1.1;
 }
+
+
+/* Hero subtitle */
 
 .services-hero-subtitle {
   max-width: 560px;
   margin: 0 auto 34px;
+
   color: var(--services-ivory);
+
   font-size: 15px;
+  font-weight: 400;
   line-height: 1.9;
 }
+
+
+/* Hero button */
 
 .services-hero-button {
   display: inline-flex;
@@ -103,13 +153,14 @@
   gap: 12px;
 
   padding: 15px 24px;
+
   border: 1px solid var(--services-ivory);
   background: rgb(64 82 103 / 20%);
   color: var(--services-ivory);
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.15em;
   text-decoration: none;
 
   transition:
@@ -127,94 +178,105 @@
   outline-offset: 5px;
 }
 
-/* Keep the packages section connected to the hero */
-.packages-title {
-  padding-top: 64px;
-}
 
-/* Mobile adjustments */
-@media (max-width: 700px) {
-  .services-hero {
-    min-height: 70vh;
-    min-height: 70svh;
-    padding: 60px 7%;
-  }
+/* =========================================
+   MAIN SERVICES PAGE
+========================================= */
 
-  .services-hero-image {
-    object-position: center center;
-  }
-
-  .services-hero-eyebrow {
-    font-size: 10px;
-    letter-spacing: 2px;
-  }
-
-  .services-hero h1 {
-    font-size: clamp(44px, 10vw, 62px);
-  }
-
-  .services-hero-subtitle {
-    font-size: 14px;
-  }
-
-  .packages-title {
-    padding-top: 42px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .services-hero-button {
-    transition: none;
-  }
-}
-
-/* Main page */
 .services-page {
+  padding: 0;
+
   background: var(--services-ivory);
   color: var(--services-text);
-  padding: 0px 6%;
 }
 
-/* Page heading */
+
+/* Packages section */
+
+.services-section {
+  width: 100%;
+  padding: 64px 6% 90px;
+  box-sizing: border-box;
+}
+
+
+/* Anchor positioning below sticky navigation */
+
+#packages {
+  scroll-margin-top: 85px;
+}
+
+
+/* =========================================
+   PACKAGE SECTION HEADING
+========================================= */
+
 .packages-title {
   margin: 0 0 32px;
+
   color: var(--services-denim);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 400;
   letter-spacing: 0.08em;
+  line-height: 1.2;
   text-align: center;
 }
 
-/* Package navigation */
+
+/* =========================================
+   PACKAGE NAVIGATION
+========================================= */
+
 .package-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  padding: 17px 3%;
-  border-top: 1px solid var(--services-tan);
-  border-bottom: 1px solid var(--services-tan);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 38px;
+
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+
+  padding: 17px 3%;
+  box-sizing: border-box;
+
+  border-top: 1px solid var(--services-tan);
+  border-bottom: 1px solid var(--services-tan);
 }
 
+
+/* Package navigation buttons */
+
 .package-nav button {
-  padding: 8px 0;
+  position: relative;
+
+  padding: 10px 0;
+
   border: none;
   border-bottom: 2px solid transparent;
   background: transparent;
   color: var(--services-denim);
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: clamp(10px, 1.5vw, 16px);
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  text-align: center;
   text-transform: uppercase;
+
   cursor: pointer;
+
   transition:
     color 0.25s ease,
     border-color 0.25s ease;
 }
+
+
+/* Hover and active states */
 
 .package-nav button:hover {
   color: var(--services-sage-dark);
@@ -225,150 +287,369 @@
   border-bottom-color: var(--services-tan);
 }
 
+
+/* Keyboard focus */
+
 .package-nav button:focus-visible {
   outline: 2px solid var(--services-denim);
   outline-offset: 5px;
 }
 
-/* Package description and photograph */
+
+/* =========================================
+   PACKAGE CONTENT LAYOUT
+========================================= */
+
 .package-content {
   display: grid;
   grid-template-columns: 1.03fr 1fr;
-  gap: 6%;
   align-items: center;
-  padding-top: 65px;
+  gap: clamp(35px, 6vw, 75px);
+
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+  padding-top: 65px;
+  box-sizing: border-box;
 }
+
+
+/* Description column */
 
 .description {
   min-width: 0;
 }
 
-/* Italic package title */
+
+/* Package title */
+
 .description h2 {
-  margin: -10px 0 8px;
+  margin: 0 0 12px;
+
   color: var(--services-denim);
-  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(36px, 4.3vw, 52px);
   font-weight: 400;
   font-style: italic;
+  letter-spacing: -0.025em;
   line-height: 1.2;
 }
 
-/* Package copy */
-.description p {
-  margin: 0 0 25px;
-  color: var(--services-text);
-  font-size: 14px;
-  line-height: 1.9;
-}
+
+/* Introductory sentence */
 
 .description .intro {
-  margin-bottom: 25px;
+  margin: 0 0 28px;
+
   color: var(--services-sage-dark);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Photography frame */
+
+/* Package paragraphs */
+
+.description p {
+  margin: 0 0 22px;
+
+  color: var(--services-text);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.95;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   PACKAGE PHOTOGRAPH
+========================================= */
+
 .photo-frame {
+  position: relative;
+
   width: 100%;
   aspect-ratio: 4 / 5;
   overflow: hidden;
+
   border: 1px solid var(--services-tan);
+  box-sizing: border-box;
+
   background: var(--services-sage-light);
 }
 
+
+/* Image fills the frame */
+
 .photo-frame img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
+
+  opacity: 1;
+
   transition: opacity 0.25s ease;
 }
 
-/* Inquiry button — matches the HTML class */
+
+/* =========================================
+   INQUIRE BUTTON
+========================================= */
+
 .inquire-button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+
   width: 100%;
   max-width: 405px;
   min-height: 50px;
-  margin-top: 12px;
-  padding: 14px 20px;
+
+  margin-top: 28px;
+  padding: 14px 22px;
+  box-sizing: border-box;
+
   border: 1px solid var(--services-denim);
   background: var(--services-denim);
   color: var(--services-ivory);
+
   font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
-    transform 0.25s ease;
+    color 0.25s ease;
 }
 
 .inquire-button:hover {
-  background: var(--services-denim-dark);
   border-color: var(--services-denim-dark);
-  transform: translateY(-2px);
+  background: var(--services-denim-dark);
+  color: var(--services-ivory);
 }
 
 .inquire-button:focus-visible {
   outline: 2px solid var(--services-sage-dark);
-  outline-offset: 4px;
+  outline-offset: 5px;
 }
 
-/* Mobile layout */
-@media (max-width: 700px) {
-  .services-page {
-    padding: 40px 6%;
+
+/* =========================================
+   TABLET LAYOUT
+========================================= */
+
+@media (max-width: 900px) {
+  .services-hero {
+    min-height: 65vh;
+    min-height: 65svh;
   }
 
-  .packages-title {
-    margin-bottom: 24px;
+  .services-section {
+    padding: 55px 5% 75px;
   }
 
   .package-nav {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 22px;
-    padding: 16px 0;
+    gap: 14px 25px;
   }
 
   .package-nav button {
     font-size: 10px;
-    letter-spacing: 1px;
+    letter-spacing: 0.08em;
   }
 
   .package-content {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 40px;
+    gap: 35px;
+    padding-top: 50px;
   }
 
   .description h2 {
-    margin-top: 0;
-    font-size: clamp(36px, 9vw, 46px);
+    font-size: clamp(32px, 4.5vw, 44px);
+  }
+
+  .description .intro {
+    font-size: 16px;
   }
 
   .description p {
-    font-size: 14px;
+    font-size: 13px;
   }
+}
+
+
+/* =========================================
+   MOBILE LAYOUT
+========================================= */
+
+@media (max-width: 700px) {
+  /* Hero */
+
+  .services-hero {
+    min-height: 70vh;
+    min-height: 70svh;
+
+    padding: 120px 7% 85px;
+  }
+
+  .services-hero-image {
+    object-position: center center;
+  }
+
+  .services-hero-eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 9px;
+    letter-spacing: 0.2em;
+  }
+
+  .services-hero h1 {
+    font-size: clamp(42px, 10vw, 62px);
+    line-height: 1.15;
+  }
+
+  .services-hero-subtitle {
+    max-width: 330px;
+    margin: 0 auto 28px;
+
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .services-hero-button {
+    padding: 14px 18px;
+    font-size: 9px;
+  }
+
+
+  /* Package section */
+
+  .services-section {
+    padding: 42px 6% 65px;
+  }
+
+  .packages-title {
+    margin-bottom: 24px;
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+
+  /* Package tabs */
+
+  .package-nav {
+    justify-content: center;
+    gap: 8px 22px;
+
+    padding: 14px 0;
+  }
+
+  .package-nav button {
+    max-width: 100%;
+
+    padding: 8px 0;
+
+    font-size: 9px;
+    letter-spacing: 0.06em;
+  }
+
+
+  /* Stack text and photo */
+
+  .package-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    padding-top: 38px;
+  }
+
+  .description h2 {
+    margin-bottom: 10px;
+    font-size: clamp(36px, 9vw, 46px);
+  }
+
+  .description .intro {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+
+  .description p {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+
+  /* Full-width inquiry button */
 
   .inquire-button {
     max-width: none;
+    margin-top: 25px;
   }
+
+
+  /* Portrait image */
 
   .photo-frame {
     aspect-ratio: 4 / 4.5;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .services-hero {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .services-hero h1 {
+    font-size: 40px;
+  }
+
+  .services-section {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .package-nav {
+    gap: 8px 15px;
+  }
+
+  .package-nav button {
+    font-size: 8px;
+    letter-spacing: 0.04em;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .services-hero-button,
+  .package-nav button,
+  .photo-frame img,
+  .inquire-button {
+    transition: none;
   }
 }
