@@ -21,23 +21,31 @@
     <!-- =====================================
          CONTACT HERO
     ====================================== -->
-
-   <div
-  id="shared-hero"
-  data-variant="contact"
-  data-image="/Images/index-hero.jpg"
-  data-alt="A couple embracing at sunset by the water"
-  data-eyebrow="THE BEGINNING OF SOMETHING GOOD"
-  data-title="Let's make something <br><em>meaninful.</em>"
-  data-subtitle="Every session starts with an idea. Tell me yours,
-          and let's create photographs that feel like you."
-  data-button-text="LET'S CONNECT"
-  data-button-url="#contact"
-  data-scroll-target="#contact"
-  data-scroll-label="LET'S CONNECT"
-></div>
-
-
+     <section class="hero">
+        <img
+          class="hero-image"
+          src="/Images/index-hero.jpg"
+          alt="Rae behind the lense"
+          fetchpriority="high"
+        >
+        <div class="hero-overlay"></div>
+        <!-- Hero text -->
+        <div class="hero-content">
+          <p class="eyebrow">THE BEGINNING OF SOMETHING GOOD</p>
+          <h1>Let's make something <br><em>meaninful.</em></h1>
+          <p class="hero-subtitle">Every session starts with an idea. Tell me yours,
+          and let's create photographs that feel like you.</p>
+          <a class="button hero-button" href="#contact">
+            <span class="hero-button-text">LET'S CONNECT</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <a class="hero-scroll" href="#contact" aria-label="Scroll to learn about Rae">
+          <span>DISCOVER MORE</span>
+          <span class="scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+   
     <!-- =====================================
          STICKY NAVIGATION
     ====================================== -->
@@ -49,34 +57,27 @@
     ====================================== -->
 
     <section class="contact-layout" id="contact">
-
       <div class="contact-aside">
-
         <p class="contact-eyebrow">
           GET IN TOUCH
         </p>
-
         <h2>
           Your story<br>
           starts here.
         </h2>
-
         <p class="contact-lead">
           I'd love to hear what you're dreaming up.
         </p>
-
         <p>
           Whether you're planning a portrait session, celebrating
           someone you love, or documenting a season of life,
           let's create something you'll treasure for years to come.
         </p>
-
         <p>
           Tell me a little about yourself, what you have in mind,
           and the moments you'd love to remember. You don't need
           to have every detail figured out yet.
         </p>
-
         <div class="contact-note">
           <span class="contact-note-label">WHAT HAPPENS NEXT?</span>
           <p>
@@ -85,17 +86,13 @@
             planning your session.
           </p>
         </div>
-
         <div class="contact-signoff">
           I can't wait to hear from you.
         </div>
-
       </div>
-
 
       <!-- Contact form -->
       <div class="contact-form-card">
-
         <div class="form-heading">
           <p class="form-eyebrow">YOUR NEXT CHAPTER</p>
           <h2>Tell me about it.</h2>
@@ -103,16 +100,12 @@
             Fill out the form below and let's make something meaningful.
           </p>
         </div>
-
         <form id="contact-form">
-
           <div class="form-row">
-
             <div class="form-field">
               <label for="name">
                 Your Name <span>*</span>
               </label>
-
               <input
                 id="name"
                 name="name"
@@ -123,12 +116,10 @@
                 required
               >
             </div>
-
             <div class="form-field">
               <label for="email">
                 Email Address <span>*</span>
               </label>
-
               <input
                 id="email"
                 name="email"
@@ -139,15 +130,11 @@
                 required
               >
             </div>
-
           </div>
-
-
           <div class="form-field">
             <label for="session">
               What are we photographing? <span>*</span>
             </label>
-
             <select id="session" name="session" required>
               <option value="">Choose a session type</option>
               <option value="Portraits">Portraits</option>
@@ -155,32 +142,24 @@
               <option value="Families">Families</option>
               <option value="Events">Events</option>
               <option value="Lifestyle / Branding">Lifestyle / Branding</option>
-              <option value="Weddings">Weddings</option>
-              <option value="Intimate Weddings / Elopements">Intimate Weddings / Elopements</option>
               <option value="Other">Other</option>
             </select>
           </div>
-
-
           <div class="form-row">
-
             <div class="form-field">
               <label for="date">
                 Preferred Date
               </label>
-
               <input
                 id="date"
                 name="date"
                 type="date"
               >
             </div>
-
             <div class="form-field">
               <label for="location">
                 Location or Setting
               </label>
-
               <input
                 id="location"
                 name="location"
@@ -189,15 +168,11 @@
                 maxlength="150"
               >
             </div>
-
           </div>
-
-
           <div class="form-field">
             <label for="message">
               Tell me about your vision <span>*</span>
             </label>
-
             <textarea
               id="message"
               name="message"
@@ -207,8 +182,7 @@
               required
             ></textarea>
           </div>
-
-
+          
           <!-- Honeypot spam prevention field -->
           <div class="form-honeypot" aria-hidden="true">
             <label for="website">Leave this field empty</label>
@@ -220,108 +194,34 @@
               autocomplete="off"
             >
           </div>
-
-
           <p class="form-required">
             * Required fields
           </p>
-
           <button class="contact-submit" type="submit">
             <span>Send your inquiry</span>
             <span aria-hidden="true">↗</span>
           </button>
-
           <p
             id="form-status"
             class="form-status"
             role="status"
             aria-live="polite"
           ></p>
-
         </form>
-
       </div>
-
     </section>
-
   </main>
 
 
   <!-- Shared footer -->
   <div id="shared-footer"></div>
+
+  
   <script src="/Javascript/footer.js" defer></script>
-  <script src="/Javascript/hero.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
+  <script src="/Javascript/contact.js" defer></script>
 
-
-  <!-- =====================================
-       CONTACT FORM SUBMISSION
-  ====================================== -->
-
-  <script>
-    const form = document.getElementById("contact-form");
-    const statusMessage = document.getElementById("form-status");
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      if (!form.reportValidity()) return;
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      // Basic honeypot spam check
-      if (data.website) {
-        form.reset();
-        statusMessage.textContent =
-          "Thank you! Your inquiry has been received.";
-        return;
-      }
-
-      statusMessage.textContent = "Sending your inquiry...";
-      statusMessage.classList.remove("form-status-error");
-      submitButton.disabled = true;
-
-      const buttonText = submitButton.querySelector("span");
-
-      buttonText.textContent = "Sending...";
-
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(
-            result.error || "Unable to send your inquiry."
-          );
-        }
-
-        form.reset();
-
-        statusMessage.textContent =
-          "Thank you! Your inquiry has been sent. I'll be in touch soon.";
-
-      } catch (error) {
-        statusMessage.textContent =
-          error.message ||
-          "Something went wrong. Please try again.";
-
-        statusMessage.classList.add("form-status-error");
-
-      } finally {
-        submitButton.disabled = false;
-        buttonText.textContent = "Send your inquiry";
-      }
-    });
-  </script>
+  
 
 </body>
 </html>

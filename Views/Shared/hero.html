@@ -1,4 +1,3 @@
-
 <section class="hero">
   <img
     class="hero-image"
@@ -6,31 +5,38 @@
     alt=""
     fetchpriority="high"
   >
-
   <div class="hero-overlay"></div>
-
   <!-- Shared header -->
   <div id="shared-header"></div>
-
   <!-- Hero text -->
   <div class="hero-content">
-
     <p class="eyebrow"></p>
-
     <h1></h1>
-
     <p class="hero-subtitle"></p>
-
     <a class="button hero-button" href="#">
       <span class="hero-button-text"></span>
       <span aria-hidden="true">↗</span>
     </a>
-
   </div>
-
   <a class="hero-scroll" href="#about" aria-label="Scroll to discover more">
     <span>DISCOVER MORE</span>
     <span class="scroll-line" aria-hidden="true"></span>
   </a>
-
 </section>
+
+
+<!-- if using shared html file -->
+<!-- this would replace hero section in every page -->
+  <!-- Shared hero: homepage settings -->
+  <div
+    id="shared-hero"
+    data-image="/Images/index-hero.jpg"
+    data-alt="A family portrait captured by Rae Brooke Photography"
+    data-eyebrow="TESTING NORTH CAROLINA PHOTOGRAPHER"
+    data-title="Every moment <br><em>has a story.</em>"
+    data-subtitle="Authentic photography. Unforgettable memories."
+    data-button-text="EXPLORE MY WORK"
+    data-button-url="/portfolio.html"
+    data-scroll-target="#about"
+    data-scroll-label="Scroll to learn about Rae"
+  ></div>

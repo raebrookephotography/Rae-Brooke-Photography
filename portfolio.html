@@ -27,21 +27,30 @@
     <!-- =====================================
          PORTFOLIO INTRO / HERO
     ====================================== -->
-
-  <div
-    id="shared-hero"
-    data-variant="portfolio"
-    data-image="/Images/index-hero.jpg"
-    data-alt="A couple embracing at sunset by the water"
-    data-eyebrow="RAE BROOKE PHOTOGRAPHY"
-    data-title="Stories worth <br><em>remembering.</em>"
-    data-subtitle="A collection of genuine moments, meaningful connections,
-            and the little details that make every story unique."
-    data-button-text="EXPLORE THE GALLERY"
-    data-button-url="#gallery"
-    data-scroll-target="#gallery"
-    data-scroll-label="EXPLORE THE GALLERY"
-  ></div>
+     <section class="hero">
+      <img
+        class="hero-image"
+        src="/Images/index-hero.jpg"
+        alt="Rae behind the lense"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay"></div>
+      <!-- Hero text -->
+      <div class="hero-content">
+        <p class="eyebrow">RAE BROOKE PHOTOGRAPHY</p>
+        <h1>Stories worth <br><em>remembering.</em></h1>
+        <p class="hero-subtitle">A collection of genuine moments, meaningful connections,
+            and the little details that make every story unique.</p>
+        <a class="button hero-button" href="#gallery">
+          <span class="hero-button-text">EXPLORE THE GALLERY</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <a class="hero-scroll" href="#gallery" aria-label="Scroll to learn about Rae">
+        <span>DISCOVER MORE</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
 
     <!-- =====================================
          STICKY NAVIGATION
@@ -235,8 +244,10 @@
 
   <!-- SHARED SITE FOOTER -->
   <div id="shared-footer"></div>
+
+  
   <script src="/Javascript/footer.js" defer></script>
-  <script src="/Javascript/hero.js" defer></script>
+
   <script src="/Javascript/sticky-nav.js" defer></script>
 
 </body>

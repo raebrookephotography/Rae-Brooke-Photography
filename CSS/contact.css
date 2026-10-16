@@ -32,6 +32,19 @@
   text-decoration: none;
 }
 
+/* Section eyebrow */
+
+.contact-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--color-sage-dark, #59664F);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.8;
+}
+
 
 /* =========================================
    SHARED HEADER POSITIONING
@@ -65,9 +78,9 @@
 
 /* Right form card */
 .contact-form-card {
-  flex: 1 1 55%;
+  flex: 1 1 0;
   min-width: 0;
-  padding: clamp(25px, 3vw, 42px);
+  padding: clamp(22px, 2.5vw, 34px);
 
   border: 1px solid var(--contact-line);
   background: #FFFFFF;
@@ -86,7 +99,7 @@
 ========================================= */
 
 .contact-aside {
-  flex: 0 0 45%;
+  flex: 0 0 38%;
   min-width: 0;
   padding-top: 12px;
 }
@@ -94,9 +107,6 @@
 .contact-aside > .contact-eyebrow {
   margin-bottom: 20px;
 }
-
-
-/* Introduction heading */
 
 .contact-aside h2 {
   margin: 0 0 25px;
@@ -110,8 +120,6 @@
   line-height: 1.12;
 }
 
-
-/* Lead sentence */
 
 .contact-aside .contact-lead {
   margin: 0 0 20px;
@@ -177,47 +185,29 @@
 }
 
 
-/* =========================================
-   FORM CARD
-========================================= */
 
-.contact-form-card {
-  min-width: 0;
-  padding: clamp(25px, 4vw, 48px);
-
-  border: 1px solid var(--contact-line);
-  background: #FFFFFF;
-
-  box-shadow: 0 12px 40px rgb(66 70 65 / 4%);
-}
 
 
 /* Form heading */
-
 .form-heading {
-  margin-bottom: 32px;
-  padding-bottom: 25px;
-
-  border-bottom: 1px solid var(--contact-line);
-}
+     margin-bottom: 22px;
+     padding-bottom: 18px;
+     border-bottom: 1px solid var(--contact-line);
+   }
 
 .form-eyebrow {
-  margin: 0 0 12px;
-
+  margin: 0 0 8px;
   color: var(--contact-sage-dark);
-
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.2em;
 }
 
 .form-heading h2 {
-  margin: 0 0 12px;
-
+  margin: 0 0 8px;
   color: var(--contact-denim);
-
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 3.5vw, 40px);
+  font-size: clamp(28px, 3vw, 36px);
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.2;
@@ -225,14 +215,14 @@
 
 .form-heading > p:last-child {
   margin: 0;
-
   color: var(--contact-muted);
-
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 1.7;
 }
 
-
+/* =========================================
+   FORM CARD
+========================================= */
 /* =========================================
    FORM ROWS AND FIELDS
 ========================================= */
@@ -241,31 +231,29 @@
   min-width: 0;
 }
 
+/* Two-column rows */
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  gap: 14px;
 }
 
+/* Individual fields */
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: 9px;
-
+  gap: 6px;
   min-width: 0;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
-
 /* Labels */
-
 .form-field label {
   color: var(--contact-denim);
-
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.07em;
-  line-height: 1.6;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
 }
 
 .form-field label span {
@@ -278,11 +266,9 @@
 .form-field input,
 .form-field select,
 .form-field textarea {
-  display: block;
-
   width: 100%;
   min-width: 0;
-  padding: 14px;
+  padding: 11px 12px;
 
   border: 1px solid var(--contact-line);
   border-radius: 0;
@@ -292,23 +278,18 @@
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.5;
 
-  transition:
-    border-color 180ms ease,
-    box-shadow 180ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
 }
-
-
-/* Input heights */
 
 .form-field input,
 .form-field select {
-  min-height: 49px;
+  min-height: 43px;
 }
 
 .form-field textarea {
-  min-height: 150px;
+  min-height: 115px;
   resize: vertical;
 }
 
@@ -389,8 +370,8 @@
   gap: 15px;
 
   width: 100%;
-  min-height: 55px;
-  padding: 17px 20px;
+  min-height: 48px;
+  padding: 14px 18px;
 
   border: 1px solid var(--contact-denim);
   border-radius: 0;
@@ -515,10 +496,6 @@
     font-size: 13px;
   }
    
-    font-size: 10px;
-    letter-spacing: 0.04em;
-  }
-
 
   /* Contact layout */
 
@@ -606,6 +583,20 @@
   }
 }
 
+
+/* =========================================
+   NARROW PHONES
+========================================= */
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-form-card {
+    padding: 22px 18px;
+  }
+}
 
 /* =========================================
    REDUCED MOTION
