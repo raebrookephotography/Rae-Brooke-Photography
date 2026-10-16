@@ -180,10 +180,24 @@
 /* Scroll indicator */
 .hero-scroll {
   position: absolute;
-  z-index: 2;
   right: 0;
   bottom: 24px;
   left: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: fit-content;
+  margin: 0 auto;
+
+  color: var(--color-ivory, #FAF9F6);
+  text-decoration: none;
+
+  font-size: 9px;
+  letter-spacing: 0.2em;
 }
 
 .scroll-line {
