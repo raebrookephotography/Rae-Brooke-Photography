@@ -121,6 +121,17 @@
 }
 
 /* Lead sentence */
+.contact-subtitle {
+  max-width: 440px;
+  margin: 0 0 28px;
+
+  color: var(--color-sage-dark, #59664F);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  line-height: 2;
+}
 
 .contact-aside .contact-lead {
   margin: 0 0 20px;
