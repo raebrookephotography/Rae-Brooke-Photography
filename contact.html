@@ -261,76 +261,9 @@
   
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
+  <script src="/Javascript/contact.js" defer></script>
 
-
-  <!-- =====================================
-       CONTACT FORM SUBMISSION
-  ====================================== -->
-
-  <script>
-    const form = document.getElementById("contact-form");
-    const statusMessage = document.getElementById("form-status");
-    const submitButton = form.querySelector('button[type="submit"]');
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      if (!form.reportValidity()) return;
-
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-
-      // Basic honeypot spam check
-      if (data.website) {
-        form.reset();
-        statusMessage.textContent =
-          "Thank you! Your inquiry has been received.";
-        return;
-      }
-
-      statusMessage.textContent = "Sending your inquiry...";
-      statusMessage.classList.remove("form-status-error");
-      submitButton.disabled = true;
-
-      const buttonText = submitButton.querySelector("span");
-
-      buttonText.textContent = "Sending...";
-
-      try {
-        const response = await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(
-            result.error || "Unable to send your inquiry."
-          );
-        }
-
-        form.reset();
-
-        statusMessage.textContent =
-          "Thank you! Your inquiry has been sent. I'll be in touch soon.";
-
-      } catch (error) {
-        statusMessage.textContent =
-          error.message ||
-          "Something went wrong. Please try again.";
-
-        statusMessage.classList.add("form-status-error");
-
-      } finally {
-        submitButton.disabled = false;
-        buttonText.textContent = "Send your inquiry";
-      }
-    });
-  </script>
+  
 
 </body>
 </html>
