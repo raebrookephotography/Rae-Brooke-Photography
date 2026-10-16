@@ -22,21 +22,29 @@
 <body>
 
   <!-- SERVICES HERO -->
-<div
-  id="shared-hero"
-  data-variant="services"
-  data-image="/Images/services-hero.jpg"
-  data-alt="A couple embracing at sunset by the water"
-  data-eyebrow="THE RAE BROOKE EXPERIENCE"
-  data-title="Your story,<br>
-        <em>beautifully told.</em>"
-  data-subtitle="Photography for the moments you'll want to remember."
-  data-button-text="EXPLORE MY PACKAGES"
-  data-button-url="#packages"
-  data-scroll-target="#packages"
-  data-scroll-label="EXPLORE MY PACKAGES"
-></div>
-  
+  <section class="hero">
+      <img
+        class="hero-image"
+        src="/Images/services-hero.jpg"
+        alt="Couple along the water"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay"></div>
+      <!-- Hero text -->
+      <div class="hero-content">
+        <p class="eyebrow">HE RAE BROOKE EXPERIENCE</p>
+        <h1>Your story,<br><em>beautifully told.</em></h1>
+        <p class="hero-subtitle">Photography for the moments you'll want to remember.</p>
+        <a class="button hero-button" href="#packages">
+          <span class="hero-button-text">EXPLORE MY PACKAGES</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <a class="hero-scroll" href="#packages" aria-label="Scroll to learn about packages">
+        <span>DISCOVER MORE</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section> 
 
 
   <!-- STICKY MAIN NAVIGATION -->
