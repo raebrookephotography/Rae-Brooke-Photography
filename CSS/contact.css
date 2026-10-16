@@ -124,13 +124,14 @@
 .contact-subtitle {
   max-width: 440px;
   margin: 0 0 28px;
-
-  color: var(--color-sage-dark, #59664F);
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--services-sage-dark);
 
   font-size: 10px;
   font-weight: 600;
+  font-style: italic;
   letter-spacing: 0.13em;
-  line-height: 2;
+  line-height: 1.7;
 }
 
 .contact-aside .contact-lead {
