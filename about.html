@@ -26,19 +26,29 @@
     <!-- =====================================
          ABOUT PAGE HERO
     ====================================== -->
-    <div
-    id="shared-hero"
-    data-image="/Images/about-hero.jpg"
-    data-alt="Rae Brooke Photography"
-    data-eyebrow="GET TO KNOW ME"
-    data-title="The girl <br><em>behind the camera.</em>"
-    data-subtitle="A little about me, my story, and what I love."
-    data-button-text="MY STORY"
-    data-button-url="#about"
-    data-scroll-target="#about"
-    data-scroll-label="Read my story"
-  ></div>
-
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="/Images/about-hero.jpg"
+        alt="Rae behind the lense"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay"></div>
+      <!-- Hero text -->
+      <div class="hero-content">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h1>The girl <br><em>behind the camera.</em></h1>
+        <p class="hero-subtitle">A little about me, my story, and what I love.</p>
+        <a class="button hero-button" href="/about.html">
+          <span class="hero-button-text">MY STORY</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <a class="hero-scroll" href="#about" aria-label="Scroll to learn about Rae">
+        <span>DISCOVER MORE</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
 
     <!-- =====================================
          STICKY NAVIGATION
@@ -46,31 +56,24 @@
 
     <div id="shared-sticky-nav"></div>
 
-
     <!-- =====================================
          ABOUT STORY
     ====================================== -->
 
     <section class="about-page" id="about-story">
-
       <div class="about-intro">
-
         <!-- Text column -->
         <div class="about-copy">
-
           <p class="about-section-eyebrow">
             A LITTLE ABOUT ME
           </p>
-
           <h2 class="about-heading">
             <em>Hey, I'm Rae!</em>
             A photographer living in Raleigh, North Carolina,
             drawn to the people, places, and moments that make
             life meaningful.
           </h2>
-
           <div class="about-story">
-
             <p>
               I’m Rachael (but you can call me Rae) — a New
               England native, wife of Jeff, and dog mom to
@@ -78,7 +81,6 @@
               capturing laughter, and turning little in-between
               moments into memories that last forever.
             </p>
-
             <p>
               I'm drawn to genuine connection, the little
               in-between moments, and the details that might
@@ -86,25 +88,18 @@
               photographs that feel natural, thoughtful, and
               true to the people in them.
             </p>
-
             <p>
               Whether it’s couples, four-legged friends, grads,
               families, or just you living your best life, I love
               creating images that feel like you.
             </p>
-
           </div>
-
           <a class="about-contact-button" href="/contact.html">
             LET'S CONNECT <span aria-hidden="true">↗</span>
           </a>
-
         </div>
-
-
         <!-- Stacked photographs -->
         <div class="about-image-stack">
-
           <div class="about-image about-image-primary">
             <img
               src="/Images/about-wedding.jpg"
@@ -112,7 +107,6 @@
               loading="lazy"
             >
           </div>
-
           <div class="about-image about-image-secondary">
             <img
               src="/Images/about-family.jpg"
@@ -120,13 +114,9 @@
               loading="lazy"
             >
           </div>
-
         </div>
-
       </div>
-
     </section>
-
   </main>
 
 
@@ -136,8 +126,10 @@
 
   <div id="shared-footer"></div>
 
-  <script src="/Javascript/header.js" defer></script>
-  <script src="/Javascript/hero.js" defer></script>
+
+    <!-- =====================================
+       JAVASCRIPT FILES USED FOR PAGE
+  ====================================== -->
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
 
