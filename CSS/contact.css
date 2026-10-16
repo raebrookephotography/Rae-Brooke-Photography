@@ -121,17 +121,12 @@
 }
 
 /* Lead sentence */
-.contact-subtitle {
-  max-width: 440px;
-  margin: 0 0 28px;
+.contact-signoff {
+  margin-top: 28px;
+  color: var(--contact-sage-dark);
   font-family: Georgia, "Times New Roman", serif;
-  color: var(--services-sage-dark);
-
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 20px;
   font-style: italic;
-  letter-spacing: 0.13em;
-  line-height: 1.7;
 }
 
 .contact-aside .contact-lead {
