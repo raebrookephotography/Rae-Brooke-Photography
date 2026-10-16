@@ -108,6 +108,18 @@
   margin-bottom: 20px;
 }
 
+.contact-aside h2 {
+  margin: 0 0 25px;
+
+  color: var(--contact-denim);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4.5vw, 58px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
 /* Lead sentence */
 
 .contact-aside .contact-lead {
