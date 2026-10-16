@@ -4,11 +4,25 @@
 ========================================= */
 
 async function loadSharedHeader() {
-  const container = document.getElementById("shared-header");
+  const container = document.querySelector(
+    "#shared-hero #shared-header"
+  );
 
-  if (!container || container.dataset.loaded === "true") {
+  if (!container) {
+    console.error(
+      "Shared header placeholder not found inside #shared-hero."
+    );
     return;
   }
+
+  if (
+    container.dataset.loading === "true" ||
+    container.dataset.loaded === "true"
+  ) {
+    return;
+  }
+
+  container.dataset.loading = "true";
 
   try {
     const response = await fetch("/Views/Shared/header.html");
@@ -28,16 +42,17 @@ async function loadSharedHeader() {
 
     if (!toggle || !dropdown) {
       throw new Error(
-        "The hero menu button or dropdown was not found."
+        "The header menu button or dropdown was not found in header.html."
       );
     }
 
-    // Mark the header as loaded after successful initialization.
-    container.dataset.loaded = "true";
-
     /* =====================================
-       OPEN AND CLOSE THE DROPDOWN
+       OPEN AND CLOSE MENU
     ===================================== */
+
+    function menuIsOpen() {
+      return toggle.getAttribute("aria-expanded") === "true";
+    }
 
     function openMenu() {
       dropdown.hidden = false;
@@ -53,10 +68,6 @@ async function loadSharedHeader() {
       }
     }
 
-    function menuIsOpen() {
-      return toggle.getAttribute("aria-expanded") === "true";
-    }
-
     toggle.addEventListener("click", () => {
       if (menuIsOpen()) {
         closeMenu();
@@ -66,13 +77,11 @@ async function loadSharedHeader() {
     });
 
     /* =====================================
-       CLOSE AFTER SELECTING A PAGE
+       CLOSE AFTER NAVIGATION
     ===================================== */
 
     dropdown.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMenu();
-      });
+      link.addEventListener("click", closeMenu);
     });
 
     /* =====================================
@@ -80,10 +89,7 @@ async function loadSharedHeader() {
     ===================================== */
 
     document.addEventListener("click", (event) => {
-      if (
-        menuIsOpen() &&
-        !container.contains(event.target)
-      ) {
+      if (menuIsOpen() && !container.contains(event.target)) {
         closeMenu();
       }
     });
@@ -108,19 +114,11 @@ async function loadSharedHeader() {
       }
     });
 
+    container.dataset.loaded = "true";
+
   } catch (error) {
-    console.error("Error loading the shared header:", error);
+    console.error("Error loading shared header:", error);
+  } finally {
+    delete container.dataset.loading;
   }
-}
-
-/* =========================================
-   INITIALIZE WHENEVER THE SCRIPT LOADS
-========================================= */
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", loadSharedHeader, {
-    once: true
-  });
-} else {
-  loadSharedHeader();
 }
