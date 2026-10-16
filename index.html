@@ -26,19 +26,29 @@
     <!-- =====================================
          HERO SECTION
     ====================================== -->
-  <!-- Shared hero: homepage settings -->
-  <div
-    id="shared-hero"
-    data-image="/Images/index-hero.jpg"
-    data-alt="A family portrait captured by Rae Brooke Photography"
-    data-eyebrow="TESTING NORTH CAROLINA PHOTOGRAPHER"
-    data-title="Every moment <br><em>has a story.</em>"
-    data-subtitle="Authentic photography. Unforgettable memories."
-    data-button-text="EXPLORE MY WORK"
-    data-button-url="/portfolio.html"
-    data-scroll-target="#about"
-    data-scroll-label="Scroll to learn about Rae"
-  ></div>
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="/Images/index-hero.jpg"
+        alt="A family portrait captured by Rae Brooke Photography"
+        fetchpriority="high"
+      >
+      <div class="hero-overlay"></div>
+      <!-- Hero text -->
+      <div class="hero-content">
+        <p class="eyebrow">"NORTH CAROLINA PHOTOGRAPHER"</p>
+        <h1>Every moment <br><em>has a story.</em>"</h1>
+        <p class="hero-subtitle">Authentic photography. Unforgettable memories.</p>
+        <a class="button hero-button" href="/portfolio.html">
+          <span class="hero-button-text">EXPLORE MY WORK</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <a class="hero-scroll" href="#about" aria-label="Scroll to learn about Rae">
+        <span>EXPLORE MY WORK</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
    
    <!-- =====================================
        SHARED STICKY NAVIGATION
