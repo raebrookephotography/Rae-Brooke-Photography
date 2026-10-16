@@ -3,26 +3,40 @@
    HERO HEADER AND DROPDOWN MENU
 ========================================= */
 
-
-
-/* Ensure the shared header overlays the hero */
-.hero {
-  position: relative;
-}
-
+/* Header placeholder inside the shared hero */
 #shared-header {
   position: absolute;
-  inset: 0 0 auto;
   z-index: 100;
+  inset: 0;
   height: 0;
+  pointer-events: none;
 }
 
+/* Actual header positioned over the hero image */
 .hero-header {
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
   width: 100%;
-  z-index: 100;
+  padding: 30px 7%;
+  box-sizing: border-box;
+
+  color: var(--color-ivory, #FAF9F6);
+  pointer-events: auto;
+}
+
+/* Ensure the dropdown remains interactive */
+.hero-menu,
+.hero-menu-toggle,
+.hero-dropdown {
+  pointer-events: auto;
 }
 
 /* =========================================
