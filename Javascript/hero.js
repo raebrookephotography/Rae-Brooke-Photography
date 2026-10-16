@@ -1,67 +1,83 @@
-document.addEventListener("DOMContentLoaded", async () => {
+async function loadSharedHero() {
   const container = document.getElementById("shared-hero");
 
-  if (!container) return;
+  if (!container || container.dataset.loading === "true" ||
+      container.dataset.loaded === "true") {
+    return;
+  }
+
+  container.dataset.loading = "true";
 
   try {
+    const settings = { ...container.dataset };
+
     const response = await fetch("/Views/Shared/hero.html");
 
     if (!response.ok) {
       throw new Error("Could not load the shared hero.");
     }
 
-    const html = await response.text();
-    container.innerHTML = html;
-
-    // Read this page's hero settings
-    const settings = container.dataset;
-    const hero = container.querySelector(".hero");
+    container.innerHTML = await response.text();
 
     const image = container.querySelector(".hero-image");
-    image.src = settings.image;
+    const heading = container.querySelector(".hero-content h1");
+    const subtitle = container.querySelector(".hero-subtitle");
+    const button = container.querySelector(".hero-button");
+    const scroll = container.querySelector(".hero-scroll");
+
+    if (!image || !heading || !subtitle || !button || !scroll) {
+      throw new Error("Required hero elements are missing.");
+    }
+
+    image.src = settings.image || "";
     image.alt = settings.alt || "";
     image.fetchPriority = "high";
 
     container.querySelector(".eyebrow").textContent =
       settings.eyebrow || "";
 
-    // Use | to specify line breaks in the heading
-    const heading = container.querySelector(".hero-content h1");
-
+    // Preserve line breaks and allow trusted HTML such as <em>.
     heading.replaceChildren();
 
     (settings.title || "").split("|").forEach((line, index) => {
       if (index > 0) {
         heading.appendChild(document.createElement("br"));
       }
-    
+
       const template = document.createElement("template");
       template.innerHTML = line;
       heading.appendChild(template.content);
     });
 
-    container.querySelector(".hero-subtitle").innerHTML =
-      settings.subtitle || "";
+    // Allow emphasis in the subtitle.
+    subtitle.innerHTML = settings.subtitle || "";
 
-    const button = container.querySelector(".hero-button");
     button.href = settings.buttonUrl || "#";
     container.querySelector(".hero-button-text").textContent =
       settings.buttonText || "";
 
-    const scroll = container.querySelector(".hero-scroll");
     scroll.href = settings.scrollTarget || "#about";
     scroll.setAttribute(
       "aria-label",
       settings.scrollLabel || "Scroll to discover more"
     );
 
-    // Load the shared header only after its placeholder exists.
-    // This avoids a race with the asynchronous hero fetch.
-    const headerScript = document.createElement("script");
-    headerScript.src = "/Javascript/header.js";
-    document.body.appendChild(headerScript);
+    // Initialize the header after its placeholder exists.
+    await loadSharedHeader();
+
+    container.dataset.loaded = "true";
 
   } catch (error) {
     console.error("Hero loading failed:", error);
+  } finally {
+    delete container.dataset.loading;
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadSharedHero, {
+    once: true
+  });
+} else {
+  loadSharedHero();
+}
