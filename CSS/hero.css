@@ -19,16 +19,14 @@
 
   background: var(--color-denim, #53677D);
   color: var(--color-ivory, #FAF9F6);
-
   text-align: center;
 }
 
 
-/* Hero photograph */
-
+/* Photograph */
 .hero-image {
   position: absolute;
-  z-index: -2;
+  z-index: 0;
   inset: 0;
 
   display: block;
@@ -40,11 +38,10 @@
 }
 
 
-/* Image overlay */
-
+/* Dark overlay */
 .hero-overlay {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   inset: 0;
 
   background: linear-gradient(
@@ -59,27 +56,30 @@
 }
 
 
-/* Header container */
-
+/* Header placeholder */
 #shared-header {
   position: absolute;
   z-index: 10;
-  inset: 0 0 auto;
+  inset: 0;
+  pointer-events: none;
+}
 
-  height: 0;
+#shared-header .hero-header {
+  pointer-events: auto;
 }
 
 
 /* Hero content */
-
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   width: 100%;
   max-width: 850px;
   margin: auto;
 }
+
+
 
 .hero-content h1 em {
   font-style: italic;
@@ -177,26 +177,13 @@
    HERO SCROLL INDICATOR
 ========================================= */
 
+/* Scroll indicator */
 .hero-scroll {
   position: absolute;
+  z-index: 2;
   right: 0;
   bottom: 24px;
   left: 0;
-  z-index: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
-  width: fit-content;
-  margin: 0 auto;
-
-  color: var(--color-ivory, #FAF9F6);
-  text-decoration: none;
-
-  font-size: 9px;
-  letter-spacing: 0.2em;
 }
 
 .scroll-line {
