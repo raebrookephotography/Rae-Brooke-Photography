@@ -32,6 +32,19 @@
   text-decoration: none;
 }
 
+/* Section eyebrow */
+
+.contact-eyebrow {
+  margin: 0 0 22px;
+
+  color: var(--color-sage-dark, #59664F);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.8;
+}
+
 
 /* =========================================
    SHARED HEADER POSITIONING
