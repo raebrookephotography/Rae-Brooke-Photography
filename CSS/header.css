@@ -10,12 +10,12 @@
   left: 0;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
 
   width: 100%;
-  padding: 32px 7%;
+  padding: 26px 6%;
   box-sizing: border-box;
 
   color: var(--color-ivory, #FAF9F6);
