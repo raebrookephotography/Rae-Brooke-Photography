@@ -148,7 +148,7 @@
 
 /* Body copy */
 
-.contact-aside > p:not(.contact-eyebrow) {
+.contact-aside > p:not(.contact-eyebrow) > p:not(.contact-subtitle) {
   color: var(--contact-muted);
   font-size: 14px;
   line-height: 1.95;
