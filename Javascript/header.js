@@ -3,10 +3,10 @@
    SHARED HEADER + DROPDOWN MENU
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", async () => {
+async function loadSharedHeader() {
   const container = document.getElementById("shared-header");
 
-  if (!container) {
+  if (!container || container.dataset.loaded === "true") {
     return;
   }
 
@@ -27,11 +27,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const dropdown = container.querySelector(".hero-dropdown");
 
     if (!toggle || !dropdown) {
-      console.error("The hero menu button or dropdown was not found.");
-      return;
+      throw new Error(
+        "The hero menu button or dropdown was not found."
+      );
     }
 
-    /* Open and close the dropdown */
+    // Mark the header as loaded after successful initialization.
+    container.dataset.loaded = "true";
+
+    /* =====================================
+       OPEN AND CLOSE THE DROPDOWN
+    ===================================== */
 
     function openMenu() {
       dropdown.hidden = false;
@@ -59,7 +65,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    /* Close after selecting a page */
+    /* =====================================
+       CLOSE AFTER SELECTING A PAGE
+    ===================================== */
 
     dropdown.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
@@ -67,7 +75,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
     });
 
-    /* Close when clicking anywhere outside the menu */
+    /* =====================================
+       CLOSE WHEN CLICKING OUTSIDE
+    ===================================== */
 
     document.addEventListener("click", (event) => {
       if (
@@ -78,7 +88,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    /* Close the menu with Escape */
+    /* =====================================
+       CLOSE WITH ESCAPE
+    ===================================== */
 
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && menuIsOpen()) {
@@ -86,7 +98,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    /* Close when the browser window is resized */
+    /* =====================================
+       CLOSE ON WINDOW RESIZE
+    ===================================== */
 
     window.addEventListener("resize", () => {
       if (menuIsOpen()) {
@@ -97,4 +111,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error loading the shared header:", error);
   }
-});
+}
+
+/* =========================================
+   INITIALIZE WHENEVER THE SCRIPT LOADS
+========================================= */
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadSharedHeader, {
+    once: true
+  });
+} else {
+  loadSharedHeader();
+}
