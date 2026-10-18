@@ -31,6 +31,7 @@
 }
 
 .portfolio-page img {
+  display: block;
   max-width: 100%;
 }
 
@@ -67,15 +68,17 @@
 }
 
 
-/* Gallery introduction */
+/* ========================================
+   MAIN PORTFOLIO INTRODUCTION
+======================================== */
 
 .portfolio-section-heading {
   max-width: 700px;
-  margin: 0 auto 50px;
+  margin: 0 auto 65px;
   text-align: center;
 }
 
-.portfolio-section-heading > p {
+.portfolio-section-heading > p:first-child {
   margin: 0 0 14px;
 
   color: var(--portfolio-sage-dark);
@@ -95,31 +98,213 @@
   line-height: 1.2;
 }
 
+.portfolio-intro-text {
+  max-width: 560px;
+  margin: 22px auto 0;
 
-/* ========================================
-   MASONRY PHOTO GALLERY
-======================================== */
-
-.gallery {
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-
-  columns: 3;
-  column-gap: 28px;
+  color: var(--portfolio-text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.9;
 }
 
 
-/* Individual photographs */
+/* ========================================
+   PORTFOLIO CATEGORY SECTIONS
+======================================== */
 
-.gallery img {
+.portfolio-category-section {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.portfolio-category-section + .portfolio-category-section {
+  margin-top: 100px;
+  padding-top: 75px;
+  border-top: 1px solid var(--portfolio-line);
+}
+
+
+/* ========================================
+   CATEGORY HEADINGS
+======================================== */
+
+.portfolio-category-heading {
+  max-width: 650px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.portfolio-category-eyebrow {
+  margin: 0 0 12px;
+
+  color: var(--portfolio-sage-dark);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+.portfolio-category-heading h3 {
+  margin: 0;
+
+  color: var(--portfolio-denim);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.portfolio-category-heading > p:last-child {
+  max-width: 540px;
+  margin: 18px auto 0;
+
+  color: var(--portfolio-text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   CAROUSEL CONTAINER
+======================================== */
+
+.portfolio-carousel {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ========================================
+   CAROUSEL TOOLBAR
+======================================== */
+
+.portfolio-carousel-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.carousel-status {
+  margin: 0;
+
+  color: var(--portfolio-text);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* ========================================
+   CAROUSEL ARROW BUTTONS
+======================================== */
+
+.carousel-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  padding: 0;
+
+  border: 1px solid var(--portfolio-line);
+  border-radius: 50%;
+
+  background: var(--portfolio-ivory);
+  color: var(--portfolio-denim);
+
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--portfolio-denim);
+  border-color: var(--portfolio-denim);
+  color: #FFFFFF;
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--portfolio-sage-dark);
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   HORIZONTAL CAROUSEL TRACK
+======================================== */
+
+.carousel-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ========================================
+   CAROUSEL SLIDES
+   Three photos visible on desktop
+======================================== */
+
+.carousel-slide {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.carousel-slide img {
   display: block;
 
   width: 100%;
   height: auto;
-  margin: 0 0 28px;
+  margin: 0;
 
-  break-inside: avoid;
   border: 0;
   background: var(--portfolio-ivory);
 
@@ -127,10 +312,200 @@
 }
 
 
-/* Subtle hover effect */
+/* Subtle hover effect for desktop */
 
-.gallery img:hover {
-  opacity: 0.92;
+@media (hover: hover) {
+  .carousel-slide img:hover {
+    opacity: 0.92;
+  }
+}
+
+
+/* ========================================
+   KEYBOARD FOCUS
+======================================== */
+
+.carousel-track:focus-visible {
+  outline: 2px solid var(--portfolio-sage-dark);
+  outline-offset: 5px;
+}
+
+
+/* ========================================
+   TABLET LAYOUT
+======================================== */
+
+@media (max-width: 900px) {
+
+  /* Gallery spacing */
+
+  .portfolio-gallery-section {
+    padding: 55px 5% 75px;
+  }
+
+  .portfolio-section-heading {
+    margin-bottom: 55px;
+  }
+
+  /* Category spacing */
+
+  .portfolio-category-section + .portfolio-category-section {
+    margin-top: 75px;
+    padding-top: 60px;
+  }
+
+  /* Carousel */
+
+  .carousel-track {
+    gap: 18px;
+  }
+
+  .carousel-slide {
+    flex-basis: calc((100% - 36px) / 3);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE LAYOUT
+======================================== */
+
+@media (max-width: 700px) {
+
+  /* Main introduction */
+
+  .portfolio-gallery-section {
+    padding: 45px 5% 55px;
+  }
+
+  .portfolio-section-heading {
+    margin-bottom: 42px;
+  }
+
+  .portfolio-section-heading > p:first-child {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .portfolio-intro-text {
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  /* Category sections */
+
+  .portfolio-category-section + .portfolio-category-section {
+    margin-top: 60px;
+    padding-top: 45px;
+  }
+
+  .portfolio-category-heading {
+    margin-bottom: 25px;
+  }
+
+  .portfolio-category-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-category-heading h3 {
+    font-size: 30px;
+  }
+
+  .portfolio-category-heading > p:last-child {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  /* Carousel toolbar */
+
+  .portfolio-carousel-toolbar {
+    margin-bottom: 14px;
+  }
+
+  .carousel-controls {
+    gap: 8px;
+  }
+
+  .carousel-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .carousel-status {
+    font-size: 10px;
+  }
+
+
+  /* Mobile carousel:
+     One main photo plus a peek at the next */
+
+  .carousel-track {
+    gap: 14px;
+    padding-right: 12%;
+
+    scroll-padding-left: 0;
+  }
+
+  .carousel-slide {
+    flex: 0 0 88%;
+  }
+
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  /* Main introduction */
+
+  .portfolio-gallery-section {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .portfolio-section-heading h2 {
+    font-size: 28px;
+  }
+
+
+  /* Category headings */
+
+  .portfolio-category-heading h3 {
+    font-size: 27px;
+  }
+
+
+  /* Carousel spacing */
+
+  .carousel-track {
+    gap: 12px;
+    padding-right: 8%;
+  }
+
+  .carousel-slide {
+    flex-basis: 92%;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 17px;
+  }
+
 }
 
 
@@ -191,114 +566,10 @@
 
 
 /* ========================================
-   TABLET LAYOUT
-======================================== */
-
-@media (max-width: 900px) {
-
-  /* Hero */
-
-  .portfolio-intro {
-    min-height: 65vh;
-    min-height: 65svh;
-    padding: 125px 6% 75px;
-  }
-
-  .portfolio-intro .portfolio-hero-image {
-    object-position: center center;
-  }
-
-
-  /* Gallery */
-
-  .portfolio-gallery-section {
-    padding: 55px 5% 75px;
-  }
-
-  .gallery {
-    columns: 2;
-    column-gap: 22px;
-  }
-
-  .gallery img {
-    margin-bottom: 22px;
-  }
-}
-
-
-/* ========================================
-   MOBILE LAYOUT
+   MOBILE CLOSING CTA
 ======================================== */
 
 @media (max-width: 700px) {
-
-  /* Hero */
-
-  .portfolio-intro {
-    min-height: 70vh;
-    min-height: 70svh;
-    padding: 120px 7% 80px;
-  }
-
-  .portfolio-intro .portfolio-hero-image {
-    object-position: center center;
-  }
-
-  .portfolio-intro .portfolio-eyebrow {
-    margin-bottom: 20px;
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .portfolio-intro .portfolio-title {
-    font-size: clamp(43px, 11vw, 60px);
-    letter-spacing: -1px;
-    line-height: 1.12;
-  }
-
-  .portfolio-intro .portfolio-description {
-    margin: 22px auto 28px;
-    font-size: 13px;
-    line-height: 1.85;
-  }
-
-  .portfolio-intro .portfolio-button {
-    padding: 14px 18px;
-    font-size: 9px;
-    letter-spacing: 1.2px;
-  }
-
-
-  /* Gallery */
-
-  .portfolio-gallery-section {
-    padding: 45px 4% 55px;
-  }
-
-  .portfolio-section-heading {
-    margin-bottom: 30px;
-  }
-
-  .portfolio-section-heading > p {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .portfolio-section-heading h2 {
-    font-size: 30px;
-  }
-
-  .gallery {
-    columns: 2;
-    column-gap: 12px;
-  }
-
-  .gallery img {
-    margin-bottom: 12px;
-  }
-
-
-  /* Closing CTA */
 
   .portfolio-cta {
     padding: 65px 7% 75px;
@@ -316,54 +587,21 @@
   .portfolio-cta > p:not(.portfolio-eyebrow) {
     font-size: 13px;
   }
+
 }
 
 
 /* ========================================
-   SMALL PHONES
+   SMALL PHONE CTA
 ======================================== */
 
 @media (max-width: 380px) {
-
-  .portfolio-intro {
-    padding-right: 6%;
-    padding-left: 6%;
-  }
-
-  .portfolio-intro .portfolio-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-  }
-
-  .portfolio-intro .portfolio-description {
-    font-size: 12px;
-  }
-
-  .portfolio-page .sticky-links {
-    gap: 8px 14px;
-  }
-
-  .portfolio-page .sticky-links a {
-    font-size: 9px;
-  }
-
-  .portfolio-gallery-section {
-    padding-right: 3%;
-    padding-left: 3%;
-  }
-
-  .gallery {
-    column-gap: 10px;
-  }
-
-  .gallery img {
-    margin-bottom: 10px;
-  }
 
   .portfolio-cta {
     padding-right: 6%;
     padding-left: 6%;
   }
+
 }
 
 
@@ -384,4 +622,9 @@
     transition: none !important;
     animation: none !important;
   }
+
+  .carousel-track {
+    scroll-behavior: auto;
+  }
+
 }
