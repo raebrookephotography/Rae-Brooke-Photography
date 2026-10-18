@@ -1,7 +1,14 @@
+
 /* ========================================
    RAE BROOKE PHOTOGRAPHY
    PORTFOLIO PAGE
-   Denim, sage, tan & ivory
+   Editorial Gallery Design
+   Denim, Sage, Tan & Ivory
+======================================== */
+
+
+/* ========================================
+   01. PAGE FOUNDATION
 ======================================== */
 
 .portfolio-page {
@@ -11,8 +18,12 @@
   --portfolio-sage-dark: #59664F;
   --portfolio-tan: #B99A79;
   --portfolio-ivory: #FAF9F6;
+  --portfolio-white: #FFFFFF;
   --portfolio-text: #424641;
   --portfolio-line: #DEDCD3;
+
+  --portfolio-page-gutter: clamp(20px, 6%, 100px);
+  --portfolio-gallery-gap: clamp(12px, 1.6vw, 22px);
 
   margin: 0;
   background: var(--portfolio-ivory);
@@ -26,26 +37,29 @@
   box-sizing: border-box;
 }
 
-.portfolio-page a {
-  text-decoration: none;
-}
-
 .portfolio-page img {
   display: block;
   max-width: 100%;
 }
 
-.portfolio-page #gallery {
-  scroll-margin-top: 100px;
+.portfolio-page a {
+  text-decoration: none;
 }
 
 .portfolio-page :focus-visible {
+  outline: 2px solid var(--portfolio-sage-dark);
   outline-offset: 5px;
+}
+
+.portfolio-page #gallery,
+.portfolio-page .portfolio-category-section {
+  scroll-margin-top: 110px;
 }
 
 
 /* ========================================
-   SHARED SITE HEADER
+   02. SHARED SITE HEADER
+   Preserve existing header behavior
 ======================================== */
 
 .portfolio-page #shared-header {
@@ -59,27 +73,32 @@
 
 
 /* ========================================
-   PORTFOLIO GALLERY SECTION
+   03. PORTFOLIO GALLERY
 ======================================== */
 
 .portfolio-gallery-section {
-  padding: 65px 6% 95px;
-  background: #FFFFFF;
+  width: 100%;
+  padding:
+    clamp(65px, 8vw, 115px)
+    var(--portfolio-page-gutter)
+    clamp(80px, 9vw, 120px);
+
+  background: var(--portfolio-white);
 }
 
 
 /* ========================================
-   MAIN PORTFOLIO INTRODUCTION
+   04. MAIN GALLERY INTRODUCTION
 ======================================== */
 
 .portfolio-section-heading {
-  max-width: 700px;
-  margin: 0 auto 65px;
+  max-width: 760px;
+  margin: 0 auto clamp(65px, 8vw, 110px);
   text-align: center;
 }
 
-.portfolio-section-heading > p:first-child {
-  margin: 0 0 14px;
+.portfolio-section-heading .portfolio-section-eyebrow {
+  margin: 0 0 16px;
 
   color: var(--portfolio-sage-dark);
   font-size: 10px;
@@ -93,48 +112,60 @@
 
   color: var(--portfolio-denim);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 4vw, 44px);
+  font-size: clamp(34px, 4.2vw, 50px);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.18;
 }
 
 .portfolio-intro-text {
-  max-width: 560px;
+  max-width: 540px;
   margin: 22px auto 0;
 
   color: var(--portfolio-text);
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
   line-height: 1.9;
 }
 
 
 /* ========================================
-   PORTFOLIO CATEGORY SECTIONS
+   05. CATEGORY SECTIONS
 ======================================== */
 
 .portfolio-category-section {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 
 .portfolio-category-section + .portfolio-category-section {
-  margin-top: 100px;
-  padding-top: 75px;
+  margin-top: clamp(80px, 11vw, 150px);
+  padding-top: clamp(55px, 7vw, 90px);
+
   border-top: 1px solid var(--portfolio-line);
 }
 
 
 /* ========================================
-   CATEGORY HEADINGS
+   06. CATEGORY HEADINGS
+   Editorial left-aligned layout
 ======================================== */
 
 .portfolio-category-heading {
-  max-width: 650px;
-  margin: 0 auto 38px;
-  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(20px, 4vw, 55px);
+
+  max-width: none;
+  margin: 0 0 clamp(25px, 3vw, 36px);
+
+  text-align: left;
+}
+
+.portfolio-category-heading > div {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .portfolio-category-eyebrow {
@@ -143,7 +174,7 @@
   color: var(--portfolio-sage-dark);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   line-height: 1.8;
 }
 
@@ -152,376 +183,133 @@
 
   color: var(--portfolio-denim);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 3.5vw, 40px);
+  font-size: clamp(32px, 3.7vw, 45px);
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
-.portfolio-category-heading > p:last-child {
-  max-width: 540px;
-  margin: 18px auto 0;
+.portfolio-category-description {
+  flex: 0 1 380px;
+  max-width: 380px;
+  margin: 0 0 4px;
 
   color: var(--portfolio-text);
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
   line-height: 1.9;
 }
 
 
 /* ========================================
-   CAROUSEL CONTAINER
+   07. EDITORIAL GALLERY FOUNDATION
 ======================================== */
 
-.portfolio-carousel {
+.editorial-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--portfolio-gallery-gap);
+
   width: 100%;
+  align-items: stretch;
+}
+
+.editorial-photo {
+  position: relative;
   min-width: 0;
-}
-
-
-/* ========================================
-   CAROUSEL TOOLBAR
-======================================== */
-
-.portfolio-carousel-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-
-  margin-bottom: 18px;
-}
-
-.carousel-status {
   margin: 0;
-
-  color: var(--portfolio-text);
-  font-size: 11px;
-  letter-spacing: 0.5px;
-  line-height: 1.6;
-}
-
-.carousel-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-
-/* ========================================
-   CAROUSEL ARROW BUTTONS
-======================================== */
-
-.carousel-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 42px;
-  height: 42px;
-  flex: 0 0 auto;
-  padding: 0;
-
-  border: 1px solid var(--portfolio-line);
-  border-radius: 50%;
+  overflow: hidden;
 
   background: var(--portfolio-ivory);
-  color: var(--portfolio-denim);
-
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    opacity 0.25s ease;
 }
 
-.carousel-arrow:hover:not(:disabled) {
-  background: var(--portfolio-denim);
-  border-color: var(--portfolio-denim);
-  color: #FFFFFF;
-}
-
-.carousel-arrow:disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.carousel-arrow:focus-visible {
-  outline: 2px solid var(--portfolio-sage-dark);
-  outline-offset: 4px;
-}
-
-
-/* ========================================
-   HORIZONTAL CAROUSEL TRACK
-======================================== */
-
-.carousel-track {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-
-  width: 100%;
-  min-width: 0;
-
-  overflow-x: auto;
-  overflow-y: hidden;
-
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: 0;
-  scroll-behavior: smooth;
-  overscroll-behavior-x: contain;
-
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
-
-
-/* ========================================
-   CAROUSEL SLIDES
-   Three photos visible on desktop
-======================================== */
-
-.carousel-slide {
-  flex: 0 0 calc((100% - 48px) / 3);
-  min-width: 0;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.carousel-slide img {
+.editorial-photo img {
   display: block;
 
   width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.65s ease;
+}
+
+
+/* Subtle hover interaction */
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .editorial-photo:hover img {
+    transform: scale(1.025);
+  }
+}
+
+
+/* ========================================
+   08. COUPLES & WEDDINGS
+   Featured image + supporting photographs
+======================================== */
+
+.editorial-gallery-weddings {
+  grid-auto-rows: clamp(155px, 19vw, 275px);
+}
+
+.editorial-gallery-weddings .wedding-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.editorial-gallery-weddings .wedding-support {
+  grid-column: 3;
+}
+
+
+/* ========================================
+   09. FAMILIES & NEWBORNS
+   Three balanced photographs
+======================================== */
+
+.editorial-gallery-families {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+}
+
+.editorial-gallery-families .editorial-photo img {
+  width: 100%;
   height: auto;
-  margin: 0;
-
-  border: 0;
-  background: var(--portfolio-ivory);
-
-  transition: opacity 0.3s ease;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
-
-/* Subtle hover effect for desktop */
-
-@media (hover: hover) {
-  .carousel-slide img:hover {
-    opacity: 0.92;
-  }
+.editorial-gallery-families .family-feature img {
+  aspect-ratio: 4 / 5;
 }
 
 
 /* ========================================
-   KEYBOARD FOCUS
+   10. BRANDING & PORTRAITS
+   Featured image + supporting portraits
 ======================================== */
 
-.carousel-track:focus-visible {
-  outline: 2px solid var(--portfolio-sage-dark);
-  outline-offset: 5px;
+.editorial-gallery-branding {
+  grid-auto-rows: clamp(155px, 19vw, 275px);
+}
+
+.editorial-gallery-branding .branding-feature {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 
 /* ========================================
-   TABLET LAYOUT
-======================================== */
-
-@media (max-width: 900px) {
-
-  /* Gallery spacing */
-
-  .portfolio-gallery-section {
-    padding: 55px 5% 75px;
-  }
-
-  .portfolio-section-heading {
-    margin-bottom: 55px;
-  }
-
-  /* Category spacing */
-
-  .portfolio-category-section + .portfolio-category-section {
-    margin-top: 75px;
-    padding-top: 60px;
-  }
-
-  /* Carousel */
-
-  .carousel-track {
-    gap: 18px;
-  }
-
-  .carousel-slide {
-    flex-basis: calc((100% - 36px) / 3);
-  }
-
-}
-
-
-/* ========================================
-   MOBILE LAYOUT
-======================================== */
-
-@media (max-width: 700px) {
-
-  /* Main introduction */
-
-  .portfolio-gallery-section {
-    padding: 45px 5% 55px;
-  }
-
-  .portfolio-section-heading {
-    margin-bottom: 42px;
-  }
-
-  .portfolio-section-heading > p:first-child {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .portfolio-section-heading h2 {
-    font-size: 30px;
-  }
-
-  .portfolio-intro-text {
-    margin-top: 18px;
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-
-  /* Category sections */
-
-  .portfolio-category-section + .portfolio-category-section {
-    margin-top: 60px;
-    padding-top: 45px;
-  }
-
-  .portfolio-category-heading {
-    margin-bottom: 25px;
-  }
-
-  .portfolio-category-eyebrow {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .portfolio-category-heading h3 {
-    font-size: 30px;
-  }
-
-  .portfolio-category-heading > p:last-child {
-    margin-top: 14px;
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-
-  /* Carousel toolbar */
-
-  .portfolio-carousel-toolbar {
-    margin-bottom: 14px;
-  }
-
-  .carousel-controls {
-    gap: 8px;
-  }
-
-  .carousel-arrow {
-    width: 38px;
-    height: 38px;
-    font-size: 18px;
-  }
-
-  .carousel-status {
-    font-size: 10px;
-  }
-
-
-  /* Mobile carousel:
-     One main photo plus a peek at the next */
-
-  .carousel-track {
-    gap: 14px;
-    padding-right: 12%;
-
-    scroll-padding-left: 0;
-  }
-
-  .carousel-slide {
-    flex: 0 0 88%;
-  }
-
-}
-
-
-/* ========================================
-   SMALL PHONES
-======================================== */
-
-@media (max-width: 380px) {
-
-  /* Main introduction */
-
-  .portfolio-gallery-section {
-    padding-right: 4%;
-    padding-left: 4%;
-  }
-
-  .portfolio-section-heading h2 {
-    font-size: 28px;
-  }
-
-
-  /* Category headings */
-
-  .portfolio-category-heading h3 {
-    font-size: 27px;
-  }
-
-
-  /* Carousel spacing */
-
-  .carousel-track {
-    gap: 12px;
-    padding-right: 8%;
-  }
-
-  .carousel-slide {
-    flex-basis: 92%;
-  }
-
-  .carousel-arrow {
-    width: 35px;
-    height: 35px;
-    font-size: 17px;
-  }
-
-}
-
-
-/* ========================================
-   CLOSING CALL TO ACTION
+   11. CLOSING CALL TO ACTION
 ======================================== */
 
 .portfolio-cta {
-  padding: 90px 7% 100px;
+  padding: clamp(70px, 8vw, 100px) 7%;
 
   background: var(--portfolio-ivory);
   text-align: center;
 }
-
-
-/* CTA eyebrow */
 
 .portfolio-cta .portfolio-eyebrow {
   margin: 0 0 20px;
@@ -532,9 +320,6 @@
   letter-spacing: 3px;
   line-height: 1.8;
 }
-
-
-/* CTA heading */
 
 .portfolio-cta h2 {
   margin: 0;
@@ -552,9 +337,6 @@
   font-style: italic;
 }
 
-
-/* CTA description */
-
 .portfolio-cta > p:not(.portfolio-eyebrow) {
   max-width: 500px;
   margin: 22px auto 30px;
@@ -566,16 +348,188 @@
 
 
 /* ========================================
-   MOBILE CLOSING CTA
+   12. TABLET LAYOUT
 ======================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
+
+  .portfolio-page {
+    --portfolio-page-gutter: 5%;
+    --portfolio-gallery-gap: 14px;
+  }
+
+  .portfolio-category-heading {
+    gap: 24px;
+  }
+
+  .portfolio-category-description {
+    flex-basis: 300px;
+  }
+
+  .editorial-gallery-weddings,
+  .editorial-gallery-branding {
+    grid-auto-rows: clamp(145px, 22vw, 210px);
+  }
+
+}
+
+
+/* ========================================
+   13. MOBILE LAYOUT
+======================================== */
+
+@media (max-width: 650px) {
+
+  .portfolio-page {
+    --portfolio-page-gutter: 5%;
+    --portfolio-gallery-gap: 12px;
+  }
+
+  /* Gallery spacing */
+
+  .portfolio-gallery-section {
+    padding-top: 55px;
+    padding-bottom: 70px;
+  }
+
+  .portfolio-section-heading {
+    margin-bottom: 60px;
+  }
+
+  .portfolio-section-heading .portfolio-section-eyebrow {
+    margin-bottom: 12px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .portfolio-section-heading h2 {
+    font-size: clamp(30px, 7vw, 38px);
+  }
+
+  .portfolio-intro-text {
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  /* Category spacing */
+
+  .portfolio-category-section + .portfolio-category-section {
+    margin-top: 70px;
+    padding-top: 50px;
+  }
+
+  .portfolio-category-heading {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .portfolio-category-eyebrow {
+    margin-bottom: 10px;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+  }
+
+  .portfolio-category-heading h3 {
+    font-size: clamp(29px, 7vw, 36px);
+  }
+
+  .portfolio-category-description {
+    max-width: 480px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+
+  /* Weddings:
+     Large featured image followed by two columns */
+
+  .editorial-gallery-weddings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 12px;
+  }
+
+  .editorial-gallery-weddings .wedding-feature {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .editorial-gallery-weddings .wedding-feature img {
+    height: auto;
+    aspect-ratio: 5 / 4;
+  }
+
+  .editorial-gallery-weddings .wedding-support {
+    grid-column: auto;
+  }
+
+  .editorial-gallery-weddings .editorial-photo img {
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .editorial-gallery-weddings .wedding-feature img {
+    aspect-ratio: 5 / 4;
+  }
+
+
+  /* Families:
+     One wide image + two supporting images */
+
+  .editorial-gallery-families {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .editorial-gallery-families .family-feature {
+    grid-column: 1 / -1;
+  }
+
+  .editorial-gallery-families .family-feature img {
+    aspect-ratio: 5 / 3;
+  }
+
+  .editorial-gallery-families .editorial-photo:not(.family-feature) img {
+    aspect-ratio: 3 / 4;
+  }
+
+
+  /* Branding:
+     One wide image + two-column supporting layout */
+
+  .editorial-gallery-branding {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 12px;
+  }
+
+  .editorial-gallery-branding .branding-feature {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .editorial-gallery-branding .branding-feature img {
+    height: auto;
+    aspect-ratio: 5 / 4;
+  }
+
+  .editorial-gallery-branding .editorial-photo:not(.branding-feature) img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+
+  /* Closing CTA */
 
   .portfolio-cta {
     padding: 65px 7% 75px;
   }
 
   .portfolio-cta .portfolio-eyebrow {
+    margin-bottom: 16px;
     font-size: 9px;
     letter-spacing: 2px;
   }
@@ -592,10 +546,29 @@
 
 
 /* ========================================
-   SMALL PHONE CTA
+   14. SMALL PHONES
 ======================================== */
 
 @media (max-width: 380px) {
+
+  .portfolio-page {
+    --portfolio-page-gutter: 4%;
+    --portfolio-gallery-gap: 9px;
+  }
+
+  .portfolio-section-heading h2 {
+    font-size: 28px;
+  }
+
+  .portfolio-category-heading h3 {
+    font-size: 28px;
+  }
+
+  .editorial-gallery-weddings,
+  .editorial-gallery-families,
+  .editorial-gallery-branding {
+    gap: 9px;
+  }
 
   .portfolio-cta {
     padding-right: 6%;
@@ -606,7 +579,7 @@
 
 
 /* ========================================
-   ACCESSIBILITY
+   15. ACCESSIBILITY
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -619,12 +592,8 @@
   .portfolio-page *::before,
   .portfolio-page *::after {
     scroll-behavior: auto !important;
-    transition: none !important;
     animation: none !important;
-  }
-
-  .carousel-track {
-    scroll-behavior: auto;
+    transition: none !important;
   }
 
 }
