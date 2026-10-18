@@ -1,28 +1,46 @@
 /* ========================================
-   RAE BROOKE PHOTOGRAPHY — GLOBAL STYLES
-   Editorial, minimal, photography-led design
+   RAE BROOKE PHOTOGRAPHY
+   GLOBAL DESIGN SYSTEM
+   Soft editorial • Minimal • Photography-led
 ======================================== */
 
 
 /* ========================================
-   BRAND COLOR PALETTE
+   01. BRAND COLOR PALETTE
 ======================================== */
 
 :root {
   --color-denim: #53677D;
   --color-denim-dark: #405267;
+
   --color-sage: #A3AD96;
   --color-sage-light: #E8EBE2;
   --color-sage-dark: #59664F;
+
   --color-tan: #B99A79;
+
   --color-ivory: #FAF9F6;
-  --color-text: #424641;
   --color-white: #FFFFFF;
+
+  --color-text: #424641;
+  --color-text-muted: #686A63;
+  --color-line: #DEDCD3;
+
+  --color-overlay: rgb(30 35 33 / 42%);
+
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+
+  --content-width: 1500px;
+  --page-gutter: clamp(22px, 6vw, 100px);
+
+  --transition-fast: 200ms ease;
+  --transition-standard: 280ms ease;
 }
 
 
 /* ========================================
-   GLOBAL RESET
+   02. GLOBAL RESET
 ======================================== */
 
 *,
@@ -33,17 +51,40 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
+  min-width: 320px;
   margin: 0;
+
   background: var(--color-ivory);
   color: var(--color-text);
-  font-family: Arial, sans-serif;
+
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.7;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
+  display: block;
   max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -51,45 +92,108 @@ a {
   text-decoration: none;
 }
 
+button {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+p {
+  margin-top: 0;
+}
+
+::selection {
+  background: var(--color-sage-light);
+  color: var(--color-denim-dark);
+}
+
 
 /* ========================================
-   SHARED HEADER
-   Used by the main site header component
+   03. ACCESSIBILITY
+======================================== */
+
+:focus-visible {
+  outline: 2px solid var(--color-sage-dark);
+  outline-offset: 4px;
+}
+
+img,
+button,
+a {
+  -webkit-touch-callout: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ========================================
+   04. SHARED SITE HEADER
+   Base appearance only.
+   Positioning belongs in header.css.
 ======================================== */
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 
-  padding: 28px 6%;
+  padding: 24px 6%;
+
   background: var(--color-ivory);
 }
 
-
-/* Header logo */
-
 .logo {
   color: var(--color-denim);
-  font-weight: 800;
-  letter-spacing: 4px;
+
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
-
-
-/* Header navigation only */
 
 header nav {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
 header nav a {
   color: var(--color-denim);
-  transition: color 0.2s ease;
+
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+
+  transition: color var(--transition-fast);
 }
 
 header nav a:hover {
@@ -98,43 +202,45 @@ header nav a:hover {
 
 
 /* ========================================
-   KEYBOARD ACCESSIBILITY
-======================================== */
-
-a:focus-visible {
-  outline: 2px solid var(--color-denim);
-  outline-offset: 4px;
-}
-
-
-/* ========================================
-   GLOBAL BUTTONS
+   05. SHARED BUTTONS
 ======================================== */
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 
-  margin-top: 20px;
-  padding: 16px 24px;
+  min-height: 46px;
+  padding: 13px 24px;
 
   border: 1px solid var(--color-denim);
+  border-radius: 0;
+
   background: var(--color-denim);
   color: var(--color-white);
 
-  letter-spacing: 1px;
-  font-size: 12px;
+  font-family: var(--font-sans);
+  font-size: 10px;
   font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-align: center;
+
+  cursor: pointer;
 
   transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .button:hover {
-  background: var(--color-denim-dark);
   border-color: var(--color-denim-dark);
-  transform: translateY(-3px);
+  background: var(--color-denim-dark);
+  color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 .button:focus-visible {
@@ -143,51 +249,65 @@ a:focus-visible {
 }
 
 
-/* ========================================
-   SHARED FOOTER
-======================================== */
+/* Button arrow */
 
-footer {
-  padding: 24px;
-  background: var(--color-denim);
-  color: var(--color-ivory);
-  text-align: center;
+.button span[aria-hidden="true"] {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1;
 }
 
 
 /* ========================================
-   MOBILE GLOBAL STYLES
+   06. SHARED SECTION EYEBROWS
+======================================== */
+
+.section-eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--color-sage-dark);
+
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   07. SHARED SITE FOOTER
+   Layout belongs in footer.css.
+======================================== */
+
+footer {
+  background: var(--color-denim);
+  color: var(--color-ivory);
+}
+
+
+/* ========================================
+   08. MOBILE GLOBAL STYLES
 ======================================== */
 
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    padding: 20px 6%;
   }
 
   header nav {
-    gap: 14px;
-    flex-wrap: wrap;
     justify-content: center;
-  }
-}
-
-
-/* ========================================
-   REDUCED MOTION
-======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+    gap: 12px 16px;
   }
 
-  .button,
   header nav a {
-    transition: none;
+    font-size: 10px;
   }
 
-  .button:hover {
-    transform: none;
+  .button {
+    min-height: 44px;
+    padding: 12px 19px;
+    font-size: 9px;
   }
 }
