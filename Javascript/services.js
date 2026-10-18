@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "A couple sharing a romantic moment during a portrait session"
     },
 
-    weddings: {
-      title: "Weddings",
+    branding: {
+      title: "Branding",
 
       intro:
         "For the big feelings, happy tears, and moments you'll want to relive forever.",
