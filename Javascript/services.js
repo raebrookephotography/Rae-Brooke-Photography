@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       ],
 
-      image: "/Images/Portfolio/Colleen_Chris_Sunset.jpg",
+      image: "/Images/Portfolio/Colleen_Twirl.jpg",
 
       imageAlt:
         "A couple sharing a romantic moment outdoors",
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Temporary fallback: replace with a real branding image
       // when you add one to your website.
-      image: "/Images/Portfolio/Amanda_Branding2.jpg",
+      image: "/Images/Portfolio/Amanda_Branding_2.jpg",
 
       imageAlt:
         "Photography from Rae Brooke Photography",
