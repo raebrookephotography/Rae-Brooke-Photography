@@ -19,101 +19,61 @@
   <link rel="stylesheet" href="/CSS/footer.css">
 </head>
 
-<body class="about-page-body">
+<body>
 
   <main>
 
     <!-- =====================================
          ABOUT PAGE HERO
-         Shared hero styles remain unchanged.
     ====================================== -->
-
     <section class="hero">
       <img
         class="hero-image"
         src="/Images/about-hero.jpg"
-        alt="Rae behind the camera"
+        alt="Rae behind the lense"
         fetchpriority="high"
       >
-
       <div class="hero-overlay"></div>
-
+      <!-- Hero text -->
       <div class="hero-content">
         <p class="eyebrow">GET TO KNOW ME</p>
-
-        <h1>
-          The girl <br>
-          <em>behind the camera.</em>
-        </h1>
-
-        <p class="hero-subtitle">
-          A little about me, my story, and what I love.
-        </p>
-
+        <h1>The girl <br><em>behind the camera.</em></h1>
+        <p class="hero-subtitle">A little about me, my story, and what I love.</p>
         <a class="button hero-button" href="#about-story">
           <span class="hero-button-text">MY STORY</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
-
-      <a
-        class="hero-scroll"
-        href="#about-story"
-        aria-label="Scroll to learn about Rae"
-      >
+      <a class="hero-scroll" href="#about-story" aria-label="Scroll to learn about Rae">
         <span>DISCOVER MORE</span>
         <span class="scroll-line" aria-hidden="true"></span>
       </a>
     </section>
 
-
     <!-- =====================================
-         SHARED STICKY NAVIGATION
+         STICKY NAVIGATION
     ====================================== -->
 
     <div id="shared-sticky-nav"></div>
 
-
     <!-- =====================================
-         EDITORIAL ABOUT STORY
+         ABOUT STORY
     ====================================== -->
 
-    <section class="about-editorial" id="about-story">
-
-      <!-- Small section introduction -->
-
-      <div class="about-editorial-top">
-        <p class="about-section-eyebrow">
-          THE PERSON BEHIND THE LENS
-        </p>
-
-        <span class="about-editorial-number" aria-hidden="true">
-          01 / ABOUT
-        </span>
-      </div>
-
-
-      <!-- Main editorial layout -->
-
-      <div class="about-editorial-grid">
-
-        <!-- Left: biography -->
-
+    <section class="about-page" id="about-story">
+      <div class="about-intro">
+        <!-- Text column -->
         <div class="about-copy">
-
+          <p class="about-section-eyebrow">
+            A LITTLE ABOUT ME
+          </p>
           <h2 class="about-heading">
-            <span class="about-heading-intro">Well, hello there.</span>
-            I'm <em>Rae.</em>
-          </h2>
-
-          <p class="about-lead">
+            <em>Hey, I'm Rae!</em>
             A photographer living in Raleigh, North Carolina,
             drawn to the people, places, and moments that make
             life meaningful.
-          </p>
-
+          </h2>
           <div class="about-story">
-
             <p>
               I’m Rachael (but you can call me Rae) — a New
               England native, wife of Jeff, and dog mom to
@@ -121,7 +81,6 @@
               capturing laughter, and turning little in-between
               moments into memories that last forever.
             </p>
-
             <p>
               I'm drawn to genuine connection, the little
               in-between moments, and the details that might
@@ -129,74 +88,35 @@
               photographs that feel natural, thoughtful, and
               true to the people in them.
             </p>
-
             <p>
               Whether it’s couples, four-legged friends, grads,
               families, or just you living your best life, I love
               creating images that feel like you.
             </p>
-
           </div>
-
           <a class="about-contact-button" href="/contact.html">
-            <span>LET'S MAKE SOMETHING MEANINGFUL</span>
-            <span class="about-button-arrow" aria-hidden="true">↗</span>
+            LET'S CONNECT <span aria-hidden="true">↗</span>
           </a>
-
         </div>
-
-
-        <!-- Right: editorial photo composition -->
-
+        <!-- Stacked photographs -->
         <div class="about-image-stack">
-
-          <figure class="about-image about-image-primary">
+          <div class="about-image about-image-primary">
             <img
               src="/Images/about-wedding.jpg"
-              alt="A candid moment captured during a wedding shoot"
+              alt="Rae Brooke, photographer"
               loading="lazy"
             >
-            <figcaption>
-              <span>01</span>
-              <span>THE MOMENTS IN BETWEEN</span>
-            </figcaption>
-          </figure>
-
-          <figure class="about-image about-image-secondary">
+          </div>
+          <div class="about-image about-image-secondary">
             <img
               src="/Images/about-family.jpg"
-              alt="A family photography moment captured by Rae"
+              alt="Rae Brooke, photographer"
               loading="lazy"
             >
-          </figure>
-
-          <p class="about-image-note">
-            Real people. Real connection.
-            <span>Always worth remembering.</span>
-          </p>
-
+          </div>
         </div>
-
       </div>
-
-
-      <!-- Closing editorial statement -->
-
-      <div class="about-editorial-bottom">
-        <span class="about-bottom-line" aria-hidden="true"></span>
-
-        <p>
-          The best photographs don't just show you what happened.
-          <em>They bring you back to how it felt.</em>
-        </p>
-
-        <span class="about-bottom-mark" aria-hidden="true">
-          RB.
-        </span>
-      </div>
-
     </section>
-
   </main>
 
 
@@ -207,10 +127,9 @@
   <div id="shared-footer"></div>
 
 
-  <!-- =====================================
-       JAVASCRIPT
+    <!-- =====================================
+       JAVASCRIPT FILES USED FOR PAGE
   ====================================== -->
-
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
 
