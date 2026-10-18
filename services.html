@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 
   <meta
     name="description"
-    content="Explore portrait, wedding, and intimate wedding photography with Rae Brooke Photography in North Carolina."
+    content="Explore portrait and branding photography with Rae Brooke Photography in North Carolina."
   >
 
   <title>Photography Services | Rae Brooke Photography</title>
@@ -16,62 +17,95 @@
   <link rel="stylesheet" href="/CSS/hero.css">
   <link rel="stylesheet" href="/CSS/sticky-nav.css">
   <link rel="stylesheet" href="/CSS/services.css">
-  <link rel="stylesheet" href="/CSS/footer.css">  
+  <link rel="stylesheet" href="/CSS/footer.css">
 </head>
 
-<body>
+<body class="services-page-body">
 
-  <!-- SERVICES HERO -->
-  <section class="hero">
+  <main>
+
+    <!-- =====================================
+         SERVICES HERO
+         Shared hero styles remain unchanged.
+    ====================================== -->
+
+    <section class="hero">
       <img
         class="hero-image"
         src="/Images/services-hero.jpg"
-        alt="Couple along the water"
+        alt="A couple enjoying a moment together by the water"
         fetchpriority="high"
       >
+
       <div class="hero-overlay"></div>
-      <!-- Hero text -->
+
       <div class="hero-content">
-        <p class="eyebrow">HE RAE BROOKE EXPERIENCE</p>
-        <h1>Your story,<br><em>beautifully told.</em></h1>
-        <p class="hero-subtitle">Photography for the moments you'll want to remember.</p>
+        <p class="eyebrow">THE RAE BROOKE EXPERIENCE</p>
+
+        <h1>
+          Your story,<br>
+          <em>beautifully told.</em>
+        </h1>
+
+        <p class="hero-subtitle">
+          Photography for the moments you'll want to remember.
+        </p>
+
         <a class="button hero-button" href="#packages">
           <span class="hero-button-text">EXPLORE MY PACKAGES</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
-      <a class="hero-scroll" href="#packages" aria-label="Scroll to learn about packages">
+
+      <a
+        class="hero-scroll"
+        href="#packages"
+        aria-label="Scroll to explore photography packages"
+      >
         <span>DISCOVER MORE</span>
         <span class="scroll-line" aria-hidden="true"></span>
       </a>
-    </section> 
+    </section>
 
 
-  <!-- STICKY MAIN NAVIGATION -->
-  <div id="shared-sticky-nav"></div>
+    <!-- =====================================
+         SHARED STICKY NAVIGATION
+    ====================================== -->
+
+    <div id="shared-sticky-nav"></div>
 
 
-  <!-- SERVICES CONTENT -->
-
-  <main class="services-page">
+    <!-- =====================================
+         EDITORIAL SERVICES
+    ====================================== -->
 
     <section class="services-section" id="packages">
 
-      <p class="section-eyebrow">
-        FIND YOUR EXPERIENCE
-      </p>
+      <!-- Section heading -->
 
-      <h2 class="packages-title">
-        MY PACKAGES
-      </h2>
+      <div class="services-heading">
+        <div class="services-heading-top">
+          <p class="section-eyebrow">
+            FIND YOUR EXPERIENCE
+          </p>
 
-      <p class="packages-subtitle">
-        Every story is different. Let's find the experience
-        that feels right for yours.
-      </p>
+          <span class="services-edition">
+            THE SERVICES EDIT
+          </span>
+        </div>
+
+        <h2 class="packages-title">
+          Moments worth <em>keeping.</em>
+        </h2>
+
+        <p class="packages-subtitle">
+          Every story is different. Let's find the experience
+          that feels right for yours.
+        </p>
+      </div>
 
 
-      <!-- PACKAGE SELECTOR -->
+      <!-- Package selector -->
 
       <nav class="package-nav" aria-label="Photography packages">
 
@@ -81,7 +115,9 @@
           aria-pressed="true"
           class="active"
         >
+          <span class="package-nav-number">01</span>
           Portraits
+          <span class="package-nav-arrow" aria-hidden="true">↗</span>
         </button>
 
         <button
@@ -89,40 +125,34 @@
           data-package="branding"
           aria-pressed="false"
         >
+          <span class="package-nav-number">02</span>
           Branding
+          <span class="package-nav-arrow" aria-hidden="true">↗</span>
         </button>
-
-          <!--
-        <button
-          type="button"
-          data-package="elopements"
-          aria-pressed="false"
-        >
-          Intimate Weddings &amp; Elopements
-        </button> -->
 
       </nav>
 
 
-      <!-- SELECTED PACKAGE -->
+      <!-- Selected package -->
 
-      <section
+      <div
         class="package-content"
         aria-label="Selected photography package"
       >
 
         <article class="description">
 
-          <p
-            class="package-eyebrow"
-            id="package-eyebrow"
-          >
-            THE LITTLE MOMENTS
-          </p>
+          <div class="package-heading-top">
+            <p class="package-eyebrow" id="package-eyebrow">
+              THE LITTLE MOMENTS
+            </p>
 
-          <h2 id="package-title">
-            Portraits
-          </h2>
+            <span class="package-index" id="package-index">
+              01 / 02
+            </span>
+          </div>
+
+          <h2 id="package-title">Portraits</h2>
 
           <p class="intro" id="package-intro">
             For this version of your life, exactly as it is right now.
@@ -164,14 +194,18 @@
             class="inquire-button"
             id="package-inquiry"
           >
-            INQUIRE HERE
+            <span>LET'S TALK ABOUT YOUR SESSION</span>
             <span aria-hidden="true">↗</span>
           </a>
+
+          <p class="package-footnote">
+            Every session starts with your story.
+          </p>
 
         </article>
 
 
-        <!-- PACKAGE IMAGE -->
+        <!-- Package photograph -->
 
         <figure class="photo-frame">
 
@@ -183,28 +217,50 @@
             decoding="async"
           >
 
-          <figcaption
-            class="photo-caption"
-            id="package-caption"
-          >
+          <div class="photo-frame-number" aria-hidden="true">
+            RB / 01
+          </div>
+
+          <figcaption class="photo-caption" id="package-caption">
             REAL MOMENTS. LASTING MEMORIES.
           </figcaption>
 
         </figure>
 
-      </section>
+      </div>
+
+
+      <!-- Closing statement -->
+
+      <div class="services-closing">
+        <span class="services-closing-rule" aria-hidden="true"></span>
+
+        <p>
+          Your life doesn't have to be perfect to be
+          <em>worth remembering.</em>
+        </p>
+
+        <a href="/contact.html">
+          LET'S CONNECT <span aria-hidden="true">↗</span>
+        </a>
+      </div>
 
     </section>
 
   </main>
 
 
-  <!-- SHARED FOOTER -->
+  <!-- =====================================
+       SHARED FOOTER
+  ====================================== -->
 
   <div id="shared-footer"></div>
 
 
-  <!-- PAGE SCRIPTS -->
+  <!-- =====================================
+       PAGE SCRIPTS
+  ====================================== -->
+
   <script src="/Javascript/services.js" defer></script>
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
