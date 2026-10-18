@@ -597,3 +597,16 @@
   }
 
 }
+
+
+
+/* ========================================
+   FIX: PORTFOLIO HEADINGS SHOULD NOT STICK
+======================================== */
+
+.portfolio-page .portfolio-section-heading,
+.portfolio-page .portfolio-category-heading {
+  position: static !important;
+  top: auto !important;
+  z-index: auto;
+}
