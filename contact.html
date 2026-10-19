@@ -1,9 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Get in touch with Rae Brooke Photography in Raleigh, North Carolina. Let's create photographs that feel like you.">
+
+  <meta
+    name="description"
+    content="Get in touch with Rae Brooke Photography in Raleigh, North Carolina. Let's create photographs that feel like you."
+  >
+
+  <meta name="theme-color" content="#FAF9F6">
 
   <title>Contact | Rae Brooke Photography</title>
 
@@ -16,96 +23,126 @@
 </head>
 
 <body class="contact-page">
+
   <main>
+    <!-- CONTACT HERO -->
+    <section class="hero contact-hero">
+      <img
+        class="hero-image"
+        src="/Images/index-hero.jpg"
+        alt="Rae Brooke Photography behind the lens"
+        fetchpriority="high"
+      >
 
-    <!-- =====================================
-         CONTACT HERO
-    ====================================== -->
-     <section class="hero">
-        <img
-          class="hero-image"
-          src="/Images/index-hero.jpg"
-          alt="Rae behind the lense"
-          fetchpriority="high"
-        >
-        <div class="hero-overlay"></div>
-        <!-- Hero text -->
-        <div class="hero-content">
-          <p class="eyebrow">THE BEGINNING OF SOMETHING GOOD</p>
-          <h1>Let's make something <br><em>meaninful.</em></h1>
-          <p class="hero-subtitle">Every session starts with an idea. Tell me yours,
-          and let's create photographs that feel like you.</p>
-          <a class="button hero-button" href="#contact">
-            <span class="hero-button-text">LET'S CONNECT</span>
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-        <a class="hero-scroll" href="#contact" aria-label="Scroll to learn about Rae">
-          <span>DISCOVER MORE</span>
-          <span class="scroll-line" aria-hidden="true"></span>
-        </a>
-      </section>
-   
-    <!-- =====================================
-         STICKY NAVIGATION
-    ====================================== -->
-    <div id="shared-sticky-nav"></div>
+      <div class="hero-overlay"></div>
 
+      <div class="hero-content">
+        <p class="eyebrow">THE BEGINNING OF SOMETHING GOOD</p>
 
-    <!-- =====================================
-         CONTACT INTRODUCTION AND FORM
-    ====================================== -->
+        <h1>
+          Let's make something
+          <br>
+          <em>meaningful.</em>
+        </h1>
 
-    <section class="contact-layout" id="contact">
-      <div class="contact-aside">
-        <p class="contact-eyebrow">
-          GET IN TOUCH
+        <p class="hero-subtitle">
+          Every session starts with an idea. Tell me yours,
+          and let's create photographs that feel like you.
         </p>
+
+        <a class="button hero-button" href="#contact">
+          <span class="hero-button-text">LET'S CONNECT</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <a
+        class="hero-scroll"
+        href="#contact"
+        aria-label="Scroll to the contact form"
+      >
+        <span>DISCOVER MORE</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- SHARED STICKY NAVIGATION -->
+    <div id="shared-sticky-nav"></div>
+    
+    <!-- CONTACT INTRODUCTION AND FORM -->
+    <!-- CONTACT INTRODUCTION AND FORM -->
+    <section class="contact-layout" id="contact">
+    
+      <!-- Small section introduction -->
+      <div class="contact-editorial-top">
+        <p class="contact-section-eyebrow">
+          LET'S CONNECT
+        </p>
+    
+        <span class="contact-editorial-number" aria-hidden="true">
+          04 / CONTACT
+        </span>
+      </div>
+    
+      <div class="contact-aside">
+        <p class="contact-eyebrow">GET IN TOUCH</p>
+
         <h2>
-          Your story<br>
+          Your story
+          <br>
           starts here.
         </h2>
+
         <p class="contact-lead">
           I'd love to hear what you're dreaming up.
         </p>
+
         <p>
           Whether you're planning a portrait session, celebrating
           someone you love, or documenting a season of life,
           let's create something you'll treasure for years to come.
         </p>
+
         <p>
           Tell me a little about yourself, what you have in mind,
           and the moments you'd love to remember. You don't need
           to have every detail figured out yet.
         </p>
+
         <div class="contact-note">
           <span class="contact-note-label">WHAT HAPPENS NEXT?</span>
+
           <p>
             Once your inquiry comes through, I'll review the details
             and get back to you as soon as possible so we can start
             planning your session.
           </p>
         </div>
-        <div class="contact-signoff">
+
+        <p class="contact-signoff">
           I can't wait to hear from you.
-        </div>
+        </p>
       </div>
 
-      <!-- Contact form -->
+      <!-- CONTACT FORM -->
       <div class="contact-form-card">
         <div class="form-heading">
           <p class="form-eyebrow">YOUR NEXT CHAPTER</p>
+
           <h2>Tell me about it.</h2>
+
           <p>
-            Fill out the form below and let's make something meaningful.
+            Share a few details below and let's make something meaningful.
           </p>
         </div>
+
         <form id="contact-form">
           <div class="form-row">
             <div class="form-field">
               <label for="name">
-                Your Name <span>*</span>
+                Your Name <span aria-hidden="true">*</span>
               </label>
+
               <input
                 id="name"
                 name="name"
@@ -116,10 +153,12 @@
                 required
               >
             </div>
+
             <div class="form-field">
               <label for="email">
-                Email Address <span>*</span>
+                Email Address <span aria-hidden="true">*</span>
               </label>
+
               <input
                 id="email"
                 name="email"
@@ -131,48 +170,58 @@
               >
             </div>
           </div>
+
           <div class="form-field">
             <label for="session">
-              What are we photographing? <span>*</span>
+              What are we photographing?
+              <span aria-hidden="true">*</span>
             </label>
+
             <select id="session" name="session" required>
               <option value="">Choose a session type</option>
               <option value="Portraits">Portraits</option>
-              <option value="Couples / Engagements">Couples / Engagements</option>
+              <option value="Couples / Engagements">
+                Couples / Engagements
+              </option>
               <option value="Families">Families</option>
               <option value="Events">Events</option>
-              <option value="Lifestyle / Branding">Lifestyle / Branding</option>
+              <option value="Lifestyle / Branding">
+                Lifestyle / Branding
+              </option>
               <option value="Other">Other</option>
             </select>
           </div>
+
           <div class="form-row">
             <div class="form-field">
-              <label for="date">
-                Preferred Date
-              </label>
+              <label for="date">Preferred Date</label>
+
               <input
                 id="date"
                 name="date"
                 type="date"
               >
             </div>
+
             <div class="form-field">
-              <label for="location">
-                Location or Setting
-              </label>
+              <label for="location">Location or Setting</label>
+
               <input
                 id="location"
                 name="location"
                 type="text"
-                placeholder="City, outdoors, studio..."
                 maxlength="150"
+                placeholder="City, outdoors, studio..."
               >
             </div>
           </div>
+
           <div class="form-field">
             <label for="message">
-              Tell me about your vision <span>*</span>
+              Tell me about your vision
+              <span aria-hidden="true">*</span>
             </label>
+
             <textarea
               id="message"
               name="message"
@@ -182,10 +231,11 @@
               required
             ></textarea>
           </div>
-          
-          <!-- Honeypot spam prevention field -->
+
+          <!-- HONEYPOT SPAM PREVENTION -->
           <div class="form-honeypot" aria-hidden="true">
             <label for="website">Leave this field empty</label>
+
             <input
               id="website"
               name="website"
@@ -194,13 +244,16 @@
               autocomplete="off"
             >
           </div>
+
           <p class="form-required">
             * Required fields
           </p>
+
           <button class="contact-submit" type="submit">
             <span>Send your inquiry</span>
             <span aria-hidden="true">↗</span>
           </button>
+
           <p
             id="form-status"
             class="form-status"
@@ -210,18 +263,23 @@
         </form>
       </div>
     </section>
+
+    <!-- CLOSING STATEMENT -->
+    <section class="contact-closing" aria-label="A note from Rae">
+      <p class="contact-closing-eyebrow">LET'S CREATE SOMETHING LASTING</p>
+
+      <p class="contact-closing-line">
+        The best photographs begin with <em>a conversation.</em>
+      </p>
+    </section>
   </main>
 
-
-  <!-- Shared footer -->
+  <!-- SHARED FOOTER -->
   <div id="shared-footer"></div>
 
-  
   <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
   <script src="/Javascript/contact.js" defer></script>
-
-  
 
 </body>
 </html>

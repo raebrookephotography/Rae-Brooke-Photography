@@ -1,255 +1,464 @@
+
 /* =========================================
    RAE BROOKE PHOTOGRAPHY
    SERVICES PAGE
-   Editorial, minimal, photography-led
+   Editorial / Magazine-Inspired Design
 ========================================= */
 
-:root {
-  --services-denim: #53677D;
-  --services-denim-dark: #405267;
-  --services-sage: #A3AD96;
-  --services-sage-light: #E8EBE2;
-  --services-sage-dark: #59664F;
-  --services-tan: #B99A79;
-  --services-ivory: #FAF9F6;
-  --services-white: #FFFFFF;
-  --services-text: #424641;
-  --services-muted: #62665F;
-  --services-line: #E3E0D8;
+
+/* =========================================
+   01. SERVICES SECTION
+========================================= */
+
+.services-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  padding:
+    clamp(65px, 8vw, 110px)
+    clamp(24px, 7.5vw, 120px)
+    clamp(70px, 9vw, 125px);
+
+  background: var(--color-ivory);
+  color: var(--color-text);
+
+  scroll-margin-top: 100px;
 }
 
-*,
-*::before,
-*::after {
+.services-section *,
+.services-section *::before,
+.services-section *::after {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--services-ivory);
-  color: var(--services-text);
-}
-
-img {
-  max-width: 100%;
 }
 
 
 /* =========================================
-   MAIN SERVICES SECTION
+   02. SECTION HEADING
 ========================================= */
 
-.services-page {
+.services-heading {
   width: 100%;
-  padding: 0;
-
-  background: var(--services-ivory);
-  color: var(--services-text);
-}
-
-.services-section {
-  width: 100%;
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 76px 6% 100px;
 }
 
-#packages {
-  scroll-margin-top: 85px;
+.services-heading-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid var(--color-line);
 }
 
-.section-eyebrow {
-  margin: 0 0 14px;
+.services-heading .section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-  color: var(--services-sage-dark);
+  margin: 0;
 
+  color: var(--color-sage-dark);
+
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.22em;
+  letter-spacing: 2px;
   line-height: 1.8;
-  text-align: center;
+}
+
+.services-heading .section-eyebrow::before {
+  content: "";
+
+  width: 25px;
+  height: 1px;
+  flex: 0 0 auto;
+
+  background: var(--color-tan);
+}
+
+.services-edition {
+  color: var(--color-text-muted);
+
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
 }
 
 .packages-title {
-  margin: 0 0 18px;
+  margin: clamp(38px, 5vw, 65px) 0 15px;
 
-  color: var(--services-denim);
+  color: var(--color-denim);
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 5vw, 48px);
+  font-family: var(--font-serif);
+  font-size: clamp(43px, 6.2vw, 78px);
   font-weight: 400;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
   text-align: center;
 }
 
+.packages-title em {
+  color: var(--color-sage-dark);
+  font-weight: 400;
+}
+
 .packages-subtitle {
-  max-width: 500px;
-  margin: 0 auto 38px;
+  max-width: 480px;
 
-  color: var(--services-muted);
+  margin: 0 auto clamp(38px, 5vw, 60px);
 
-  font-size: 14px;
+  color: var(--color-text-muted);
+
+  font-family: var(--font-serif);
+  font-size: 16px;
   line-height: 1.9;
   text-align: center;
 }
 
 
 /* =========================================
-   PACKAGE SELECTOR
+   03. PACKAGE SELECTOR
 ========================================= */
 
 .package-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px 38px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   width: 100%;
-  max-width: 1100px;
+  max-width: 1400px;
+
   margin: 0 auto;
 
-  padding: 17px 3%;
-
-  border-top: 1px solid var(--services-tan);
-  border-bottom: 1px solid var(--services-tan);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .package-nav button {
   position: relative;
 
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+
+  min-width: 0;
+  min-height: 70px;
+
+  padding: 17px 22px;
 
   border: 0;
   border-bottom: 2px solid transparent;
   background: transparent;
-  color: var(--services-denim);
+  color: var(--color-text-muted);
 
-  font-family: Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.7;
-  text-align: center;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 2vw, 23px);
+  font-weight: 400;
+  text-align: left;
 
   cursor: pointer;
 
   transition:
-    color 0.25s ease,
-    border-color 0.25s ease;
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.package-nav button + button {
+  border-left: 1px solid var(--color-line);
 }
 
 .package-nav button:hover {
-  color: var(--services-sage-dark);
+  color: var(--color-denim);
+  background: rgb(232 235 226 / 30%);
 }
 
 .package-nav button.active,
 .package-nav button[aria-pressed="true"] {
-  color: var(--services-denim-dark);
-  border-bottom-color: var(--services-tan);
+  border-bottom-color: var(--color-sage-dark);
+  color: var(--color-denim);
+}
+
+.package-nav-number {
+  align-self: flex-start;
+  padding-top: 5px;
+
+  color: var(--color-sage-dark);
+
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.package-nav-arrow {
+  margin-left: auto;
+
+  color: var(--color-sage-dark);
+  font-family: var(--font-sans);
+  font-size: 15px;
+
+  opacity: 0;
+  transform: translate(-3px, 3px);
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.package-nav button:hover .package-nav-arrow,
+.package-nav button.active .package-nav-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .package-nav button:focus-visible {
-  outline: 2px solid var(--services-denim);
-  outline-offset: 5px;
+  outline: 2px solid var(--color-sage-dark);
+  outline-offset: -4px;
 }
 
 
 /* =========================================
-   PACKAGE CONTENT
+   04. PACKAGE CONTENT GRID
 ========================================= */
 
 .package-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.03fr) minmax(0, 1fr);
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(0, 1.08fr);
+
   align-items: center;
-  gap: clamp(35px, 6vw, 75px);
+
+  gap: clamp(45px, 8vw, 120px);
 
   width: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
+
   margin: 0 auto;
-  padding-top: 65px;
+  padding-top: clamp(50px, 7vw, 90px);
 }
 
 .description {
   min-width: 0;
+  max-width: 560px;
+}
+
+
+/* Package label and number */
+
+.package-heading-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 22px;
 }
 
 .package-eyebrow {
-  margin: 0 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-  color: var(--services-sage-dark);
+  margin: 0;
 
+  color: var(--color-sage-dark);
+
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 1.8px;
   line-height: 1.8;
 }
 
-.description h2 {
-  margin: 0 0 12px;
+.package-eyebrow::before {
+  content: "";
 
-  color: var(--services-denim);
+  width: 22px;
+  height: 1px;
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 4.3vw, 52px);
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  background: var(--color-tan);
 }
 
+.package-index {
+  color: var(--color-text-muted);
+
+  font-family: var(--font-sans);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+
+/* Package title */
+
+.description h2 {
+  margin: 0 0 15px;
+
+  color: var(--color-denim);
+
+  font-family: var(--font-serif);
+  font-size: clamp(46px, 5vw, 67px);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+
+/* Introductory statement */
+
 .description .intro {
+  max-width: 470px;
+
   margin: 0 0 28px;
+  padding-left: 16px;
 
-  color: var(--services-sage-dark);
+  border-left: 1px solid var(--color-tan);
 
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
+  color: var(--color-sage-dark);
+
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 1.8vw, 21px);
   font-style: italic;
   line-height: 1.7;
 }
 
-.description p {
-  margin: 0 0 22px;
 
-  color: var(--services-text);
+/* Description paragraphs */
 
+.description #package-description {
+  color: var(--color-text);
+
+  font-family: var(--font-serif);
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.95;
+  line-height: 2;
 }
 
-.description .package-price {
-  margin-top: 28px;
+.description #package-description p {
+  margin: 0 0 20px;
+}
+
+.description #package-description .package-price {
+  margin-top: 27px;
   margin-bottom: 0;
 
-  color: var(--services-denim);
+  color: var(--color-denim);
+
+  font-family: var(--font-sans);
+  font-size: 11px;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.9;
 }
 
 
 /* =========================================
-   PACKAGE PHOTOGRAPH
+   05. INQUIRY LINK
+========================================= */
+
+.inquire-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  max-width: 390px;
+  min-height: 48px;
+
+  margin-top: 32px;
+  padding: 13px 0;
+
+  border: 0;
+  border-bottom: 1px solid var(--color-sage-dark);
+  background: transparent;
+  color: var(--color-denim);
+
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.8;
+  text-decoration: none;
+
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.inquire-button > span:last-child {
+  color: var(--color-sage-dark);
+  font-size: 17px;
+
+  transition: transform var(--transition-fast);
+}
+
+.inquire-button:hover {
+  border-color: var(--color-tan);
+  color: var(--color-sage-dark);
+}
+
+.inquire-button:hover > span:last-child {
+  transform: translate(3px, -3px);
+}
+
+.inquire-button:focus-visible {
+  outline: 2px solid var(--color-sage-dark);
+  outline-offset: 5px;
+}
+
+.package-footnote {
+  margin: 15px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   06. PACKAGE PHOTOGRAPH
 ========================================= */
 
 .photo-frame {
   position: relative;
+  isolation: isolate;
 
-  width: 100%;
+  width: calc(100% - 14px);
+  min-width: 0;
+
   aspect-ratio: 4 / 5;
-  margin: 0;
 
-  overflow: hidden;
+  margin: 0 14px 14px 0;
 
-  border: 1px solid var(--services-tan);
-  background: var(--services-sage-light);
+  background: var(--color-sage-light);
+}
+
+.photo-frame::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: 14px;
+  right: -14px;
+  bottom: -14px;
+  left: 14px;
+
+  border: 1px solid var(--color-sage-dark);
+
+  pointer-events: none;
 }
 
 .photo-frame img {
@@ -261,10 +470,10 @@ img {
   object-fit: cover;
   object-position: center;
 
-  opacity: 1;
-
-  transition: opacity 0.25s ease;
+  background: var(--color-sage-light);
 }
+
+/* Image caption */
 
 .photo-caption {
   position: absolute;
@@ -272,254 +481,367 @@ img {
   bottom: 0;
   left: 0;
 
-  padding: 16px 20px;
+  padding: 35px 20px 18px;
 
   background: linear-gradient(
     to top,
-    rgb(30 35 33 / 65%),
-    rgb(30 35 33 / 0%)
+    rgb(30 35 33 / 58%),
+    transparent
   );
 
-  color: var(--services-white);
+  color: var(--color-white);
 
+  font-family: var(--font-sans);
   font-size: 9px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 1.7px;
   line-height: 1.8;
 }
 
 
 /* =========================================
-   INQUIRY BUTTON
+   07. CLOSING STATEMENT
 ========================================= */
 
-.inquire-button {
-  display: inline-flex;
+.services-closing {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr) auto;
+
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  gap: clamp(20px, 4vw, 55px);
 
   width: 100%;
-  max-width: 405px;
-  min-height: 52px;
+  max-width: 1400px;
 
-  margin-top: 30px;
-  padding: 15px 22px;
+  margin: clamp(75px, 10vw, 125px) auto 0;
+  padding-top: 28px;
 
-  border: 1px solid var(--services-denim);
-  background: var(--services-denim);
-  color: var(--services-ivory);
-
-  font-family: Arial, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-align: center;
-  text-decoration: none;
-
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease;
+  border-top: 1px solid var(--color-line);
 }
 
-.inquire-button:hover {
-  border-color: var(--services-denim-dark);
-  background: var(--services-denim-dark);
-  color: var(--services-ivory);
+.services-closing-rule {
+  width: 30px;
+  height: 1px;
+
+  background: var(--color-tan);
 }
 
-.inquire-button:focus-visible {
-  outline: 2px solid var(--services-sage-dark);
+.services-closing p {
+  max-width: 760px;
+
+  margin: 0;
+
+  color: var(--color-denim);
+
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+
+.services-closing p em {
+  color: var(--color-sage-dark);
+  font-weight: 400;
+}
+
+.services-closing > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid var(--color-sage-dark);
+  color: var(--color-denim);
+
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+
+  transition: color var(--transition-fast);
+}
+
+.services-closing > a span {
+  color: var(--color-sage-dark);
+  font-size: 15px;
+}
+
+.services-closing > a:hover {
+  color: var(--color-sage-dark);
+}
+
+.services-closing > a:focus-visible {
+  outline: 2px solid var(--color-sage-dark);
   outline-offset: 5px;
 }
 
 
 /* =========================================
-   TABLET
+   08. TABLET
 ========================================= */
 
-@media (max-width: 900px) {
-  .services-hero {
-    min-height: 65vh;
-    min-height: 65svh;
-  }
+@media (max-width: 1000px) {
 
   .services-section {
-    padding: 60px 5% 80px;
-  }
-
-  .package-nav {
-    gap: 14px 25px;
-  }
-
-  .package-nav button {
-    font-size: 10px;
-    letter-spacing: 0.08em;
-  }
-
-  .package-content {
-    gap: 35px;
-    padding-top: 50px;
-  }
-
-  .description h2 {
-    font-size: clamp(32px, 4.5vw, 44px);
-  }
-
-  .description .intro {
-    font-size: 16px;
-  }
-
-  .description p {
-    font-size: 13px;
-  }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-  .services-hero {
-    min-height: 70vh;
-    min-height: 70svh;
-    padding: 120px 7% 85px;
-  }
-
-  .services-hero-image {
-    object-position: center center;
-  }
-
-  .services-hero-eyebrow {
-    margin-bottom: 20px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-  }
-
-  .services-hero h1 {
-    font-size: clamp(42px, 10vw, 62px);
-    line-height: 1.15;
-  }
-
-  .services-hero-subtitle {
-    max-width: 330px;
-    margin-bottom: 28px;
-    font-size: 13px;
-    line-height: 1.8;
-  }
-
-  .services-hero-button {
-    padding: 14px 18px;
-    font-size: 9px;
-  }
-
-  /* Keep every navigation link available on mobile. */
-  .services-section {
-    padding: 45px 6% 65px;
-  }
-
-  .packages-title {
-    font-size: clamp(30px, 8vw, 40px);
-  }
-
-  .packages-subtitle {
-    margin-bottom: 28px;
-    font-size: 13px;
-  }
-
-  .package-nav {
-    justify-content: center;
-    gap: 8px 22px;
-    padding: 14px 0;
-  }
-
-  .package-nav button {
-    max-width: 100%;
-    padding: 8px 0;
-    font-size: 9px;
-    letter-spacing: 0.06em;
-  }
-
-  .package-content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-    padding-top: 38px;
-  }
-
-  .description h2 {
-    margin-bottom: 10px;
-    font-size: clamp(36px, 9vw, 46px);
-  }
-
-  .description .intro {
-    margin-bottom: 24px;
-    font-size: 16px;
-  }
-
-  .description p {
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  .inquire-button {
-    max-width: none;
-    margin-top: 25px;
-  }
-
-  .photo-frame {
-    aspect-ratio: 4 / 4.5;
-  }
-}
-
-
-/* =========================================
-   SMALL PHONES
-========================================= */
-
-@media (max-width: 380px) {
-  .services-hero {
     padding-right: 6%;
     padding-left: 6%;
   }
 
-  .services-hero h1 {
-    font-size: 40px;
+  .package-content {
+    gap: 45px;
   }
 
-  .services-section {
-    padding-right: 5%;
-    padding-left: 5%;
+  .description h2 {
+    font-size: clamp(42px, 5.5vw, 57px);
   }
 
-  .package-nav {
-    gap: 8px 15px;
+  .description #package-description {
+    font-size: 13px;
+    line-height: 1.95;
   }
 
   .package-nav button {
-    font-size: 8px;
-    letter-spacing: 0.04em;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 
 
 /* =========================================
-   REDUCED MOTION
+   09. MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .services-section {
+    padding: 58px 7% 75px;
+  }
+
+  .services-heading-top {
+    gap: 12px;
+    padding-bottom: 15px;
+  }
+
+  .services-heading .section-eyebrow {
+    gap: 9px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .services-heading .section-eyebrow::before {
+    width: 18px;
+  }
+
+  .services-edition {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .packages-title {
+    margin-top: 43px;
+    font-size: clamp(43px, 10vw, 64px);
+    line-height: 1.08;
+  }
+
+  .packages-subtitle {
+    max-width: 360px;
+    margin-bottom: 35px;
+    font-size: 14px;
+  }
+
+
+  /* Package tabs */
+
+  .package-nav button {
+    gap: 9px;
+
+    min-height: 62px;
+    padding: 14px 10px;
+
+    font-size: clamp(15px, 4vw, 19px);
+  }
+
+  .package-nav-number {
+    font-size: 8px;
+  }
+
+  .package-nav-arrow {
+    font-size: 12px;
+  }
+
+
+  /* Package content */
+
+  .package-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+
+    padding-top: 42px;
+  }
+
+  .description {
+    max-width: 560px;
+  }
+
+  .package-heading-top {
+    margin-bottom: 20px;
+  }
+
+  .package-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .description h2 {
+    margin-bottom: 17px;
+    font-size: clamp(48px, 11vw, 65px);
+  }
+
+  .description .intro {
+    margin-bottom: 24px;
+    font-size: 19px;
+  }
+
+  .description #package-description {
+    font-size: 14px;
+    line-height: 1.95;
+  }
+
+  .description #package-description p {
+    margin-bottom: 18px;
+  }
+
+  .inquire-button {
+    max-width: 100%;
+    margin-top: 27px;
+  }
+
+
+  /* Photograph */
+
+  .photo-frame {
+    width: calc(100% - 12px);
+    max-width: 560px;
+
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+
+  .photo-frame::before {
+    top: 12px;
+    right: -12px;
+    bottom: -12px;
+    left: 12px;
+  }
+
+
+  /* Closing statement */
+
+  .services-closing {
+    grid-template-columns: 22px minmax(0, 1fr);
+    gap: 16px;
+
+    margin-top: 75px;
+    padding-top: 23px;
+  }
+
+  .services-closing-rule {
+    width: 22px;
+  }
+
+  .services-closing p {
+    font-size: clamp(23px, 6vw, 31px);
+  }
+
+  .services-closing > a {
+    grid-column: 2;
+    justify-self: start;
+
+    margin-top: 6px;
+  }
+}
+
+
+/* =========================================
+   10. SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .services-section {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  .services-heading-top {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .services-heading .section-eyebrow {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .services-edition {
+    font-size: 7px;
+    letter-spacing: 0.7px;
+  }
+
+  .packages-title {
+    font-size: 40px;
+  }
+
+  .package-nav button {
+    gap: 7px;
+    padding-right: 7px;
+    padding-left: 7px;
+    font-size: 15px;
+  }
+
+  .package-nav-number {
+    font-size: 7px;
+  }
+
+  .description h2 {
+    font-size: 46px;
+  }
+
+  .description .intro {
+    font-size: 17px;
+  }
+
+  .description #package-description {
+    font-size: 13px;
+  }
+
+  .package-index {
+    font-size: 8px;
+  }
+
+  .photo-caption {
+    padding-right: 12px;
+    padding-left: 12px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+
+/* =========================================
+   11. ACCESSIBILITY
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 
-  .services-hero-button,
-  .sticky-links a,
-  .sticky-links a::after,
   .package-nav button,
-  .photo-frame img,
-  .inquire-button {
+  .package-nav-arrow,
+  .inquire-button,
+  .inquire-button > span:last-child,
+  .services-closing > a {
     transition: none;
   }
 }
