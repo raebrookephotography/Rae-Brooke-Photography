@@ -50,41 +50,6 @@
 }
 
 /* =========================================
-   HERO
-   Uses the shared hero structure
-========================================= */
-
-.contact-page .hero {
-  position: relative;
-  min-height: 78vh;
-  min-height: 78svh;
-}
-
-.contact-page .hero-image {
-  object-position: center 40%;
-}
-
-.contact-page .hero-content {
-  max-width: 850px;
-}
-
-.contact-page .hero .eyebrow {
-  margin-bottom: 22px;
-}
-
-.contact-page .hero h1 {
-  max-width: 850px;
-}
-
-.contact-page .hero-subtitle {
-  max-width: 520px;
-}
-
-.contact-page .hero-scroll {
-  cursor: pointer;
-}
-
-/* =========================================
    CONTACT SECTION
 ========================================= */
 
