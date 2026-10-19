@@ -473,26 +473,6 @@
   background: var(--color-sage-light);
 }
 
-
-/* Small editorial image marker */
-
-.photo-frame-number {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-
-  padding: 8px 10px;
-
-  background: var(--color-ivory);
-  color: var(--color-denim);
-
-  font-family: var(--font-sans);
-  font-size: 8px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-
 /* Image caption */
 
 .photo-caption {
