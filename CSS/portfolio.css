@@ -384,7 +384,9 @@
 ======================================== */
 
 .portfolio-cta {
-  padding: clamp(70px, 8vw, 100px) 7%;
+  padding: clamp(85px, 10vw, 125px) var(--portfolio-page-gutter);
+
+  border-top: 1px solid var(--portfolio-line);
 
   background: var(--portfolio-ivory);
   text-align: center;
@@ -401,13 +403,15 @@
 }
 
 .portfolio-cta h2 {
-  margin: 0;
+  max-width: 850px;
+  margin: 0 auto;
 
   color: var(--portfolio-denim);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-serif);
   font-size: clamp(38px, 5vw, 58px);
   font-weight: 400;
-  line-height: 1.15;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
 .portfolio-cta h2 em {
@@ -421,6 +425,7 @@
   margin: 22px auto 30px;
 
   color: var(--portfolio-text);
+  font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.9;
 }
