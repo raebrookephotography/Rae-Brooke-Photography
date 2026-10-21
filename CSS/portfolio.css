@@ -447,9 +447,36 @@
     flex-basis: 300px;
   }
 
+ /* Featured galleries: two-column tablet layout */
+
   .editorial-gallery-weddings,
   .editorial-gallery-branding {
-    grid-auto-rows: clamp(145px, 22vw, 210px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    gap: 14px;
+  }
+
+  .editorial-gallery-weddings .wedding-feature,
+  .editorial-gallery-branding .branding-feature {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .editorial-gallery-weddings .wedding-feature img,
+  .editorial-gallery-branding .branding-feature img {
+    height: auto;
+    aspect-ratio: 5 / 4;
+  }
+
+  .editorial-gallery-weddings .wedding-support,
+  .editorial-gallery-branding .editorial-photo:not(.branding-feature) {
+    grid-column: auto;
+  }
+
+  .editorial-gallery-weddings .wedding-support img,
+  .editorial-gallery-branding .editorial-photo:not(.branding-feature) img {
+    height: auto;
+    aspect-ratio: 3 / 4;
   }
 
 }
