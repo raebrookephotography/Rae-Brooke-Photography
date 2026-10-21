@@ -19,16 +19,16 @@
   width: 100%;
   min-height: 72px;
   padding: 16px var(--page-gutter);
-  background: rgb(245 241 233 / 96%);
-  border-bottom: 1px solid var(--color-line);
+  background: var(--color-ivory, #FAF9F6);
+  border-bottom: 1px solid #E3E0D8;
   backdrop-filter: blur(12px);
 }
 
 .sticky-brand {
   flex-shrink: 0;
-  color: var(--color-text);
+  color: var(--color-denim, #53677D);
   font-family: var(--font-serif);
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.11em;
 }
 
@@ -43,9 +43,9 @@
 .sticky-links a {
   position: relative;
   padding: 8px 0;
-  color: var(--color-text);
+  color: var(--color-denim, #53677D);
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.1em;
   transition: color var(--transition-fast);
