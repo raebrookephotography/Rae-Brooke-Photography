@@ -20,7 +20,7 @@
     clamp(24px, 7.5vw, 120px)
     clamp(70px, 9vw, 125px);
 
-  background: var(--color-ivory);
+  background: var(--color-soft-ivory);
   color: var(--color-text);
 
   scroll-margin-top: 100px;
