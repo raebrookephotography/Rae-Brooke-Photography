@@ -102,12 +102,12 @@
   display: grid;
 
   grid-template-columns:
-    minmax(0, 0.92fr)
-    minmax(0, 1.08fr);
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
 
   align-items: start;
 
-  gap: clamp(55px, 9vw, 145px);
+  gap: clamp(40px, 6vw, 95px);
 
   width: 100%;
   max-width: 1400px;
@@ -145,9 +145,9 @@
   color: var(--about-ink);
 
   font-family: var(--font-serif);
-  font-size: clamp(54px, 6.1vw, 88px);
+  font-size: clamp(48px, 5.4vw, 76px);
   font-weight: 400;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.05em;
   line-height: 0.99;
 }
 
