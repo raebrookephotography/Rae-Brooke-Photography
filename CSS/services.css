@@ -839,7 +839,10 @@
   .package-nav-arrow,
   .inquire-button,
   .inquire-button > span:last-child,
-  .services-closing > a {
+  .services-closing > a,
+  .photo-frame img {
+    animation: none;
+    scroll-behavior: auto;
     transition: none;
   }
 }
