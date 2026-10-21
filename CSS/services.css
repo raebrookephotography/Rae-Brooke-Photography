@@ -789,12 +789,16 @@
     font-size: 40px;
   }
 
-  .package-nav button {
-    gap: 7px;
-    padding-right: 7px;
-    padding-left: 7px;
-    font-size: 15px;
-  }
+.package-nav button {
+  gap: 6px;
+
+  min-width: 0;
+  padding-right: 7px;
+  padding-left: 7px;
+
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
 
   .package-nav-number {
     font-size: 7px;
