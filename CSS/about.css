@@ -285,10 +285,10 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.66fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.68fr);
 
   align-items: start;
-  column-gap: clamp(12px, 2vw, 28px);
+  column-gap: clamp(14px, 2.5vw, 32px);
   row-gap: 0;
 
   min-width: 0;
@@ -403,7 +403,7 @@
   width: 100%;
   aspect-ratio: 3 / 4;
 
-  margin-top: clamp(80px, 13vw, 175px);
+  margin-top: clamp(70px, 10vw, 140px);
 
   overflow: hidden;
 }
