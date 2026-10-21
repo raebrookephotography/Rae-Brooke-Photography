@@ -805,11 +805,53 @@
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .about-image img,
   .about-contact-button,
   .about-button-arrow {
     transition: none;
   }
+}
 
+
+
+/* =========================================
+   12. ABOUT HERO REFINEMENTS
+========================================= */
+
+.about-page-body .hero .hero-content {
+  max-width: 900px;
+}
+
+.about-page-body .hero .eyebrow {
+  margin-bottom: 22px;
+}
+
+.about-page-body .hero h1 {
+  max-width: 850px;
+  margin-right: auto;
+  margin-bottom: 24px;
+  margin-left: auto;
+  font-size: clamp(52px, 7.2vw, 92px);
+}
+
+.about-page-body .hero .hero-subtitle {
+  max-width: 520px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .about-page-body .hero {
+    padding: 120px 7% 90px;
+  }
+
+  .about-page-body .hero h1 {
+    font-size: clamp(44px, 10vw, 66px);
+    line-height: 1.04;
+  }
+
+  .about-page-body .hero .hero-subtitle {
+    font-size: 14px;
+    line-height: 1.8;
+  }
 }
