@@ -439,8 +439,6 @@
   isolation: isolate;
 
   width: calc(100% - 14px);
-  min-width: 0;
-
   aspect-ratio: 4 / 5;
 
   margin: 0 14px 14px 0;
@@ -452,12 +450,8 @@
   content: "";
 
   position: absolute;
+  inset: 14px -14px -14px 14px;
   z-index: -1;
-
-  top: 14px;
-  right: -14px;
-  bottom: -14px;
-  left: 14px;
 
   border: 1px solid var(--color-sage-dark);
 
@@ -472,8 +466,6 @@
 
   object-fit: cover;
   object-position: center;
-
-  background: var(--color-sage-light);
 }
 
 /* Image caption */
