@@ -87,15 +87,16 @@
 }
 
 .contact-section-eyebrow {
-  margin: 0;
-
-  color: var(--contact-sage-dark);
-
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  line-height: 1.8;
-  text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: var(--about-accent);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1.8;
 }
 
 .contact-editorial-number {
