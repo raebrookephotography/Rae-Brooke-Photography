@@ -72,16 +72,16 @@
   background: var(--color-tan);
 }
 
+
+
 .hero h1 {
-  max-width: 820px;
-  margin: 0 0 22px;
-  color: var(--color-white);
+  margin: 0 0 25px;
+  color: var(--color-ivory, #FAF9F6);
   font-family: var(--font-serif);
-  font-size: clamp(58px, 8.5vw, 124px);
+  font-size: clamp(50px, 7vw, 88px);
   font-weight: 400;
   letter-spacing: -0.055em;
-  line-height: 0.91;
-  text-wrap: balance;
+  line-height: 0.99;
 }
 
 .hero h1 em {
