@@ -10,10 +10,6 @@
 ========================================= */
 
 .about-editorial {
-  --about-ink: var(--color-denim);
-  --about-accent: var(--color-sage-dark);
-  --about-rule: var(--color-line);
-
   position: relative;
 
   width: 100%;
@@ -52,7 +48,7 @@
   margin: 0 auto;
   padding-bottom: 18px;
 
-  border-bottom: 1px solid var(--about-rule);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .about-heading-eyebrow {
@@ -62,10 +58,10 @@
 
   margin: 0;
 
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
 
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 1.8;
@@ -88,7 +84,7 @@
   color: var(--color-text-muted);
 
   font-family: var(--font-sans);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
@@ -142,7 +138,7 @@
 
   margin: 0 0 28px;
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
   font-size: clamp(48px, 5.4vw, 76px);
@@ -167,7 +163,7 @@
 }
 
 .about-heading em {
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
 
   font-family: var(--font-serif);
   font-weight: 400;
@@ -185,7 +181,7 @@
 
   border-left: 1px solid var(--color-tan);
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
   font-size: clamp(18px, 1.8vw, 23px);
@@ -234,10 +230,10 @@
   padding: 12px 0;
 
   border: 0;
-  border-bottom: 1px solid var(--about-accent);
+  border-bottom: 1px solid var(--color-sage-dark);
 
   background: transparent;
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-sans);
   font-size: 9px;
@@ -253,14 +249,14 @@
 
 .about-contact-button:hover {
   border-color: var(--color-tan);
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
 }
 
 .about-button-arrow {
   display: inline-block;
   flex: 0 0 auto;
 
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
   font-size: 17px;
   line-height: 1;
 
@@ -272,7 +268,7 @@
 }
 
 .about-contact-button:focus-visible {
-  outline: 2px solid var(--about-accent);
+  outline: 2px solid var(--color-sage-dark);
   outline-offset: 5px;
 }
 
@@ -426,9 +422,9 @@
   margin: 0;
   padding: 17px 0 0;
 
-  border-top: 1px solid var(--about-rule);
+  border-top: 1px solid var(--color-line);
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
   font-size: clamp(17px, 1.8vw, 22px);
@@ -462,7 +458,7 @@
   margin: clamp(75px, 9vw, 120px) auto 0;
   padding-top: 30px;
 
-  border-top: 1px solid var(--about-rule);
+  border-top: 1px solid var(--color-line);
 }
 
 .about-bottom-line {
@@ -479,7 +475,7 @@
 
   margin: 0;
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
   font-size: clamp(22px, 2.8vw, 36px);
@@ -489,7 +485,7 @@
 }
 
 .about-editorial-bottom p em {
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
   font-weight: 400;
 }
 
