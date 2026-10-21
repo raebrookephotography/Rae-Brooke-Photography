@@ -220,10 +220,10 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: clamp(20px, 4vw, 55px);
+  gap: clamp(24px, 4vw, 60px);
 
   max-width: none;
-  margin: 0 0 clamp(25px, 3vw, 36px);
+  margin: 0 0 clamp(30px, 3.5vw, 42px);
 
   text-align: left;
 }
@@ -234,33 +234,38 @@
 }
 
 .portfolio-category-eyebrow {
-  margin: 0 0 12px;
+  margin: 0 0 13px;
 
   color: var(--portfolio-sage-dark);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 0.22em;
   line-height: 1.8;
+  text-transform: uppercase;
 }
 
 .portfolio-category-heading h3 {
   margin: 0;
 
   color: var(--portfolio-denim);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 3.7vw, 45px);
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 3.8vw, 48px);
   font-weight: 400;
-  line-height: 1.15;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
 }
 
 .portfolio-category-description {
-  flex: 0 1 380px;
-  max-width: 380px;
+  flex: 0 1 390px;
+  max-width: 390px;
   margin: 0 0 4px;
 
   color: var(--portfolio-text);
+  font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 400;
+  letter-spacing: 0.01em;
   line-height: 1.9;
 }
 
