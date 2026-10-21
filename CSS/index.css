@@ -37,7 +37,7 @@
   max-width: 1720px;
   margin: 0 auto;
   padding: var(--section-space) var(--page-gutter);
-  background: var(--color-ivory);
+  background: var(--color-soft-ivory);
   scroll-margin-top: 90px;
 }
 
@@ -310,7 +310,7 @@
   align-items: center;
   gap: 22px;
   padding: 28px var(--page-gutter);
-  background: var(--color-ivory);
+  background: var(--color-soft-ivory);
   color: var(--color-text-muted);
   text-align: center;
 }
