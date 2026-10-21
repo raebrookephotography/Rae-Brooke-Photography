@@ -55,7 +55,7 @@
   border-bottom: 1px solid var(--about-rule);
 }
 
-.about-section-eyebrow {
+.about-heading-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -71,7 +71,7 @@
   line-height: 1.8;
 }
 
-.about-section-eyebrow::before {
+.about-heading-eyebrow::before {
   content: "";
 
   display: block;
@@ -82,7 +82,7 @@
   background: var(--color-tan);
 }
 
-.about-editorial-number {
+.about-heading-details {
   flex: 0 0 auto;
 
   color: var(--color-text-muted);
@@ -574,18 +574,18 @@
     padding-bottom: 15px;
   }
 
-  .about-section-eyebrow {
+  .about-heading-eyebrow {
     gap: 9px;
 
     font-size: 9px;
     letter-spacing: 1.5px;
   }
 
-  .about-section-eyebrow::before {
+  .about-heading-eyebrow::before {
     width: 18px;
   }
 
-  .about-editorial-number {
+  .about-heading-details {
     padding-top: 2px;
 
     font-size: 8px;
@@ -746,12 +746,12 @@
     gap: 8px;
   }
 
-  .about-section-eyebrow {
+  .about-heading-eyebrow {
     font-size: 8px;
     letter-spacing: 1.1px;
   }
 
-  .about-editorial-number {
+  .about-heading-details {
     font-size: 7px;
   }
 
