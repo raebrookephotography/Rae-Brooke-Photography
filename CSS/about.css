@@ -40,7 +40,7 @@
    02. TOP EDITORIAL LABEL
 ========================================= */
 
-.about-editorial-top {
+.about-heading-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -567,7 +567,7 @@
     padding: 58px 7% 70px;
   }
 
-  .about-editorial-top {
+  .about-heading-top {
     align-items: flex-start;
     gap: 12px;
 
@@ -742,7 +742,7 @@
     padding-left: 6%;
   }
 
-  .about-editorial-top {
+  .about-heading-top {
     gap: 8px;
   }
 
