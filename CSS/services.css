@@ -234,24 +234,20 @@
 
 .package-content {
   display: grid;
-  grid-template-columns:
-    minmax(0, 0.92fr)
-    minmax(0, 1.08fr);
-
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
   align-items: center;
-
-  gap: clamp(45px, 8vw, 120px);
+  gap: clamp(48px, 7vw, 105px);
 
   width: 100%;
   max-width: 1300px;
-
   margin: 0 auto;
-  padding-top: clamp(50px, 7vw, 90px);
+  padding-top: clamp(52px, 6.5vw, 82px);
 }
 
 .description {
-  min-width: 0;
+  width: 100%;
   max-width: 560px;
+  min-width: 0;
 }
 
 
@@ -304,16 +300,14 @@
 /* Package title */
 
 .description h2 {
-  margin: 0 0 15px;
+  margin: 22px 0 24px;
 
   color: var(--color-denim);
-
   font-family: var(--font-serif);
-  font-size: clamp(46px, 5vw, 67px);
+  font-size: clamp(46px, 4.8vw, 66px);
   font-weight: 400;
-  font-style: italic;
-  letter-spacing: -0.05em;
-  line-height: 1.05;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
 }
 
 
@@ -339,16 +333,20 @@
 /* Description paragraphs */
 
 .description #package-description {
-  color: var(--color-text);
+  color: var(--color-text-muted);
 
   font-family: var(--font-serif);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .description #package-description p {
   margin: 0 0 20px;
+}
+
+.description #package-description p:last-child {
+  margin-bottom: 0;
 }
 
 .description #package-description .package-price {
