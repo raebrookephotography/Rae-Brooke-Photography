@@ -320,7 +320,7 @@
 ======================================== */
 
 .editorial-gallery-weddings {
-  grid-auto-rows: clamp(155px, 19vw, 275px);
+  grid-auto-rows: clamp(170px, 20vw, 290px);
 }
 
 .editorial-gallery-weddings .wedding-feature {
@@ -332,6 +332,15 @@
   grid-column: 3;
 }
 
+/* Keep the featured photograph visually dominant */
+.editorial-gallery-weddings .wedding-feature img {
+  object-position: center;
+}
+
+/* Consistent image coverage for supporting photographs */
+.editorial-gallery-weddings .wedding-support img {
+  object-position: center;
+}
 
 /* ========================================
    09. FAMILIES & NEWBORNS
@@ -341,19 +350,17 @@
 .editorial-gallery-families {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
+  gap: var(--portfolio-gallery-gap);
 }
 
 .editorial-gallery-families .editorial-photo img {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center;
 }
-
-.editorial-gallery-families .family-feature img {
-  aspect-ratio: 4 / 5;
-}
-
 
 /* ========================================
    10. BRANDING & PORTRAITS
@@ -361,12 +368,16 @@
 ======================================== */
 
 .editorial-gallery-branding {
-  grid-auto-rows: clamp(155px, 19vw, 275px);
+  grid-auto-rows: clamp(170px, 20vw, 290px);
 }
 
 .editorial-gallery-branding .branding-feature {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.editorial-gallery-branding .branding-feature img {
+  object-position: center;
 }
 
 
