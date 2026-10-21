@@ -82,8 +82,6 @@
     clamp(65px, 8vw, 115px)
     var(--portfolio-page-gutter)
     clamp(80px, 9vw, 120px);
-
-/*  background: var(--portfolio-white); */
 }
 
 /* ========================================
