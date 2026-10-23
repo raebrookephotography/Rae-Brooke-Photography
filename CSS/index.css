@@ -122,7 +122,8 @@
   border-bottom: 1px solid var(--color-sage-dark);
   border-radius: 0;
   background: transparent;
-  color: var(--color-text);
+  color: var(--color-denim);
+  font-family: var(--font-sans);
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.16em;
