@@ -139,3 +139,19 @@ if (document.readyState === "loading") {
 } else {
   loadSharedHero();
 }
+
+/* =========================================
+   LOAD HEADER FOR DIRECTLY EMBEDDED HEROES
+========================================= */
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (!document.querySelector("#shared-hero")) {
+      loadSharedHeader();
+    }
+  }, { once: true });
+} else {
+  if (!document.querySelector("#shared-hero")) {
+    loadSharedHeader();
+  }
+}
