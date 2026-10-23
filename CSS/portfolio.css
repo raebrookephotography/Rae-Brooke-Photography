@@ -324,9 +324,9 @@
    Featured image + supporting photographs
 ======================================== */
 
-/*  .editorial-gallery-weddings {
-  grid-auto-rows: clamp(170px, 20vw, 290px);
-} */
+.editorial-gallery-weddings {
+   grid-auto-flow: dense;
+} 
 
 .editorial-gallery-weddings .wedding-feature {
   grid-column: span 2;
@@ -356,6 +356,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
   gap: var(--portfolio-gallery-gap);
+  grid-auto-flow: dense;
 }
 
 .editorial-gallery-families .editorial-photo img {
@@ -372,9 +373,9 @@
    Featured image + supporting portraits
 ======================================== */
 
-/* .editorial-gallery-branding {
-  grid-auto-rows: clamp(170px, 20vw, 290px);
-} */
+.editorial-gallery-branding {
+  grid-auto-flow: dense;
+} 
 
 .editorial-gallery-branding .branding-feature {
   grid-column: span 2;
