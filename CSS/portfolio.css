@@ -324,9 +324,9 @@
    Featured image + supporting photographs
 ======================================== */
 
-.editorial-gallery-weddings {
+/*  .editorial-gallery-weddings {
   grid-auto-rows: clamp(170px, 20vw, 290px);
-}
+} */
 
 .editorial-gallery-weddings .wedding-feature {
   grid-column: span 2;
@@ -372,9 +372,9 @@
    Featured image + supporting portraits
 ======================================== */
 
-.editorial-gallery-branding {
+/* .editorial-gallery-branding {
   grid-auto-rows: clamp(170px, 20vw, 290px);
-}
+} */
 
 .editorial-gallery-branding .branding-feature {
   grid-column: span 2;
