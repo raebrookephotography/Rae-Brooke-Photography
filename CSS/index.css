@@ -71,7 +71,7 @@
 
 .home-page .about-content h2 {
   margin: 0 0 22px;
-  color: var(--color-denim: #687987;);
+  color: var(--color-denim);
   font-family: var(--font-serif);
   font-size: clamp(46px, 5.6vw, 76px);
   font-weight: 400;
@@ -80,7 +80,7 @@
 }
 
 .home-page .about-content h2 em {
-  color: var(--color-denim-dark);
+  color: var(--color-sage-dark);
   font-weight: 400;
   font-style: italic;
 }
