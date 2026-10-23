@@ -98,7 +98,7 @@
 .home-page .about-content > p:not(.section-eyebrow):not(.about-subtitle) {
   max-width: 490px;
   margin: 0 0 17px;
-  color: var(--color-text-muted);
+/*  color: var(--color-text-muted); */
   font-family: var(--font-serif);
   font-size: clamp(16px, 1.4vw, 18px);
   font-weight: 400;
