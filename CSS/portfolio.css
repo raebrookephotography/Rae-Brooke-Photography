@@ -1,4 +1,3 @@
-
 /* ========================================
    RAE BROOKE PHOTOGRAPHY
    PORTFOLIO PAGE
@@ -299,10 +298,13 @@
 
 .editorial-photo img {
   display: block;
+
   width: 100%;
   height: 100%;
-  object-fit: contain;
+
+  object-fit: cover;
   object-position: center;
+
   transition: transform 0.65s ease;
 }
 
@@ -317,37 +319,68 @@
 
 
 /* ========================================
-   08–10. SHARED EDITORIAL GALLERY LAYOUT
+   08. COUPLES & WEDDINGS
    Featured image + supporting photographs
 ======================================== */
 
-.editorial-gallery-weddings,
-.editorial-gallery-families,
-.editorial-gallery-branding {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: clamp(170px, 20vw, 290px);
-  grid-auto-flow: dense;
-  align-items: stretch;
+.editorial-gallery-weddings {
+   grid-auto-flow: dense;
+} 
+
+.editorial-gallery-weddings .wedding-feature {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-/* Large featured photograph */
+.editorial-gallery-weddings .wedding-support {
+  grid-column: 3;
+}
 
-.editorial-gallery-weddings .wedding-feature,
-.editorial-gallery-families .family-feature,
+/* Keep the featured photograph visually dominant */
+.editorial-gallery-weddings .wedding-feature img {
+  object-position: center;
+}
+
+/* Consistent image coverage for supporting photographs */
+.editorial-gallery-weddings .wedding-support img {
+  object-position: center;
+}
+
+/* ========================================
+   09. FAMILIES & NEWBORNS
+   Three balanced photographs
+======================================== */
+
+.editorial-gallery-families {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--portfolio-gallery-gap);
+  grid-auto-flow: dense;
+}
+
+.editorial-gallery-families .editorial-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ========================================
+   10. BRANDING & PORTRAITS
+   Featured image + supporting portraits
+======================================== */
+
+.editorial-gallery-branding {
+  grid-auto-flow: dense;
+} 
+
 .editorial-gallery-branding .branding-feature {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-/* Supporting photographs */
-
-.editorial-gallery-weddings .wedding-support {
-  grid-column: auto;
-}
-
-.editorial-gallery-weddings .wedding-feature img,
-.editorial-gallery-weddings .wedding-support img,
-.editorial-gallery-families .family-feature img,
 .editorial-gallery-branding .branding-feature img {
   object-position: center;
 }
@@ -427,7 +460,6 @@
  /* Featured galleries: two-column tablet layout */
 
   .editorial-gallery-weddings,
-  .editorial-gallery-families,
   .editorial-gallery-branding {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: auto;
@@ -435,15 +467,13 @@
   }
 
   .editorial-gallery-weddings .wedding-feature,
-  .editorial-gallery-families .family-feature,
   .editorial-gallery-branding .branding-feature {
     grid-column: 1 / -1;
     grid-row: auto;
   }
 
   .editorial-gallery-weddings .wedding-feature img,
-  .editorial-gallery-branding .branding-feature img
-  .editorial-gallery-families .families-feature img {
+  .editorial-gallery-branding .branding-feature img {
     height: auto;
     aspect-ratio: 5 / 4;
   }
