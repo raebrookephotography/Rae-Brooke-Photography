@@ -121,3 +121,5 @@ async function loadSharedHeader() {
     delete container.dataset.loading;
   }
 }
+
+document.addEventListener("DOMContentLoaded", loadSharedHeader);
