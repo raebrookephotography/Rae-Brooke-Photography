@@ -4,8 +4,7 @@
 ========================================= */
 
 async function loadSharedHeader() {
-  const container = document.querySelector(
-    "#shared-hero #shared-header"
+  const container = document.querySelector("#shared-header");
   );
 
   if (!container) {
