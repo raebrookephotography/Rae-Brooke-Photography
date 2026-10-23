@@ -47,21 +47,6 @@
 
 
 /* ========================================
-   02. SHARED SITE HEADER
-   Preserve existing header behavior
-======================================== */
-
-.portfolio-page #shared-header {
-  position: absolute;
-  z-index: 1001;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-}
-
-
-/* ========================================
    03. PORTFOLIO GALLERY
 ======================================== */
 
