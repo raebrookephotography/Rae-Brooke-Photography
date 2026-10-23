@@ -16,7 +16,7 @@
   --portfolio-gallery-gap: clamp(12px, 1.6vw, 22px);
 
   margin: 0;
-  background: var(--color-ivory);
+  background: var(--color-soft-ivory);
   color: var(--color-text);
   font-family: Georgia, "Times New Roman", serif;
 }
