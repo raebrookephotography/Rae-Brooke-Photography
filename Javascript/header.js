@@ -5,11 +5,10 @@
 
 async function loadSharedHeader() {
   const container = document.querySelector("#shared-header");
-  );
 
   if (!container) {
     console.error(
-      "Shared header placeholder not found inside #shared-hero."
+      "Shared header placeholder not found."
     );
     return;
   }
@@ -122,4 +121,3 @@ async function loadSharedHeader() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadSharedHeader);
