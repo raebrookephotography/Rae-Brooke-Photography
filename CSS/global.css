@@ -208,6 +208,43 @@ header nav a:hover { color: var(--color-sage-dark); }
   line-height: 1;
 }
 
+/* =========================================
+   SHARED MINIMAL ARROW
+========================================= */
+
+.arrow-up-right {
+  display: inline-block;
+  position: relative;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.arrow-up-right::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  width: 10px;
+  height: 1.5px;
+  background: currentColor;
+  transform: rotate(-45deg);
+  transform-origin: right center;
+}
+
+.arrow-up-right::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+
 /* Shared footer colors */
 footer {
   background: var(--color-denim-dark);
