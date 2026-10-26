@@ -52,12 +52,14 @@ async function loadSharedHeader() {
       return toggle.getAttribute("aria-expanded") === "true";
     }
 
-    function openMenu() {
+    
+function openMenu() {
   dropdown.hidden = false;
   toggle.setAttribute("aria-expanded", "true");
 
   if (window.matchMedia("(max-width: 600px)").matches) {
     document.body.style.overflow = "hidden";
+    document.body.classList.add("mobile-menu-open");
   }
 }
 
@@ -66,6 +68,7 @@ function closeMenu(returnFocus = false) {
   toggle.setAttribute("aria-expanded", "false");
 
   document.body.style.overflow = "";
+  document.body.classList.remove("mobile-menu-open");
 
   if (returnFocus) {
     toggle.focus();
