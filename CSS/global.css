@@ -224,28 +224,31 @@ header nav a:hover { color: var(--color-sage-dark); }
   overflow: visible;
 }
 
+
 .arrow-up-right::before {
   content: "";
   position: absolute;
-  top: 4px;
-  right: 2px;
+  top: 7px;
+  left: 2px;
   width: 10px;
   height: 1.5px;
   background: currentColor;
   transform: rotate(-45deg);
-  transform-origin: right center;
+  transform-origin: center;
 }
 
 .arrow-up-right::after {
   content: "";
   position: absolute;
-  top: 1px;
+  top: 2px;
   right: 2px;
   width: 6px;
   height: 6px;
   border-top: 1.5px solid currentColor;
   border-right: 1.5px solid currentColor;
+  box-sizing: border-box;
 }
+
 
 
 /* Shared footer colors */
