@@ -210,7 +210,7 @@ header nav a:hover { color: var(--color-sage-dark); }
 
 
 /* =========================================
-   SHARED MINIMAL ARROW
+   REFINED MINIMAL ARROW
 ========================================= */
 
 .arrow-up-right {
@@ -222,16 +222,16 @@ header nav a:hover { color: var(--color-sage-dark); }
   color: inherit;
   vertical-align: middle;
   overflow: visible;
+  transition: transform 220ms ease;
 }
-
 
 .arrow-up-right::before {
   content: "";
   position: absolute;
   top: 7px;
   left: 2px;
-  width: 10px;
-  height: 1.5px;
+  width: 11px;
+  height: 1.25px;
   background: currentColor;
   transform: rotate(-45deg);
   transform-origin: center;
@@ -244,9 +244,20 @@ header nav a:hover { color: var(--color-sage-dark); }
   right: 2px;
   width: 6px;
   height: 6px;
-  border-top: 1.5px solid currentColor;
-  border-right: 1.5px solid currentColor;
+  border-top: 1.25px solid currentColor;
+  border-right: 1.25px solid currentColor;
   box-sizing: border-box;
+}
+
+/* Optional subtle hover interaction */
+a:hover .arrow-up-right {
+  transform: translate(2px, -2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-up-right {
+    transition: none;
+  }
 }
 
 
