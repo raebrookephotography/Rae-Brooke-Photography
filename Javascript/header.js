@@ -53,18 +53,24 @@ async function loadSharedHeader() {
     }
 
     function openMenu() {
-      dropdown.hidden = false;
-      toggle.setAttribute("aria-expanded", "true");
-    }
+  dropdown.hidden = false;
+  toggle.setAttribute("aria-expanded", "true");
 
-    function closeMenu(returnFocus = false) {
-      dropdown.hidden = true;
-      toggle.setAttribute("aria-expanded", "false");
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    document.body.style.overflow = "hidden";
+  }
+}
 
-      if (returnFocus) {
-        toggle.focus();
-      }
-    }
+function closeMenu(returnFocus = false) {
+  dropdown.hidden = true;
+  toggle.setAttribute("aria-expanded", "false");
+
+  document.body.style.overflow = "";
+
+  if (returnFocus) {
+    toggle.focus();
+  }
+}
 
     toggle.addEventListener("click", () => {
       if (menuIsOpen()) {
