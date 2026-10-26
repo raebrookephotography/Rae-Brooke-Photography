@@ -53,32 +53,32 @@ async function loadSharedHeader() {
     }
 
     
-function openMenu() {
-  dropdown.hidden = false;
-  toggle.setAttribute("aria-expanded", "true");
-
-  // Prevent the page behind the menu from scrolling
-  document.body.style.overflow = "hidden";
-  document.documentElement.style.overflow = "hidden";
-
-  if (window.matchMedia("(max-width: 600px)").matches) {
-    document.body.classList.add("mobile-menu-open");
-  }
-}
-
-function closeMenu(returnFocus = false) {
-  dropdown.hidden = true;
-  toggle.setAttribute("aria-expanded", "false");
-
-  // Restore page scrolling
-  document.body.style.overflow = "";
-  document.documentElement.style.overflow = "";
-  document.body.classList.remove("mobile-menu-open");
-
-  if (returnFocus) {
-    toggle.focus();
-  }
-}
+   function openMenu() {
+     dropdown.hidden = false;
+     toggle.setAttribute("aria-expanded", "true");
+   
+     document.body.style.overflow = "hidden";
+     document.documentElement.style.overflow = "hidden";
+     document.body.classList.add("menu-open");
+   
+     if (window.matchMedia("(max-width: 600px)").matches) {
+       document.body.classList.add("mobile-menu-open");
+     }
+   }
+   
+   function closeMenu(returnFocus = false) {
+     dropdown.hidden = true;
+     toggle.setAttribute("aria-expanded", "false");
+   
+     document.body.style.overflow = "";
+     document.documentElement.style.overflow = "";
+     document.body.classList.remove("menu-open");
+     document.body.classList.remove("mobile-menu-open");
+   
+     if (returnFocus) {
+       toggle.focus();
+     }
+   }
 
     toggle.addEventListener("click", () => {
       if (menuIsOpen()) {
