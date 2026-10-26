@@ -209,7 +209,7 @@
 .home-selected-heading h2 {
   max-width: 720px;
   margin: 0;
-  color: var(--color-text);
+  color: var(--color-denin);
   font-size: clamp(42px, 6.4vw, 82px);
   letter-spacing: -0.055em;
   line-height: 0.98;
