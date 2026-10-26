@@ -35,7 +35,8 @@
       >
 
       <div class="hero-overlay"></div>
-
+      <!-- Shared header -->
+      <div id="shared-header"></div>
       <div class="hero-content">
         <p class="eyebrow">THE BEGINNING OF SOMETHING GOOD</p>
 
@@ -52,7 +53,7 @@
 
         <a class="button hero-button" href="#contact">
           <span class="hero-button-text">LET'S CONNECT</span>
-          <span aria-hidden="true">↗</span>
+          <span class="arrow-up-right" aria-hidden="true"></span>
         </a>
       </div>
 
@@ -70,17 +71,16 @@
     <div id="shared-sticky-nav"></div>
     
     <!-- CONTACT INTRODUCTION AND FORM -->
-    <!-- CONTACT INTRODUCTION AND FORM -->
     <section class="contact-layout" id="contact">
     
       <!-- Small section introduction -->
-      <div class="contact-editorial-top">
-        <p class="contact-section-eyebrow">
+      <div class="contact-heading-top">
+        <p class="contact-heading-eyebrow">
           LET'S CONNECT
         </p>
     
-        <span class="contact-editorial-number" aria-hidden="true">
-          04 / CONTACT
+        <span class="contact-heading-details" aria-hidden="true">
+          CONTACT
         </span>
       </div>
     
@@ -251,7 +251,7 @@
 
           <button class="contact-submit" type="submit">
             <span>Send your inquiry</span>
-            <span aria-hidden="true">↗</span>
+            <span class="arrow-up-right" aria-hidden="true"></span>
           </button>
 
           <p
@@ -277,8 +277,10 @@
   <!-- SHARED FOOTER -->
   <div id="shared-footer"></div>
 
-  <script src="/Javascript/footer.js" defer></script>
+  <script src="/Javascript/header.js"></script>
+  <script src="/Javascript/hero.js"></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
+  <script src="/Javascript/footer.js" defer></script>
   <script src="/Javascript/contact.js" defer></script>
 
 </body>

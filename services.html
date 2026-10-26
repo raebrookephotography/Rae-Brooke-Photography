@@ -23,7 +23,6 @@
 <body class="services-page-body">
 
   <main>
-
     <!-- =====================================
          SERVICES HERO
          Shared hero styles remain unchanged.
@@ -38,7 +37,8 @@
       >
 
       <div class="hero-overlay"></div>
-
+      <!-- Shared header -->
+      <div id="shared-header"></div>
       <div class="hero-content">
         <p class="eyebrow">THE RAE BROOKE EXPERIENCE</p>
 
@@ -53,7 +53,7 @@
 
         <a class="button hero-button" href="#packages">
           <span class="hero-button-text">EXPLORE MY PACKAGES</span>
-          <span aria-hidden="true">↗</span>
+          <span class="arrow-up-right" aria-hidden="true"></span>
         </a>
       </div>
 
@@ -85,12 +85,12 @@
 
       <div class="services-heading">
         <div class="services-heading-top">
-          <p class="section-eyebrow">
+          <p class="services-heading-eyebrow">
             FIND YOUR EXPERIENCE
           </p>
 
-          <span class="services-edition">
-            THE SERVICES EDIT
+          <span class="services-heading-details">
+            SERVICES
           </span>
         </div>
 
@@ -117,7 +117,8 @@
         >
           <span class="package-nav-number">01</span>
           Portraits
-          <span class="package-nav-arrow" aria-hidden="true">↗</span>
+         <!-- <span class="package-nav-arrow" aria-hidden="true">↗</span> -->
+          <span class="arrow-up-right" aria-hidden="true"></span>
         </button>
 
         <button
@@ -127,7 +128,8 @@
         >
           <span class="package-nav-number">02</span>
           Branding
-          <span class="package-nav-arrow" aria-hidden="true">↗</span>
+        <!--  <span class="package-nav-arrow" aria-hidden="true">↗</span> -->
+          <span class="arrow-up-right" aria-hidden="true"></span>
         </button>
 
       </nav>
@@ -137,7 +139,9 @@
 
       <div
         class="package-content"
+        role="region"
         aria-label="Selected photography package"
+        aria-live="polite"
       >
 
         <article class="description">
@@ -195,7 +199,7 @@
             id="package-inquiry"
           >
             <span>LET'S TALK ABOUT YOUR SESSION</span>
-            <span aria-hidden="true">↗</span>
+            <span class="arrow-up-right" aria-hidden="true"></span>
           </a>
 
           <p class="package-footnote">
@@ -236,7 +240,7 @@
         </p>
 
         <a href="/contact.html">
-          LET'S CONNECT <span aria-hidden="true">↗</span>
+          LET'S CONNECT <span class="arrow-up-right" aria-hidden="true"></span>
         </a>
       </div>
 
@@ -257,8 +261,10 @@
   ====================================== -->
 
   <script src="/Javascript/services.js" defer></script>
-  <script src="/Javascript/footer.js" defer></script>
+  <script src="/Javascript/header.js"></script>
+  <script src="/Javascript/hero.js"></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
+  <script src="/Javascript/footer.js" defer></script>
 
 </body>
 </html>

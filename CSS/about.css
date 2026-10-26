@@ -10,10 +10,6 @@
 ========================================= */
 
 .about-editorial {
-  --about-ink: var(--color-denim);
-  --about-accent: var(--color-sage-dark);
-  --about-rule: var(--color-line);
-
   position: relative;
 
   width: 100%;
@@ -23,7 +19,7 @@
 
   overflow: hidden;
 
-  background: var(--color-ivory);
+  background: var(--color-soft-ivory);
   color: var(--color-text);
 
   scroll-margin-top: 100px;
@@ -40,7 +36,7 @@
    02. TOP EDITORIAL LABEL
 ========================================= */
 
-.about-editorial-top {
+.about-heading-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,26 +48,26 @@
   margin: 0 auto;
   padding-bottom: 18px;
 
-  border-bottom: 1px solid var(--about-rule);
+  border-bottom: 1px solid var(--color-line);
 }
 
-.about-section-eyebrow {
+.about-heading-eyebrow {
   display: flex;
   align-items: center;
   gap: 12px;
 
   margin: 0;
 
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
 
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 2px;
   line-height: 1.8;
 }
 
-.about-section-eyebrow::before {
+.about-heading-eyebrow::before {
   content: "";
 
   display: block;
@@ -82,13 +78,13 @@
   background: var(--color-tan);
 }
 
-.about-editorial-number {
+.about-heading-details {
   flex: 0 0 auto;
 
   color: var(--color-text-muted);
 
   font-family: var(--font-sans);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
@@ -102,12 +98,12 @@
   display: grid;
 
   grid-template-columns:
-    minmax(0, 0.92fr)
-    minmax(0, 1.08fr);
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
 
   align-items: start;
 
-  gap: clamp(55px, 9vw, 145px);
+  gap: clamp(40px, 6vw, 95px);
 
   width: 100%;
   max-width: 1400px;
@@ -142,12 +138,12 @@
 
   margin: 0 0 28px;
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
-  font-size: clamp(54px, 6.1vw, 88px);
+  font-size: clamp(48px, 5.4vw, 76px);
   font-weight: 400;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.05em;
   line-height: 0.99;
 }
 
@@ -167,7 +163,7 @@
 }
 
 .about-heading em {
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
 
   font-family: var(--font-serif);
   font-weight: 400;
@@ -185,7 +181,7 @@
 
   border-left: 1px solid var(--color-tan);
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
   font-size: clamp(18px, 1.8vw, 23px);
@@ -203,7 +199,7 @@
   color: var(--color-text);
 
   font-family: var(--font-serif);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 2;
 }
@@ -234,10 +230,10 @@
   padding: 12px 0;
 
   border: 0;
-  border-bottom: 1px solid var(--about-accent);
+  border-bottom: 1px solid var(--color-sage-dark);
 
   background: transparent;
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-sans);
   font-size: 9px;
@@ -253,14 +249,14 @@
 
 .about-contact-button:hover {
   border-color: var(--color-tan);
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
 }
 
 .about-button-arrow {
   display: inline-block;
   flex: 0 0 auto;
 
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
   font-size: 17px;
   line-height: 1;
 
@@ -272,7 +268,7 @@
 }
 
 .about-contact-button:focus-visible {
-  outline: 2px solid var(--about-accent);
+  outline: 2px solid var(--color-sage-dark);
   outline-offset: 5px;
 }
 
@@ -285,10 +281,10 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.66fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.68fr);
 
   align-items: start;
-  column-gap: clamp(12px, 2vw, 28px);
+  column-gap: clamp(14px, 2.5vw, 32px);
   row-gap: 0;
 
   min-width: 0;
@@ -403,7 +399,7 @@
   width: 100%;
   aspect-ratio: 3 / 4;
 
-  margin-top: clamp(80px, 13vw, 175px);
+  margin-top: clamp(70px, 10vw, 140px);
 
   overflow: hidden;
 }
@@ -426,9 +422,9 @@
   margin: 0;
   padding: 17px 0 0;
 
-  border-top: 1px solid var(--about-rule);
+  border-top: 1px solid var(--color-line);
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
   font-size: clamp(17px, 1.8vw, 22px);
@@ -451,7 +447,7 @@
 
 .about-editorial-bottom {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) auto;
+  grid-template-columns: 35px minmax(0, 1fr) auto;
 
   align-items: center;
   gap: clamp(20px, 4vw, 55px);
@@ -459,37 +455,37 @@
   width: 100%;
   max-width: 1400px;
 
-  margin: clamp(70px, 9vw, 120px) auto 0;
-  padding-top: 27px;
+  margin: clamp(75px, 9vw, 120px) auto 0;
+  padding-top: 30px;
 
-  border-top: 1px solid var(--about-rule);
+  border-top: 1px solid var(--color-line);
 }
 
 .about-bottom-line {
   display: block;
 
-  width: 35px;
+  width: 30px;
   height: 1px;
 
   background: var(--color-tan);
 }
 
 .about-editorial-bottom p {
-  max-width: 800px;
+  max-width: 780px;
 
   margin: 0;
 
-  color: var(--about-ink);
+  color: var(--color-denim);
 
   font-family: var(--font-serif);
-  font-size: clamp(20px, 2.8vw, 36px);
+  font-size: clamp(22px, 2.8vw, 36px);
   font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.5;
+  letter-spacing: -0.03em;
+  line-height: 1.45;
 }
 
 .about-editorial-bottom p em {
-  color: var(--about-accent);
+  color: var(--color-sage-dark);
   font-weight: 400;
 }
 
@@ -567,25 +563,25 @@
     padding: 58px 7% 70px;
   }
 
-  .about-editorial-top {
+  .about-heading-top {
     align-items: flex-start;
     gap: 12px;
 
     padding-bottom: 15px;
   }
 
-  .about-section-eyebrow {
+  .about-heading-eyebrow {
     gap: 9px;
 
     font-size: 9px;
     letter-spacing: 1.5px;
   }
 
-  .about-section-eyebrow::before {
+  .about-heading-eyebrow::before {
     width: 18px;
   }
 
-  .about-editorial-number {
+  .about-heading-details {
     padding-top: 2px;
 
     font-size: 8px;
@@ -742,16 +738,16 @@
     padding-left: 6%;
   }
 
-  .about-editorial-top {
+  .about-heading-top {
     gap: 8px;
   }
 
-  .about-section-eyebrow {
+  .about-heading-eyebrow {
     font-size: 8px;
     letter-spacing: 1.1px;
   }
 
-  .about-editorial-number {
+  .about-heading-details {
     font-size: 7px;
   }
 
@@ -805,13 +801,57 @@
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .about-image img,
   .about-contact-button,
   .about-button-arrow {
     transition: none;
   }
+}
 
+
+
+/* =========================================
+   12. ABOUT HERO REFINEMENTS
+========================================= */
+
+.about-page-body .hero .hero-content {
+  max-width: 900px;
+}
+
+.about-page-body .hero .eyebrow {
+  margin-bottom: 22px;
+}
+
+.about-page-body .hero h1 {
+  max-width: 850px;
+/*  margin-right: auto; */
+/*  margin-bottom: 24px; */
+/*  margin-left: auto; */
+  margin: 0 0 32px;
+  font-size: clamp(52px, 7.2vw, 92px);
+}
+
+.about-page-body .hero .hero-subtitle {
+  max-width: 520px;
+  margin-right: auto;
+/*  margin-left: auto; */
+  margin-left: 0px;
+}
+
+@media (max-width: 700px) {
+  .about-page-body .hero {
+    padding: 120px 7% 90px;
+  }
+
+  .about-page-body .hero h1 {
+    font-size: clamp(44px, 10vw, 66px);
+    line-height: 1.04;
+  }
+
+  .about-page-body .hero .hero-subtitle {
+    font-size: 14px;
+    line-height: 1.8;
+  }
 }
 
 

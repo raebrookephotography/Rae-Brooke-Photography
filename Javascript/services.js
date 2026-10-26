@@ -169,10 +169,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Update the photograph and caption.
-    packageImage.alt = selectedPackage.imageAlt;
-    packageImage.src = selectedPackage.image;
-    packageCaption.textContent = selectedPackage.caption;
+   // Update the photograph and caption.
+   packageImage.alt = selectedPackage.imageAlt;
+   
+   if (packageImage.getAttribute("src") !== selectedPackage.image) {
+     packageImage.src = selectedPackage.image;
+   }
+   
+   packageCaption.textContent = selectedPackage.caption;
 
     // Update the inquiry destination.
     packageInquiry.href = selectedPackage.inquiry;

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,10 +30,12 @@
       <img
         class="hero-image"
         src="/Images/index-hero.jpg"
-        alt="Rae behind the lense"
+        alt="Family portrait captured by Rae Brooke Photography"
         fetchpriority="high"
       >
       <div class="hero-overlay"></div>
+       <!-- Shared header -->
+      <div id="shared-header"></div>
       <!-- Hero text -->
       <div class="hero-content">
         <p class="eyebrow">RAE BROOKE PHOTOGRAPHY</p>
@@ -42,10 +43,10 @@
         <p class="hero-subtitle">Natural, heartfelt photography for couples, families, and life's meaningful milestones in North Carolina.</p>        
         <a class="button hero-button" href="#gallery">
           <span class="hero-button-text">EXPLORE THE GALLERY</span>
-          <span aria-hidden="true">↗</span>
+          <span class="arrow-up-right" aria-hidden="true"></span>
         </a>
       </div>
-      <a class="hero-scroll" href="#gallery" aria-label="Scroll to learn about Rae">
+      <a class="hero-scroll" href="#gallery" aria-label="Scroll to view the photography gallery">
         <span>DISCOVER MORE</span>
         <span class="scroll-line" aria-hidden="true"></span>
       </a>
@@ -72,13 +73,13 @@
 >
  
 <!-- SMALL EDITORIAL SECTION INTRODUCTION -->
-<div class="portfolio-editorial-top">
-  <p class="portfolio-editorial-eyebrow">
+<div class="portfolio-heading-top">
+  <p class="portfolio-heading-eyebrow">
     SELECTED WORK
   </p>
 
-  <span class="portfolio-editorial-number" aria-hidden="true">
-    03 / PORTFOLIO
+  <span class="portfolio-heading-details" aria-hidden="true">
+    PORTFOLIO
   </span>
 </div>
 
@@ -105,8 +106,8 @@
   >
     <header class="portfolio-category-heading">
       <div>
-        <p class="portfolio-category-eyebrow">01 / LOVE & CONNECTION</p>
-        <h3 id="couples-weddings-title">Couples & Weddings</h3>
+        <p class="portfolio-category-eyebrow">LOVE & CONNECTION</p>
+        <h3 id="couples-weddings-title">Couples & Engagements</h3>
       </div>
 
       <p class="portfolio-category-description">
@@ -117,24 +118,6 @@
 
     <div class="editorial-gallery editorial-gallery-weddings">
 
-      <figure class="editorial-photo wedding-feature">
-        <img
-          src="/Images/Portfolio/Justine_George.jpeg"
-          alt="Couple sharing a meaningful moment"
-          loading="lazy"
-          decoding="async"
-        >
-      </figure>
-
-      <figure class="editorial-photo wedding-support wedding-support-top">
-        <img
-          src="/Images/Portfolio/Colleen_Chris_Sunset.jpg"
-          alt="Couple enjoying a sunset together"
-          loading="lazy"
-          decoding="async"
-        >
-      </figure>
-
       <figure class="editorial-photo wedding-support wedding-support-bottom">
         <img
           src="/Images/Portfolio/Ring_Seashells.jpg"
@@ -143,7 +126,6 @@
           decoding="async"
         >
       </figure>
-
       <figure class="editorial-photo">
         <img
           src="/Images/Portfolio/Amanda_David_1.jpg"
@@ -153,6 +135,7 @@
         >
       </figure>
 
+      <!--
       <figure class="editorial-photo">
         <img
           src="/Images/Portfolio/Colleen_Chris_Water.jpg"
@@ -161,6 +144,7 @@
           decoding="async"
         >
       </figure>
+      -->
 
       <figure class="editorial-photo">
         <img
@@ -170,7 +154,7 @@
           decoding="async"
         >
       </figure>
-
+      
       <figure class="editorial-photo">
         <img
           src="/Images/Portfolio/Couple_1.jpg"
@@ -182,8 +166,8 @@
 
       <figure class="editorial-photo">
         <img
-          src="/Images/Portfolio/Jess_Jordan_1.jpg"
-          alt="Couple portrait"
+          src="/Images/Portfolio/JustUs.jpg"
+          alt="Couple photographed together"
           loading="lazy"
           decoding="async"
         >
@@ -191,21 +175,23 @@
 
       <figure class="editorial-photo">
         <img
-          src="/Images/Portfolio/Haley_Bachelorette.jpg"
-          alt="Bachelorette celebration"
+          src="/Images/Portfolio/Colleen_Twirl.jpg"
+          alt="Couple twirl together"
           loading="lazy"
           decoding="async"
         >
       </figure>
 
-      <figure class="editorial-photo">
+      <!--
+      <figure class="editorial-photo wedding-support wedding-support-top">
         <img
-          src="/Images/Portfolio/Erin_BridalShower.jpg"
-          alt="Bridal shower celebration"
+          src="/Images/Portfolio/Colleen_Chris_Sunset.jpg"
+          alt="Couple enjoying a sunset together"
           loading="lazy"
           decoding="async"
         >
       </figure>
+      -->
 
     </div>
   </section>
@@ -223,9 +209,9 @@
     <header class="portfolio-category-heading">
       <div>
         <p class="portfolio-category-eyebrow">
-          02 / LITTLE MOMENTS, BIG LOVE
+          LITTLE MOMENTS, BIG LOVE
         </p>
-        <h3 id="families-newborns-title">Families & Newborns</h3>
+        <h3 id="families-newborns-title">Families</h3>
       </div>
 
       <p class="portfolio-category-description">
@@ -245,10 +231,30 @@
         >
       </figure>
 
+      <figure class="editorial-photo wedding-feature">
+        <img
+          src="/Images/Portfolio/Justine_George.jpeg"
+          alt="Couple sharing a meaningful moment"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+
+      <!--
       <figure class="editorial-photo family-feature">
         <img
           src="/Images/Portfolio/Family_2.jpg"
           alt="Family spending time together"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+      -->
+
+      <figure class="editorial-photo">
+        <img
+          src="/Images/Portfolio/Jess_Jordan_1.jpg"
+          alt="Couple portrait"
           loading="lazy"
           decoding="async"
         >
@@ -258,6 +264,33 @@
         <img
           src="/Images/Portfolio/Baby_Feet.jpg"
           alt="Tiny baby feet and newborn details"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+
+      <figure class="editorial-photo">
+        <img
+          src="/Images/Portfolio/Justine_1.jpg"
+          alt="Bridal shower celebration"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+
+      <figure class="editorial-photo family-feature">
+        <img
+          src="/Images/Portfolio/Family_3.jpg"
+          alt="Family spending time together"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>
+
+      <figure class="editorial-photo">
+        <img
+          src="/Images/Portfolio/Erin_BridalShower.jpg"
+          alt="Bridal shower celebration"
           loading="lazy"
           decoding="async"
         >
@@ -279,7 +312,7 @@
     <header class="portfolio-category-heading">
       <div>
         <p class="portfolio-category-eyebrow">
-          03 / PERSONALITY & PURPOSE
+          PERSONALITY & PURPOSE
         </p>
         <h3 id="branding-portraits-title">Branding & Portraits</h3>
       </div>
@@ -303,12 +336,30 @@
 
       <figure class="editorial-photo">
         <img
+          src="/Images/Portfolio/Katleen.jpg"
+          alt="Individual portrait session"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>    
+
+      <figure class="editorial-photo">
+        <img
           src="/Images/Portfolio/Amanda_Branding_2.jpg"
           alt="Lifestyle branding portrait"
           loading="lazy"
           decoding="async"
         >
       </figure>
+
+      <figure class="editorial-photo">
+        <img
+          src="/Images/Portfolio/Haley_Bachelorette.jpg"
+          alt="Bachelorette celebration"
+          loading="lazy"
+          decoding="async"
+        >
+      </figure>  
 
       <figure class="editorial-photo">
         <img
@@ -319,32 +370,9 @@
         >
       </figure>
 
-      <figure class="editorial-photo">
-        <img
-          src="/Images/Portfolio/Katleen.jpg"
-          alt="Individual portrait session"
-          loading="lazy"
-          decoding="async"
-        >
-      </figure>
+       
 
-      <figure class="editorial-photo">
-        <img
-          src="/Images/Portfolio/Justine_1.jpg"
-          alt="Portrait from a photography session"
-          loading="lazy"
-          decoding="async"
-        >
-      </figure>
-
-      <figure class="editorial-photo">
-        <img
-          src="/Images/Portfolio/Colleen_Twirl.jpg"
-          alt="Joyful movement captured during a portrait session"
-          loading="lazy"
-          decoding="async"
-        >
-      </figure>
+         
 
     </div>
   </section>
@@ -372,7 +400,7 @@
 
       <a class="portfolio-button" href="/contact.html">
         LET'S CONNECT
-        <span aria-hidden="true">↗</span>
+        <span class="arrow-up-right" aria-hidden="true"></span>
       </a>
 
     </section>
@@ -383,9 +411,10 @@
   <!-- SHARED SITE FOOTER -->
   <div id="shared-footer"></div>
 
-  
-  <script src="/Javascript/footer.js" defer></script>
+  <script src="/Javascript/header.js"></script>
+  <script src="/Javascript/hero.js"></script>
   <script src="/Javascript/sticky-nav.js" defer></script>
+  <script src="/Javascript/footer.js" defer></script>
 
 </body>
 </html>
