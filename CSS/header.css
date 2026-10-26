@@ -227,3 +227,10 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-dropdown, .menu-icon span, .hero-dropdown a { animation: none; transition: none; }
 }
+/* Hide sticky navigation while the mobile menu is open */
+@media (max-width: 600px) {
+  body.mobile-menu-open #shared-sticky-nav {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
